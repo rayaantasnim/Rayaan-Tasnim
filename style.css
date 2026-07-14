@@ -1,0 +1,316 @@
+/* ====== IDAI Premium Style ====== */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #fdfdfd, #f7f9fc, #e6f0ff);
+  color: #222;
+  line-height: 1.6;
+}
+
+.col-md-4 h5 {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 15px !important;
+    background: linear-gradient(90deg, rgba(52, 152, 219, 0.2), rgba(155, 89, 182, 0.2)) !important;
+    padding: 10px 15px !important;
+    border-radius: 6px !important;
+    text-align: center !important;
+}
+
+
+/* Hero Banner */
+header {
+  background: linear-gradient(90deg, #e6f0ff, #ffffff, #f7f9fc);
+  padding: 60px 20px;
+  text-align: center;
+  color: black !important;
+
+  p{
+    color: black !important;
+    font-weight: bold;
+  }
+
+  box-shadow: 0 0 25px rgba(0,0,0,0.1);
+}
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #0056b3, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Headings: gradient text + vivid emoji */
+h2, h4 {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;          /* keep emoji + text side by side */
+  align-items: center;
+  gap: 8px;               /* space between emoji and text */
+}
+
+/* Gradient headings */
+h2, h4 {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  background: linear-gradient(90deg, #ff9800, #ffc107, #ffeb3b) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+/* Emojis stay vivid */
+h2, h4 {
+  unicode-bidi: isolate;
+}
+
+h2, h4 {
+  /* Reset emoji rendering so they keep native color */
+  -webkit-text-fill-color: initial !important;
+  color: initial !important;
+}
+
+/* Images */
+img{
+  width: 45% !important;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  border: 3px solid #FF8C00;
+  margin: 10px;
+}
+
+img:hover {
+  opacity: 0.95;
+  transform: scale(1.05);
+  border-color: #FFD700;
+  box-shadow: 0 0 12px #FF8C00;
+}
+
+img:active {
+  transform: scale(0.95);
+}
+
+.s{
+  width: 45% !important;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+header blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #ff9800, #ffc107);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Section Titles */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #0056b3, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ff9800;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Cards */
+.card {
+  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  border: 2px solid #e6f0ff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 198, 255, 0.6);
+}
+.card-title {
+  background: linear-gradient(90deg, #0056b3, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Paragraphs */
+.text-justify {
+  text-align: justify;
+}
+
+/* Wave Style Buttons */
+@keyframes waveFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.btn-primary {
+  background: linear-gradient(270deg, #ff9800, #ffc107, #ffeb3b, #ffc107, #ff9800);
+  background-size: 300% 300%;
+  animation: waveFlow 6s ease infinite;
+  border: none;
+  color: #222;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.8);
+  animation-duration: 3s; /* faster wave on hover */
+}
+
+/* Ordered Lists */
+ol {
+  padding-left: 20px;
+}
+ol li {
+  margin-bottom: 8px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+ol li:hover {
+  color: #0056b3;
+}
+
+/* Footer */
+footer {
+  padding-top: 0px !important;
+  background: linear-gradient(90deg, #f7f9fc, #ffffff);
+  color: black !important;
+
+  p{
+    font-weight: bold;
+    font-size: 1rem;
+    color: black !important;
+    margin:0px !important;
+  }
+
+  padding: 5px;
+  text-align: center;
+  font-size: 1rem;
+  border-top: 2px solid #ff9800;
+}
+
+.project{
+  .col-md-4{
+    border:2px black solid;
+    border-top: none;
+    border-radius: 50px ;
+    padding: 20px !important;
+    gap: 10px !important;
+  }
+
+  p{
+    text-align: justify !important;
+  }
+
+  img{
+    width: 100% !important;
+  }
+}
+
+.minor-banner {
+  width: 45% !important;
+  display: inline-block;
+}
+
+.row .text-center{
+  .img-fluid .minor-banner{
+    width:45%;
+  }
+}
+
+.container .my-5{
+  img{
+    width: 45% !important;
+  }
+}
+
+section{
+  img{
+    margin:0px !important;
+    margin-bottom:20px !important;
+  }
+}
+
+/* ====== Responsive Media Query ====== */
+@media (max-width: 1100px) {
+  body{
+    margin-left: 10px !important;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+  header p, header blockquote {
+    font-size: 1rem;
+  }
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  footer{
+    text-align: center;
+
+    p{
+      text-align: center;
+    }
+  }
+
+  .py-4{
+    text-align: center;
+  }
+
+  .container .my-5{
+    img{
+      width: 90% !important;
+    }
+  }
+
+  section{
+    width: 97% !important;
+    padding-left: 0px !important;
+    padding-right:0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
+  img{
+    margin:0px !important ;
+    width: 90% !important;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+  }
+}
