@@ -261,6 +261,13 @@ section{
 
 /* ====== Responsive Media Query ====== */
 @media (max-width: 1100px) {
+  .project{
+    .col-md-4{
+      gap:30px !important;
+      margin-bottom:30px !important;
+    }
+  }
+
   body{
     margin-left: 10px !important;
   }
