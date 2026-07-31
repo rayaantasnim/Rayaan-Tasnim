@@ -321,3 +321,92 @@ section{
     padding: 12px;
   }
 }
+
+.btn-special {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    color: whitesmoke !important;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+/* ===== Super Form Styling ===== */
+.super {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee) !important;
+  background-size: 300% 300% !important;
+  animation: superBg 15s ease infinite !important;
+  padding: 10px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25) !important;
+  transition: all 0.6s ease !important;
+  text-align: center !important;
+  margin-bottom: 20px !important;
+  width: 50% !important;
+  margin: 0 auto !important;   /* centers the form */
+
+  .btn-special{
+    margin-top: 10px !important;
+    min-width:200px !important;
+  }
+}
+
+
+/* Background Animation */
+@keyframes superBg {
+  0% { background-position: 0% 50% !important; }
+  50% { background-position: 100% 50% !important; }
+  100% { background-position: 0% 50% !important; }
+}
+
+/* Hover Effect */
+.super:hover {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #ffdde1, #ee9ca7) !important;
+  background-size: 400% 400% !important;
+  box-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 50px rgba(255,105,180,0.5) !important;
+  transform: scale(1.03) !important;
+}
+
+/* Headings inside Super */
+.super h1 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  text-shadow: 0 0 10px rgba(0,0,0,0.4) !important;
+  transition: color 0.5s ease, text-shadow 0.5s ease !important;
+}
+
+.super h1:hover {
+  color: #ff6f61 !important;
+  text-shadow: 0 0 20px #fff, 0 0 30px #ff6f61 !important;
+}
+
+.s{
+  background:linear-gradient(#f00c32, #0cf023, #0c2ef0) !important;
+  color: white !important;
+}
+
+.btn-special:hover {
+    background: linear-gradient(135deg, #2ecc71, #3498db);
+    transform: translateY(-2px) scale(1.03);
+    border: 2px black solid;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 1100px){
+    .super{
+    width: 80% !important;
+    margin-top: 20px !important;
+    
+    h1{
+      font-size: 20px !important;
+    }
+  }
+}
