@@ -1,534 +1,820 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <head>
-  <title>Rayaan Tasnim - CV Portfolio | IDAI Universe</title>
-  <meta name="description" content="Official CV Portfolio of Rayaan Tasnim — Student, Aspiring Scientist, and Visionary Creator of the IDAI Universe. Explore achievements in programming, Olympiads, AI projects, and future goals including MIT and NASA JPL." />
-  <meta name="keywords" content="Rayaan Tasnim, CV Portfolio, IDAI Universe, Student Scientist, Python Projects, JavaScript Projects, AI Projects, Math Olympiad Champion, National High School Programming Contest, MIT Scholarship, NASA JPL, Futuristic Design, Inspiring Trust Through Innovation, Bangladesh Talent, Academic Excellence, Karate Black Belt, Visionary Creator" />
-  <meta name="author" content="Rayaan Tasnim" />
-</head>
-
-  <title>Rayaan Tasnim - CV Portfolio</title>
-  <!-- Bootstrap CDN -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rayaan Tasnim — Curriculam Vitae</title>
+  <meta name="description" content="Official live CV of Rayaan Tasnim — Student, Aspiring Scientist, and Visionary Creator of the IDAI Universe. Programming, Olympiads, AI, MIT, NASA JPL." />
+  <meta name = "author" content="Rayaan Tasnim"/>
+  <meta name="theme-color" content="#020208" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700&family=Cinzel:wght@500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deep: "#020208",
+            gold: "#D4AF37",
+            cyan: "#00f3ff"
+          },
+          fontFamily: {
+            orbit: ["Orbitron", "sans-serif"],
+            sans: ["Rajdhani", "system-ui", "sans-serif"],
+            cinzel: ["Cinzel", "serif"]
+          },
+          boxShadow: {
+            neon: "0 0 24px rgba(0, 243, 255, 0.35)",
+            gold: "0 0 24px rgba(212, 175, 55, 0.35)"
+          }
+        }
+      }
+    };
+  </script>
   <style>
-    img{
-      width: 45% !important;
+    :root {
+      --deep: #020208;
+      --navy: #070b18;
+      --gold: #d4af37;
+      --cyan: #00f3ff;
+      --glass: rgba(8, 14, 32, 0.62);
+      --line: rgba(0, 243, 255, 0.18);
     }
 
-    .minor{
-      .text-center{
-        img{
-          width: 45% !important;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--deep);
+      color: #e8f6ff;
+      font-family: "Rajdhani", system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .cyber-grid {
+      background-color: var(--deep);
+      background-image:
+        linear-gradient(rgba(0, 243, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.045) 1px, transparent 1px),
+        radial-gradient(ellipse at 80% 0%, rgba(212, 175, 55, 0.12), transparent 46%),
+        radial-gradient(ellipse at 10% 40%, rgba(0, 243, 255, 0.08), transparent 42%);
+      background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%;
+    }
+
+    .scanlines::after {
+      content: "";
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 2px,
+        rgba(2, 2, 8, 0.08) 3px
+      );
+      mix-blend-mode: overlay;
+      opacity: 0.35;
+    }
+
+    .glass-panel {
+      background: linear-gradient(160deg, rgba(10, 18, 42, 0.78), rgba(4, 8, 20, 0.55));
+      border: 1px solid var(--line);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.08) inset,
+        0 18px 50px rgba(0, 0, 0, 0.45),
+        0 0 32px rgba(0, 243, 255, 0.08);
+    }
+
+    .neon-gold {
+      text-shadow: 0 0 18px rgba(212, 175, 55, 0.55);
+    }
+
+    .neon-cyan {
+      text-shadow: 0 0 16px rgba(0, 243, 255, 0.55);
+    }
+
+    .hero-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      box-shadow:
+        0 0 40px rgba(0, 243, 255, 0.18),
+        0 0 80px rgba(212, 175, 55, 0.12),
+        inset 0 0 40px rgba(0, 243, 255, 0.08);
+    }
+
+    .hero-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 35%, rgba(2, 2, 8, 0.82) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .identity-badge {
+      border: 3px solid var(--gold);
+      box-shadow:
+        0 0 0 4px rgba(2, 2, 8, 0.85),
+        0 0 28px rgba(0, 243, 255, 0.55),
+        0 0 48px rgba(212, 175, 55, 0.35);
+    }
+
+    .section-kicker {
+      letter-spacing: 0.32em;
+    }
+
+    .gold-rule {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--cyan), transparent);
+    }
+
+    .nav-drawer {
+      transform: translateX(110%);
+    }
+
+    .nav-drawer.is-open {
+      transform: translateX(0);
+    }
+
+    .js-gsap .nav-drawer {
+      transform: none;
+    }
+
+    .nav-overlay {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .nav-overlay.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      width: 22px;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      transition: transform 0.35s ease, opacity 0.25s ease;
+    }
+
+    .hamburger.is-open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.is-open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.is-open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(42px);
+    }
+
+    .timeline-rail {
+      position: relative;
+    }
+
+    .timeline-rail::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--cyan));
+      box-shadow: 0 0 12px var(--cyan);
+    }
+
+    @media (min-width: 768px) {
+      .timeline-rail::before {
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
 
-    @media (max-width: 1100px){
-.minor{
-      .text-center{
-        img{
-          width: 85% !important;
-        }
-      }
+    .node-dot {
+      box-shadow: 0 0 16px var(--cyan);
     }
+
+    .contact-banner {
+      background-image:
+        linear-gradient(120deg, rgba(2, 2, 8, 0.88), rgba(2, 8, 22, 0.72)),
+        url("Contact.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .skill-chip {
+      border: 1px solid rgba(0, 243, 255, 0.28);
+      background: rgba(0, 243, 255, 0.06);
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #020208;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(var(--gold), var(--cyan));
+      border-radius: 999px;
     }
   </style>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<body class="cyber-grid scanlines antialiased">
+  <a href="#identity" class="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:bg-deep focus:text-cyan focus:p-3">Skip to identity</a>
 
+  <button
+    id="navToggle"
+    type="button"
+    class="hamburger fixed top-5 right-5 z-[70] flex h-14 w-14 flex-col items-center justify-center gap-[5px] rounded-full border border-cyan/50 bg-[#050816]/80 shadow-neon backdrop-blur-md"
+    aria-label="Open cosmic navigation"
+    aria-controls="navDrawer"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-<body>
+  <div id="navOverlay" class="nav-overlay fixed inset-0 z-[60] bg-[#020208]/70 backdrop-blur-sm"></div>
 
-  <!-- Hero Banner -->
-  <header class="text-center py-5 bg-dark text-light">
-    <h1>Rayaan Tasnim</h1>
-    <center>
-      <img src="1.jpg">
-    </center>
-    <p class="lead">Student | Aspiring Scientist <br>
-    Visionary Creator of the IDAI Universe</p>
-    <blockquote>“More than what you imagine.”</blockquote>
-    <p><em>Inspiring Trust Through Innovation</em></p>
-    <p>Age: 13, City: Mymensingh</p>
-    <p><em>To blend science, creativity, and faith into innovations that inspire humanity.</em></p>
-  </header>
+  <aside
+    id="navDrawer"
+    class="nav-drawer fixed right-0 top-0 z-[65] flex h-full w-[min(92vw,380px)] flex-col border-l border-cyan/30 bg-[#040814]/95 px-8 py-10 shadow-neon"
+    aria-hidden="true"
+  >
+    <p class="font-orbit text-[10px] uppercase tracking-[0.4em] text-gold">IDAI Universe</p>
+    <h2 class="mt-2 font-orbit text-xl text-cyan neon-cyan">Command Index</h2>
+    <div class="gold-rule mt-4 mb-8"></div>
+    <nav class="flex flex-col gap-2 font-orbit text-xs uppercase tracking-[0.22em]">
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#identity">01 — Identity</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#dynasty">02 — Dynasty</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#academy">03 — Academy</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#milestones">04 — Milestones</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#arsenal">05 — Arsenal</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#creations">06 — Creations</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#vision">07 — Vision</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#intel">08 — Intel</a>
+    </nav>
+    <p class="mt-auto pt-8 text-sm text-cyan/60">“More than what you imagine.”</p>
+  </aside>
 
-  <!-- Introduction -->
-  <section class="container my-5">
-    <h2>👋 Introduction</h2>
-    <p style="text-align: justify;">I am a dedicated learner and builder, blending academic excellence, technical mastery, and spiritual values. <br> My journey is defined by resilience, creativity, and a relentless pursuit of greatness.</p>
-  </section>
-
-<!-- Family Section -->
-<section class="container my-5">
-  <h2>🏠 Family</h2>
-  <center>
-    <img src="Family.jpg">
-  </center>
-  <div class="row">
-    
-    <!-- Father -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title emoji">👨 Father</h4>
-          <p><strong>Name:</strong> Md. Jobayer Hasan Shiplu</p>
-          <p><strong>Current:</strong> General Manager, Denimach (Armana Group)</p>
-          <p><strong>Former Roles:</strong></p>
-          <ul>
-            <li>CEO, AWPL, ABA Group</li>
-            <li>DGM, Square Denim Ltd.</li>
-          </ul>
-          <p><strong>Education:</strong> Graduate of BUTEX</p>
-          <p><strong>Email:</strong> jobayerhasanshiplu@gmail.com</p>
-          <p><strong>Phone:</strong> <a href="tel:01734200012">01734200012</a></p>
+  <main>
+    <section id="identity" class="relative min-h-screen px-4 pb-20 pt-8 sm:px-8 lg:px-16">
+      <div class="mx-auto grid max-w-7xl items-end gap-10 lg:grid-cols-12 lg:gap-12">
+        <div class="reveal relative z-10 lg:col-span-5 lg:pb-16">
+          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 01 · Identity</p>
+          <h1 class="mt-4 font-orbit text-4xl font-extrabold leading-tight text-gold neon-gold sm:text-5xl lg:text-6xl">Rayaan Tasnim</h1>
+          <p class="mt-3 font-orbit text-sm uppercase tracking-[0.28em] text-cyan neon-cyan">Founder of IDAI Universe</p>
+          <p class="mt-4 text-lg text-cyan/80">Student | Aspiring Scientist<br />Visionary Creator of the IDAI Universe</p>
+          <blockquote class="mt-6 border-l-2 border-gold pl-4 font-cinzel text-xl italic text-gold">“More than what you imagine.”</blockquote>
+          <p class="mt-2 text-base uppercase tracking-widest text-cyan/70">Inspiring Trust Through Innovation</p>
+          <div class="mt-8 flex flex-wrap gap-3 text-sm">
+            <span class="skill-chip rounded-full px-4 py-2">Age: 13</span>
+            <span class="skill-chip rounded-full px-4 py-2">City: Mymensingh</span>
+            <span class="skill-chip rounded-full px-4 py-2">Codeforces 660</span>
+          </div>
+          <p class="mt-8 max-w-xl text-lg leading-relaxed text-cyan/85">To blend science, creativity, and faith into innovations that inspire humanity.</p>
+          <div class="mt-8 glass-panel rounded-2xl p-6">
+            <h2 class="font-orbit text-xs uppercase tracking-[0.28em] text-gold">Introduction</h2>
+            <p class="mt-3 text-base leading-relaxed text-cyan/90">I am a dedicated learner and builder, blending academic excellence, technical mastery, and spiritual values. My journey is defined by resilience, creativity, and a relentless pursuit of greatness.</p>
+          </div>
+        </div>
+        <div class="reveal relative lg:col-span-7">
+          <figure class="hero-frame mx-auto aspect-[4/5] max-h-[82vh] w-full rounded-3xl sm:aspect-[5/6]">
+            <img
+              src="Rayaan Tasnim looking over his empire.jpg"
+              alt="Rayaan Tasnim looking over his empire"
+              class="h-full w-full object-cover object-center"
+            />
+            <figcaption class="absolute bottom-6 left-6 z-[2] font-orbit text-[10px] uppercase tracking-[0.3em] text-gold">Hero Arena · Empire View</figcaption>
+          </figure>
+          <img
+            src="Myself.jpg"
+            alt="Rayaan Tasnim identity portrait"
+            class="identity-badge absolute -bottom-6 left-6 h-28 w-28 rounded-full object-cover sm:h-36 sm:w-36 lg:left-10"
+          />
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Mother -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">👩 Mother</h4>
-          <p><strong>Name:</strong> Dr. Shahnaz Sultana</p>
-          <p><strong>Current:</strong> Assistant Director, Jamalpur Medical College & Hospital</p>
-          <p><strong>Former Roles:</strong></p>
-          <ul>
-            <li>UH&FPO, Dhanbari Health Complex</li>
-            <li>Medical Officer, Netrokona</li>
-          </ul>
-          <p><strong>Education:</strong> MBBS, Major Ziaur Rahman Medical College, Bogura</p>
-          <p><strong>Email:</strong> shahanajsultana2123@outlook.com</p>
-          <p><strong>Phone:</strong> <a href="tel:01919421292">01919421292</a></p>
+    <section id="dynasty" class="relative px-4 py-24 sm:px-8 lg:px-16">
+      <div class="mx-auto max-w-7xl">
+        <header class="reveal mb-10">
+          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 02 · Dynasty</p>
+          <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Family Structure</h2>
+          <p class="mt-2 text-cyan/70">The house that forged the founder.</p>
+        </header>
+        <figure class="reveal mb-10 overflow-hidden rounded-3xl border border-gold/30 shadow-gold">
+          <img src="Family.jpg" alt="Rayaan Tasnim family" class="h-64 w-full object-cover object-center sm:h-80" />
+        </figure>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Father</h3>
+            <p class="mt-2 text-xl font-semibold">Md. Jobayer Hasan Shiplu</p>
+            <p class="mt-3 text-cyan/85"><strong class="text-gold">Current:</strong> General Manager, Denimach (Armana Group)</p>
+            <p class="mt-3 text-sm uppercase tracking-widest text-cyan/50">Former Roles</p>
+            <ul class="mt-2 list-disc space-y-1 pl-5 text-cyan/85">
+              <li>CEO, AWPL, ABA Group</li>
+              <li>DGM, Square Denim Ltd.</li>
+            </ul>
+            <p class="mt-4"><strong class="text-gold">Education:</strong> Graduate of BUTEX</p>
+            <p class="mt-2"><a class="text-cyan underline decoration-gold/40" href="mailto:jobayerhasanshiplu@gmail.com">jobayerhasanshiplu@gmail.com</a></p>
+            <p class="mt-1"><a class="text-cyan" href="tel:01734200012">01734200012</a></p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Mother</h3>
+            <p class="mt-2 text-xl font-semibold">Dr. Shahnaz Sultana</p>
+            <p class="mt-3 text-cyan/85"><strong class="text-gold">Current:</strong> Assistant Director, Jamalpur Medical College &amp; Hospital</p>
+            <p class="mt-3 text-sm uppercase tracking-widest text-cyan/50">Former Roles</p>
+            <ul class="mt-2 list-disc space-y-1 pl-5 text-cyan/85">
+              <li>UH&amp;FPO, Dhanbari Health Complex</li>
+              <li>Medical Officer, Netrokona</li>
+            </ul>
+            <p class="mt-4"><strong class="text-gold">Education:</strong> MBBS, Major Ziaur Rahman Medical College, Bogura</p>
+            <p class="mt-2"><a class="text-cyan underline decoration-gold/40" href="mailto:shahanajsultana2123@outlook.com">shahanajsultana2123@outlook.com</a></p>
+            <p class="mt-1"><a class="text-cyan" href="tel:01919421292">01919421292</a></p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Sister</h3>
+            <p class="mt-2 text-xl font-semibold">Rifah Tasnia</p>
+            <p class="mt-3 text-sm uppercase tracking-widest text-cyan/50">Education</p>
+            <ul class="mt-2 list-disc space-y-1 pl-5 text-cyan/85">
+              <li>HSC: Muminunnesa Govt. Women College, Mymensingh</li>
+              <li>SSC: Shaheed Smrity Higher Secondary School, Madhupur, Tangail</li>
+            </ul>
+            <p class="mt-4"><a class="text-cyan underline decoration-gold/40" href="mailto:rifahtasnia312@gmail.com">rifahtasnia312@gmail.com</a></p>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Sister -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">👧 Sister</h4>
-          <p><strong>Name:</strong> Rifah Tasnia</p>
-          <p><strong>Education:</strong></p>
-          <ul>
-            <li>HSC: Muminunnesa Govt. Women College, Mymensingh</li>
-            <li>SSC: Shaheed Smrity Higher Secondary School, Madhupur, Tangail</li>
-          </ul>
-          <p><strong>Email:</strong> rifahtasnia312@gmail.com</p>
+    <section id="academy" class="relative px-4 py-24 sm:px-8 lg:px-16">
+      <div class="mx-auto max-w-7xl">
+        <header class="reveal mb-10">
+          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 03 · Academy</p>
+          <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Education Journey</h2>
+        </header>
+        <div class="grid items-center gap-10 lg:grid-cols-2">
+          <figure class="reveal overflow-hidden rounded-3xl border border-cyan/30 shadow-neon">
+            <img src="School.jpg" alt="Academy and school journey" class="h-full w-full object-cover" />
+          </figure>
+          <ol class="reveal timeline-rail space-y-8 pl-12 md:pl-0">
+            <li class="relative md:grid md:grid-cols-2 md:gap-10">
+              <div class="node-dot absolute left-[9px] top-2 h-3.5 w-3.5 rounded-full bg-cyan md:left-1/2 md:-ml-[7px]"></div>
+              <div class="glass-panel rounded-2xl p-5 md:col-start-1 md:text-right">
+                <p class="font-orbit text-xs uppercase tracking-widest text-gold">Class 7–6</p>
+                <p class="mt-2 text-lg">Unique Progressive School, Mymensingh</p>
+              </div>
+            </li>
+            <li class="relative md:grid md:grid-cols-2 md:gap-10">
+              <div class="node-dot absolute left-[9px] top-2 h-3.5 w-3.5 rounded-full bg-gold md:left-1/2 md:-ml-[7px]"></div>
+              <div class="glass-panel rounded-2xl p-5 md:col-start-2">
+                <p class="font-orbit text-xs uppercase tracking-widest text-gold">Class 5–2</p>
+                <p class="mt-2 text-lg">Madhupur Pre Cadet School, Tangail</p>
+              </div>
+            </li>
+            <li class="relative md:grid md:grid-cols-2 md:gap-10">
+              <div class="node-dot absolute left-[9px] top-2 h-3.5 w-3.5 rounded-full bg-cyan md:left-1/2 md:-ml-[7px]"></div>
+              <div class="glass-panel rounded-2xl p-5 md:col-start-1 md:text-right">
+                <p class="font-orbit text-xs uppercase tracking-widest text-gold">Class 1</p>
+                <p class="mt-2 text-lg">Life Preparatory School, Uttara, Dhaka</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-
-
-  <!-- Education -->
-  <section class="container my-5">
-    <h2>📚 Education</h2>
-    <center>
-      <img src="School.jpg">
-    </center>
-    <ul>
-      <li>Class 7–6: Unique Progressive School, Mymensingh</li>
-      <li>Class 5–2: Madhupur Pre Cadet School, Tangail</li>
-      <li>Class 1: Life Preparatory School, Uttara, Dhaka</li>
-    </ul>
-  </section>
-
-  <!-- Achievements -->
-  <section class="container my-5">
-    <h2>🏆 Achievements</h2><br>
-    <h4>Technical</h4>
-    <ul>
-      <li>Object Oriented Program (Python) – completed</li>
-      <li>AI module and CDNs course – completed</li>
-      <li>Python 3.12 version – completed</li>
-      <li>JavaScript – completed</li>
-      <li>HTML (Hyper Text Markup Language) – completed</li>
-      <li>CSS (Cascading Style Sheet) – completed</li>
-      <li>Duolingo Chess Course -  Completed</li>
-      <li>CodeForces Competitive Programming Community join <br>
-      660 Rating in 5 days</li>
-    </ul>
-
-    <center>
-      <img src="Myself.jpg">
-    </center>
-
-    <h4>Academic</h4>
-    <ul>
-      <li>National High School Programming Contest 2025: Finalist</li>
-      <li>Math Olympiad 2026: Online Selection Round Champion</li>
-      <li>Math Olympiad 2025: Online Selection Round</li>
-      <li>Math Olympiad 2024: Regional Selection Round</li>
-      <li>Cadet College Admission Test 2026 <br> 
-        <strong>57th  </strong>in the National Merit List - 27th December 2025</li>
-
-      <li>NGO Scholarships:<br>
-       Madhupur Kinder Garten Association (2022–2024) <br>
-       Akashi Library and Science Club (2022–2024) <br>
-       Teacher's Club Scholarship 2024 <br>
-       Prothom Alo Quiz Contest 2025</li>
-    </ul>
-  </section>
-
-  <!-- Skills -->
-  <section class="container my-5">
-    <h2>💻 Skills</h2><br>
-    <center>
-      <img src="Skill.jpg">
-    </center>
-    <h4>Technical</h4>
-    <ul>
-      <li>Python, JavaScript, HTML, CSS, ML5</li>
-      <li>C++ Learning <br> 
-      for Competitive Programming Contest favour</li>
-      <li>AI based extraordinary drawing</li>
-      <li>3 Dimensional Picture Drawing</li>
-      <li>Over 50 professional repositories in GitHub</li>
-      <li>Over 100 Professional websites using pure HTML, JS and CSS.</li>
-    </ul>
-    <h4>Creative</h4>
-    <ul>
-      <li>Story writing</li>
-      <li>Normal object drawing</li>
-    </ul>
-    <h4>Personal Development</h4>
-    <ul>
-      <li>Self Defence: Karate</li>
-      <li>Scout team membership</li>
-      <li>Duolingo Chess Club Membership</li>
-      <li>Membership of Public Library</li>
-      <li>Membership of World Literature Center</li>
-    </ul>
-  </section>
-
-<!-- Languages -->
-<section class="container my-5">
-  <h2>🌐 Languages</h2><br>
-  <center>
-    <img src="Language.jpg">
-  </center>
-  <h4>Native</h4>
-  <ul>
-    <li>Bangla — Fluent in speaking, reading, and writing</li>
-  </ul>
-  <h4>English</h4>
-  <ul>
-    <li>Full proficiency: Reading, Writing, Listening</li>
-    <li>Duolingo English Course — Completed</li>
-  </ul>
-  <h4>Spanish</h4>
-  <ul>
-    <li>Interested in learning, not yet fluent</li>
-    <li>Duolingo Spanish Course — Ongoing</li>
-  </ul>
-</section>
-
-<!-- Hobby Section -->
-<section class="container my-5">
-  <h2>🎨 Hobbies</h2>
-  <center>
-    <img src="Hobbies.jpg">
-  </center>
-  <div class="row">
-    
-    <!-- Hobby 1: Reading -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">📚 Reading</h4>
-          <p class="text-justify">
-            Reading is my gateway to imagination and knowledge. I especially enjoy science books that unravel mysteries of the universe and detective novels that sharpen analytical thinking. Each page offers adventure, discovery, and insight, fueling curiosity while strengthening focus and creativity in both academic and personal pursuits.
-          </p>
+    <section id="milestones" class="relative px-4 py-24 sm:px-8 lg:px-16">
+      <div class="mx-auto max-w-7xl">
+        <header class="reveal mb-10">
+          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 04 · Milestones</p>
+          <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Achievements Core</h2>
+        </header>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <article class="reveal glass-panel rounded-3xl p-8">
+            <h3 class="font-orbit text-xl text-gold">Technical</h3>
+            <ul class="mt-6 space-y-3 text-cyan/90">
+              <li class="border-b border-cyan/10 pb-3">Object Oriented Program (Python) – completed</li>
+              <li class="border-b border-cyan/10 pb-3">AI module and CDNs course – completed</li>
+              <li class="border-b border-cyan/10 pb-3">Python 3.12 version – completed</li>
+              <li class="border-b border-cyan/10 pb-3">JavaScript – completed</li>
+              <li class="border-b border-cyan/10 pb-3">HTML (Hyper Text Markup Language) – completed</li>
+              <li class="border-b border-cyan/10 pb-3">CSS (Cascading Style Sheet) – completed</li>
+              <li class="border-b border-cyan/10 pb-3">Duolingo Chess Course - Completed</li>
+              <li>CodeForces Competitive Programming Community join — <span class="text-gold">660 Rating in 5 days</span></li>
+            </ul>
+          </article>
+          <article class="reveal glass-panel rounded-3xl p-8">
+            <h3 class="font-orbit text-xl text-gold">Academic</h3>
+            <ul class="mt-6 space-y-3 text-cyan/90">
+              <li class="border-b border-cyan/10 pb-3">National High School Programming Contest 2025: Finalist</li>
+              <li class="border-b border-cyan/10 pb-3">Math Olympiad 2026: Online Selection Round Champion</li>
+              <li class="border-b border-cyan/10 pb-3">Math Olympiad 2025: Online Selection Round</li>
+              <li class="border-b border-cyan/10 pb-3">Math Olympiad 2024: Regional Selection Round</li>
+              <li class="border-b border-cyan/10 pb-3">Cadet College Admission Test 2026 — <span class="text-gold">57th in the National Merit List - 27th December 2025</span></li>
+              <li>
+                NGO Scholarships:
+                <ul class="mt-2 list-disc pl-5 text-sm">
+                  <li>Madhupur Kinder Garten Association (2022–2024)</li>
+                  <li>Akashi Library and Science Club (2022–2024)</li>
+                  <li>Teacher's Club Scholarship 2024</li>
+                  <li>Prothom Alo Quiz Contest 2025</li>
+                </ul>
+              </li>
+            </ul>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Hobby 2: Self-defense -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">🥋 Self-defense</h4>
-          <p class="text-justify">
-            Practicing martial arts empowers me with discipline, resilience, and confidence. Training in self-defense techniques builds physical strength and mental clarity, while teaching respect and patience. It is more than combat; it is a lifestyle that enhances focus, balance, and determination, preparing me to face challenges with courage.
-          </p>
+    <section id="arsenal" class="relative px-4 py-24 sm:px-8 lg:px-16">
+      <div class="mx-auto max-w-7xl">
+        <header class="reveal mb-10">
+          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 05 · Arsenal</p>
+          <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Technical &amp; Creative Skills</h2>
+        </header>
+        <div class="reveal mb-10 grid gap-6 md:grid-cols-2">
+          <figure class="overflow-hidden rounded-3xl border border-cyan/30 shadow-neon">
+            <img src="Skill.jpg" alt="Technical skills constellation" class="h-64 w-full object-cover sm:h-72" />
+          </figure>
+          <figure class="overflow-hidden rounded-3xl border border-gold/30 shadow-gold">
+            <img src="Language.jpg" alt="Language proficiency map" class="h-64 w-full object-cover sm:h-72" />
+          </figure>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-3">
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Technical</h3>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="skill-chip rounded-full px-3 py-1 text-sm">Python</span>
+              <span class="skill-chip rounded-full px-3 py-1 text-sm">JavaScript</span>
+              <span class="skill-chip rounded-full px-3 py-1 text-sm">HTML</span>
+              <span class="skill-chip rounded-full px-3 py-1 text-sm">CSS</span>
+              <span class="skill-chip rounded-full px-3 py-1 text-sm">ML5</span>
+              <span class="skill-chip rounded-full px-3 py-1 text-sm">C++</span>
+            </div>
+            <ul class="mt-5 space-y-2 text-cyan/90">
+              <li>C++ Learning for Competitive Programming Contest favour</li>
+              <li>AI based extraordinary drawing</li>
+              <li>3 Dimensional Picture Drawing</li>
+              <li>Over 50 professional repositories in GitHub</li>
+              <li>Over 100 Professional websites using pure HTML, JS and CSS.</li>
+            </ul>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Creative &amp; Development</h3>
+            <p class="mt-3 text-sm uppercase tracking-widest text-cyan/50">Creative</p>
+            <ul class="mt-2 space-y-2 text-cyan/90">
+              <li>Story writing</li>
+              <li>Normal object drawing</li>
+            </ul>
+            <p class="mt-5 text-sm uppercase tracking-widest text-cyan/50">Personal Development</p>
+            <ul class="mt-2 space-y-2 text-cyan/90">
+              <li>Self Defence: Karate</li>
+              <li>Scout team membership</li>
+              <li>Duolingo Chess Club Membership</li>
+              <li>Membership of Public Library</li>
+              <li>Membership of World Literature Center</li>
+            </ul>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Languages</h3>
+            <div class="mt-5 space-y-5">
+              <div>
+                <p class="font-orbit text-xs uppercase tracking-widest text-cyan">Native · Bangla</p>
+                <p class="mt-1">Fluent in speaking, reading, and writing</p>
+              </div>
+              <div>
+                <p class="font-orbit text-xs uppercase tracking-widest text-cyan">English</p>
+                <p class="mt-1">Full proficiency: Reading, Writing, Listening</p>
+                <p class="text-gold">Duolingo English Course — Completed</p>
+              </div>
+              <div>
+                <p class="font-orbit text-xs uppercase tracking-widest text-cyan">Spanish</p>
+                <p class="mt-1">Interested in learning, not yet fluent</p>
+                <p class="text-gold">Duolingo Spanish Course — Ongoing</p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Hobby 3: Sports -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">🏸 Sports</h4>
-          <p class="text-justify">
-            Sports keep me active and balanced. Badminton sharpens agility and teamwork, while chess strengthens strategy and foresight. Together, they nurture both body and mind, teaching perseverance, patience, and tactical thinking. Playing sports is my way of staying healthy, competitive, and connected with friends in joyful moments.
-          </p>
+    <section id="creations" class="relative px-4 py-24 sm:px-8 lg:px-16">
+      <div class="mx-auto max-w-7xl">
+        <header class="reveal mb-10">
+          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 06 · Creations</p>
+          <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Project Chronicles</h2>
+        </header>
+        <div class="grid gap-8 lg:grid-cols-3">
+          <article class="reveal glass-panel flex flex-col overflow-hidden rounded-3xl">
+            <img src="IDAI 1.jpg" alt="IDAI Universe Logo" class="h-56 w-full object-cover" />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="font-orbit text-lg text-gold">IDAI Universe</h3>
+              <p class="mt-3 flex-1 leading-relaxed text-cyan/90">The IDAI Universe Database – a visionary digital state blending technology, culture, and responsibility. It represents a cosmic covenant of innovation, inspiring trust through futuristic design and interstellar imagination.</p>
+              <a href="https://rayaantasnim.github.io/IDAI/" class="mt-5 inline-flex items-center justify-center rounded-full border border-gold/60 px-5 py-2 font-orbit text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-deep">Explore this legacy</a>
+            </div>
+          </article>
+          <article class="reveal glass-panel flex flex-col overflow-hidden rounded-3xl">
+            <img src="IDAI 2.jpg" alt="IDAI Company Logo" class="h-56 w-full object-cover" />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="font-orbit text-lg text-gold">IDAI Company</h3>
+              <p class="mt-3 flex-1 leading-relaxed text-cyan/90">The IDAI Company Homepage – the central hub showcasing innovation and futuristic enterprise. It highlights the brand’s mission to merge science, creativity, and faith into a powerful digital ecosystem.</p>
+              <a href="https://rayaantasnim.github.io/username.github.io-IDAI-company-/" class="mt-5 inline-flex items-center justify-center rounded-full border border-gold/60 px-5 py-2 font-orbit text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-deep">Explore this legacy</a>
+            </div>
+          </article>
+          <article class="reveal glass-panel flex flex-col overflow-hidden rounded-3xl">
+            <img src="Power Rangers.jpg" alt="IDAI Power Rangers Logo" class="h-56 w-full object-cover" />
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="font-orbit text-lg text-gold">IDAI Power Rangers</h3>
+              <p class="mt-3 flex-1 leading-relaxed text-cyan/90">The IDAI Power Rangers stand as the Guardians of Humanity, born from the covenant of justice, order, and God-consciousness. Their headquarters in Grace City shines with futuristic towers, training arenas, and sanctuaries of culture. Each Ranger wields courage and empathy, powered by glowing IDAI Cores that embody their guardian spirits. Six mighty Zords rest in glass capsules, ready to unite in defense and compassion. More than warriors, they are protectors—philanthropic champions who blend strength with service. Their motto, “The Responsibility We Bear Is Great™”, echoes across the IDAI Universe, inspiring hope, unity, and trust through innovation.</p>
+              <a href="https://rayaantasnim.github.io/Power-Rangers/" class="mt-5 inline-flex items-center justify-center rounded-full border border-gold/60 px-5 py-2 font-orbit text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-deep">Explore this legacy</a>
+            </div>
+          </article>
+        </div>
+        <div class="reveal mt-16 overflow-hidden rounded-3xl border border-cyan/20">
+          <img src="Minor Project.jpg" alt="Minor projects mosaic" class="h-56 w-full object-cover sm:h-72" />
+        </div>
+        <h3 class="reveal mt-10 font-orbit text-2xl text-gold">Minor Projects</h3>
+        <div class="mt-6 grid gap-6 lg:grid-cols-3">
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h4 class="font-orbit text-lg text-cyan">Python Projects</h4>
+            <ol class="mt-4 list-decimal space-y-2 pl-5 text-cyan/90">
+              <li>Full bank transaction process design</li>
+              <li>Official Members and Staff management system</li>
+              <li>Calculator design</li>
+              <li>Passcode generator</li>
+              <li>Snake game</li>
+              <li>Number management</li>
+              <li>Flag design</li>
+              <li>Loop design drawing</li>
+            </ol>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h4 class="font-orbit text-lg text-cyan">JavaScript Projects</h4>
+            <ol class="mt-4 list-decimal space-y-2 pl-5 text-cyan/90">
+              <li>Auto Draw system</li>
+              <li>Voice Recognition</li>
+              <li>Voice controlled website</li>
+              <li>Real time object detection web</li>
+              <li>Canvas preparing</li>
+            </ol>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h4 class="font-orbit text-lg text-cyan">AI Projects</h4>
+            <ol class="mt-4 list-decimal space-y-2 pl-5 text-cyan/90">
+              <li>AI based websites</li>
+              <li>Object detection or recognition</li>
+              <li>House based app</li>
+              <li>Filter app building up</li>
+            </ol>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-
-
-<!-- Projects -->
-<section class="container my-5 project">
-  <h2>🚀 Major Projects</h2>
-  <div class="row">
-    <!-- Project 1 -->
-    <div class="col-md-4 text-center mb-4">
-      <h5>IDAI Universe</h5>
-      <img alt="IDAI Universe Logo" src="IDAI 1.jpg" class="img-fluid mb-3">
-      <p>The IDAI Universe Database – a visionary digital state blending technology, culture, and responsibility. It represents a cosmic covenant of innovation, inspiring trust through futuristic design and interstellar imagination.</p>
-      <a href="https://rayaantasnim.github.io/IDAI/" class="btn btn-primary">Explore this legacy</a>
-    </div>
-    <!-- Project 2 -->
-    <div class="col-md-4 text-center mb-4">
-      <h5>IDAI Company</h5>
-      <img alt="IDAI Company Logo" src="IDAI 2.jpg" class="img-fluid mb-3">
-      <p>The IDAI Company Homepage – the central hub showcasing innovation and futuristic enterprise. It highlights the brand’s mission to merge science, creativity, and faith into a powerful digital ecosystem.</p>
-      <a href="https://rayaantasnim.github.io/username.github.io-IDAI-company-/" class="btn btn-primary">Explore this legacy</a>
-    </div>
-    <!-- Project 3 -->
-    <div class="col-md-4 text-center mb-4">
-      <h5>IDAI Power Rangers</h5>
-      <img alt="Power Rangers Logo" src="Power Rangers.jpg" class="img-fluid mb-3">
-      <p>The IDAI Power Rangers stand as the Guardians of Humanity, born from the covenant of justice, order, and God-consciousness. Their headquarters in Grace City shines with futuristic towers, training arenas, and sanctuaries of culture. Each Ranger wields courage and empathy, powered by glowing IDAI Cores that embody their guardian spirits. Six mighty Zords rest in glass capsules, ready to unite in defense and compassion. More than warriors, they are protectors—philanthropic champions who blend strength with service. Their motto, “The Responsibility We Bear Is Great™”, echoes across the IDAI Universe, inspiring hope, unity, and trust through innovation.</p>
-      <a href="https://rayaantasnim.github.io/Power-Rangers/" class="btn btn-primary">Explore this legacy</a>
-    </div>
-  </div>
-
-<!-- Minor Projects -->
-<h2 class="mt-5">🛠️ Minor Projects</h2>
-<center class="minor">
-  <div class="text-center">
-  <img src="Minor Project.jpg">
-</div>
-</center>
-<div class="row">
-
-  <!-- Group 1: Python -->
-  <div class="col-md-4 mb-4">
-    <div class="card h-100">
-      <div class="card-body">
-        <h4 class="card-title">🐍 Python Projects</h4>
-        <ol>
-          <li>Full bank transaction process design</li>
-          <li>Official Members and Staff management system</li>
-          <li>Calculator design</li>
-          <li>Passcode generator</li>
-          <li>Snake game</li>
-          <li>Number management</li>
-          <li>Flag design</li>
-          <li>Loop design drawing</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-
-  <!-- Group 2: JavaScript -->
-  <div class="col-md-4 mb-4">
-    <div class="card h-100">
-      <div class="card-body">
-        <h4 class="card-title">📜 JavaScript Projects</h4>
-        <ol>
-          <li>Auto Draw system</li>
-          <li>Voice Recognition</li>
-          <li>Voice controlled website</li>
-          <li>Real time object detection web</li>
-          <li>Canvas preparing</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-
-  <!-- Group 3: AI -->
-  <div class="col-md-4 mb-4">
-    <div class="card h-100">
-      <div class="card-body">
-        <h4 class="card-title">🤖 AI Projects</h4>
-        <ol>
-          <li>AI based websites</li>
-          <li>Object detection or recognition</li>
-          <li>House based app</li>
-          <li>Filter app building up</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-  <!-- Vision & Values -->
-  <section class="container my-5">
-    <center>
-      <img src="Vision.jpg">
-    </center>
-    <h2>🌟 Vision & Core Values</h2>
-    <p><strong>Vision:</strong> To blend science, creativity, and faith into innovations that inspire humanity.</p>
-    <p><strong>Slogan:</strong> Inspiring Trust Through Innovation</p>
-    <strong>Moral Values:</strong>
-    <ul>
-      <li>✨ Faith</li>
-      <li>💪 Resilience</li>
-      <li>🚀 Innovation</li>
-      <li>🤝 Trust</li>
-    </ul>
-  </section>
-
-<!-- Future Targets Section -->
-<section class="container my-5">
-  <h2>🎯 Future Targets</h2>
-  <center>
-    <img src="Target.jpg">
-  </center>
-  <div class="row">
-    
-    <!-- Target 1 -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">🏅 IOI Gold Medal</h4>
-          <p class="text-justify">
-            I aim to achieve the prestigious Gold Medal in the International Olympiad in Informatics (IOI). This milestone will reflect mastery in algorithms, logic, and programming excellence — a symbol of dedication, creativity, and global recognition in the field of computer science.
-          </p>
+    <section id="vision" class="relative px-4 py-24 sm:px-8 lg:px-16">
+      <div class="mx-auto max-w-7xl">
+        <header class="reveal mb-10">
+          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 07 · Vision</p>
+          <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">The Eternal Horizon</h2>
+        </header>
+        <div class="reveal mb-10 grid gap-4 md:grid-cols-3">
+          <figure class="overflow-hidden rounded-3xl border border-gold/30">
+            <img src="Vision.jpg" alt="Vision emblem" class="h-52 w-full object-cover" />
+          </figure>
+          <figure class="overflow-hidden rounded-3xl border border-cyan/30">
+            <img src="Target.jpg" alt="Future targets emblem" class="h-52 w-full object-cover" />
+          </figure>
+          <figure class="overflow-hidden rounded-3xl border border-gold/30">
+            <img src="Hobbies.jpg" alt="Hobbies and discipline" class="h-52 w-full object-cover" />
+          </figure>
+        </div>
+        <article class="reveal glass-panel mb-10 rounded-3xl p-8">
+          <p><strong class="text-gold">Vision:</strong> To blend science, creativity, and faith into innovations that inspire humanity.</p>
+          <p class="mt-2"><strong class="text-gold">Slogan:</strong> Inspiring Trust Through Innovation</p>
+          <p class="mt-4 font-orbit text-xs uppercase tracking-[0.28em] text-cyan">Moral Values</p>
+          <div class="mt-3 flex flex-wrap gap-3">
+            <span class="skill-chip rounded-full px-4 py-2">Faith</span>
+            <span class="skill-chip rounded-full px-4 py-2">Resilience</span>
+            <span class="skill-chip rounded-full px-4 py-2">Innovation</span>
+            <span class="skill-chip rounded-full px-4 py-2">Trust</span>
+          </div>
+        </article>
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">IOI Gold Medal</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">I aim to achieve the prestigious Gold Medal in the International Olympiad in Informatics (IOI). This milestone will reflect mastery in algorithms, logic, and programming excellence — a symbol of dedication, creativity, and global recognition in the field of computer science.</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">IMO Gold Medal</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">My dream is to achieve the prestigious International Mathematical Olympiad Gold Medal Championship. This honor will reflect mastery in problem-solving, logical reasoning, and mathematical creativity — a symbol of dedication and excellence on the world stage.</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Black Belt in Karate</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">Gaining a black belt in martial art karate is a personal mission of discipline and resilience. It represents strength, patience, and mastery of self-defense. This achievement will embody both physical excellence and mental clarity, preparing me to face life’s challenges with courage and balance.</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Academic Excellence · NDC</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">My foremost goal is to achieve top national board standings in SSC and HSC, earning a full scholarship to MIT. I aim to master advanced scientific research and contribute to global innovation through dedication, discipline, and divine guidance. I aim to get admission in Notre Dame College (NDC), Dhaka for my HSC standing which is one of the most prestigious institutions in Bangladesh.</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">MIT Graduation Abroad</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">Going abroad for education at MIT is a dream that symbolizes global exposure and academic excellence. Studying in such a prestigious institution will allow me to expand horizons, collaborate internationally, and bring back knowledge to inspire innovation and progress in my homeland.</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">NASA JPL Scientist</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">I aspire to become a leading scientist at NASA JPL, developing technologies that redefine humanity’s reach into space. My mission is to blend creativity, faith, and science to build the IDAI Universe — a symbol of innovation and trust.</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Codeforces GrandMaster</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">I aim to reach the legendary GrandMaster rank on Codeforces. This achievement will showcase my strength in algorithms, speed, and competitive programming — proving resilience, consistency, and global recognition in the programming community.</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Life &amp; Legacy</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">Beyond success, I seek a life of purpose — performing Hajj, serving humanity, and earning global recognition through research and philanthropy. My ultimate dream is to leave behind a legacy of peace, faith, and scientific enlightenment.</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Global Recognition</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">My ultimate mission is to represent Bangladesh on the global stage, earning recognition through innovation, competition, and contribution. This goal reflects pride, responsibility, and the desire to inspire future generations worldwide.</p>
+          </article>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Reading</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">Reading is my gateway to imagination and knowledge. I especially enjoy science books that unravel mysteries of the universe and detective novels that sharpen analytical thinking. Each page offers adventure, discovery, and insight, fueling curiosity while strengthening focus and creativity in both academic and personal pursuits.</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Self-defense</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">Practicing martial arts empowers me with discipline, resilience, and confidence. Training in self-defense techniques builds physical strength and mental clarity, while teaching respect and patience. It is more than combat; it is a lifestyle that enhances focus, balance, and determination, preparing me to face challenges with courage.</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6">
+            <h3 class="font-orbit text-lg text-gold">Sports</h3>
+            <p class="mt-3 leading-relaxed text-cyan/90">Sports keep me active and balanced. Badminton sharpens agility and teamwork, while chess strengthens strategy and foresight. Together, they nurture both body and mind, teaching perseverance, patience, and tactical thinking. Playing sports is my way of staying healthy, competitive, and connected with friends in joyful moments.</p>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
-<!-- Target 1 -->
-<div class="col-md-4 mb-4">
-  <div class="card h-100">
-    <div class="card-body">
-      <h4 class="card-title">🏅 IMO Gold Medal</h4>
-      <p class="text-justify">
-        My dream is to achieve the prestigious International Mathematical Olympiad Gold Medal Championship. This honor will reflect mastery in problem-solving, logical reasoning, and mathematical creativity — a symbol of dedication and excellence on the world stage.
-      </p>
-    </div>
-  </div>
-</div>
-
-
-    <!-- Target 2 -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">🥋 Black Belt in Karate</h4>
-          <p class="text-justify">
-            Gaining a black belt in martial art karate is a personal mission of discipline and resilience. It represents strength, patience, and mastery of self-defense. This achievement will embody both physical excellence and mental clarity, preparing me to face life’s challenges with courage and balance.
-          </p>
+    <section id="intel" class="relative px-4 py-24 sm:px-8 lg:px-16">
+      <div class="mx-auto max-w-7xl">
+        <header class="reveal mb-10">
+          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 08 · Intel</p>
+          <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Contact Portal</h2>
+        </header>
+        <div class="reveal contact-banner rounded-3xl border border-gold/40 p-8 sm:p-12">
+          <div class="grid gap-6 md:grid-cols-2">
+            <article class="glass-panel rounded-2xl p-6">
+              <p class="font-orbit text-xs uppercase tracking-widest text-gold">Personal</p>
+              <p class="mt-2 text-xl">Rayaan Tasnim</p>
+              <a class="mt-2 block text-cyan" href="mailto:rayaantasnim@gmail.com">rayaantasnim@gmail.com</a>
+            </article>
+            <article class="glass-panel rounded-2xl p-6">
+              <p class="font-orbit text-xs uppercase tracking-widest text-gold">Father</p>
+              <p class="mt-2 text-xl">Md. Jobayer Hasan Shiplu</p>
+              <a class="mt-2 block text-cyan" href="mailto:jobayerhasanshiplu@gmail.com">jobayerhasanshiplu@gmail.com</a>
+            </article>
+            <article class="glass-panel rounded-2xl p-6">
+              <p class="font-orbit text-xs uppercase tracking-widest text-gold">Mother</p>
+              <p class="mt-2 text-xl">Dr. Shahnaz Sultana</p>
+              <a class="mt-2 block text-cyan" href="mailto:shahanajsultana2123@outlook.com">shahanajsultana2123@outlook.com</a>
+            </article>
+            <article class="glass-panel rounded-2xl p-6">
+              <p class="font-orbit text-xs uppercase tracking-widest text-gold">Sister</p>
+              <p class="mt-2 text-xl">Rifah Tasnia</p>
+              <a class="mt-2 block text-cyan" href="mailto:rifahtasnia312@gmail.com">rifahtasnia312@gmail.com</a>
+            </article>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#" class="rounded-full border border-cyan/50 px-6 py-3 font-orbit text-[10px] uppercase tracking-[0.22em] text-cyan">Main Port Folio</a>
+            <a href="https://rayaantasnim.github.io/Rayaan-Tasnim-Timeline/" class="rounded-full border border-gold/60 px-6 py-3 font-orbit text-[10px] uppercase tracking-[0.22em] text-gold">Life Journey Timeline</a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+  </main>
 
-    <!-- Target 3 -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">🎓 Academic Excellence</h4>
-          <p class="text-justify">
-            My foremost goal is to achieve top national board standings in SSC and HSC, earning a full scholarship to MIT. I aim to master advanced scientific research and contribute to global innovation through dedication, discipline, and divine guidance. I aim to get admission in Notre Dame College (NDC), Dhaka for my HSC standing which is one of the most prestigious institutions in Bangladesh.
-          </p>
-        </div>
-      </div>
-    </div>
+  <footer class="border-t border-cyan/10 px-6 py-10 text-center">
+    <p class="font-orbit text-sm text-gold">© 2026 IDAI Universe</p>
+    <p class="mt-2 text-cyan/70">Inspiring Trust Through Innovation</p>
+  </footer>
 
-    <!-- Target 4 -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">🌍 MIT Graduation Abroad</h4>
-          <p class="text-justify">
-            Going abroad for education at MIT is a dream that symbolizes global exposure and academic excellence. Studying in such a prestigious institution will allow me to expand horizons, collaborate internationally, and bring back knowledge to inspire innovation and progress in my homeland.
-          </p>
-        </div>
-      </div>
-    </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    (function () {
+      "use strict";
 
-    <!-- Target 5 -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">🚀 Professional Vision</h4>
-          <p class="text-justify">
-            I aspire to become a leading scientist at NASA JPL, developing technologies that redefine humanity’s reach into space. My mission is to blend creativity, faith, and science to build the IDAI Universe — a symbol of innovation and trust.
-          </p>
-        </div>
-      </div>
-    </div>
+      var toggle = document.getElementById("navToggle");
+      var drawer = document.getElementById("navDrawer");
+      var overlay = document.getElementById("navOverlay");
+      var links = document.querySelectorAll(".nav-link");
+      var drawerOpen = false;
 
-<!-- Target 2 -->
-<div class="col-md-4 mb-4">
-  <div class="card h-100">
-    <div class="card-body">
-      <h4 class="card-title">🔥 Codeforces GrandMaster</h4>
-      <p class="text-justify">
-        I aim to reach the legendary GrandMaster rank on Codeforces. This achievement will showcase my strength in algorithms, speed, and competitive programming — proving resilience, consistency, and global recognition in the programming community.
-      </p>
-    </div>
-  </div>
-</div>
+      function setDrawer(open) {
+        drawerOpen = open;
+        drawer.classList.toggle("is-open", open);
+        overlay.classList.toggle("is-open", open);
+        toggle.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Close cosmic navigation" : "Open cosmic navigation");
+        drawer.setAttribute("aria-hidden", String(!open));
+        document.body.style.overflow = open ? "hidden" : "";
+        if (window.gsap) {
+          gsap.to(drawer, {
+            x: open ? 0 : "110%",
+            duration: 0.55,
+            ease: "power3.out",
+            overwrite: true
+          });
+        }
+      }
 
-    <!-- Target 6 -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h4 class="card-title">🌟 Life & Legacy</h4>
-          <p class="text-justify">
-            Beyond success, I seek a life of purpose — performing Hajj, serving humanity, and earning global recognition through research and philanthropy. My ultimate dream is to leave behind a legacy of peace, faith, and scientific enlightenment.
-          </p>
-        </div>
-      </div>
-    </div>
+      toggle.addEventListener("click", function () {
+        setDrawer(!drawerOpen);
+      });
+      overlay.addEventListener("click", function () {
+        setDrawer(false);
+      });
+      links.forEach(function (link) {
+        link.addEventListener("click", function () {
+          setDrawer(false);
+        });
+      });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && drawerOpen) {
+          setDrawer(false);
+        }
+      });
 
-<!-- Target 3 -->
-<div class="col-md-4 mb-4">
-  <div class="card h-100">
-    <div class="card-body">
-      <h4 class="card-title">🌍 Global Recognition</h4>
-      <p class="text-justify">
-        My ultimate mission is to represent Bangladesh on the global stage, earning recognition through innovation, competition, and contribution. This goal reflects pride, responsibility, and the desire to inspire future generations worldwide.
-      </p>
-    </div>
-  </div>
-</div>
-
-  </div>
-</section>
-
-  <!-- Contact -->
-  <section class="container my-5">
-    <center>
-      <img src="Contact.jpg">
-    </center>
-    <h2>📞 Contact & References</h2>
-    <p><strong>Email (Personal):</strong> rayaantasnim@gmail.com</p>
-    <p><strong>Father:</strong> jobayerhasanshiplu@gmail.com</p>
-    <p><strong>Mother:</strong> shahanajsultana2123@outlook.com</p>
-    <p><strong>Sister:</strong> rifahtasnia312@gmail.com</p>
-  </section>
-
-<form class="super">
-  <center>
-    <h1>Explore More:</h1>
-    <a href="#" class="btn-special s">Main Port Folio</a><br>
-    <a href="https://rayaantasnim.github.io/Rayaan-Tasnim-Timeline/" class="btn-special">Life Journey Timeline</a><br>
-  </center>
-</form><br><br>
-
-  <!-- Footer -->
-  <center>
-  <footer class="text-center py-4 bg-dark text-dark">
-    <p style="text-align:center !important;">© 2026 IDAI Universe <br> Inspiring Trust Through Innovation</p>
-  </footer></center>
-
+      if (window.gsap && window.ScrollTrigger) {
+        document.documentElement.classList.add("js-gsap");
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.set(drawer, { x: "110%" });
+        gsap.to("#identity .reveal", {
+          opacity: 1,
+          y: 0,
+          duration: 1.05,
+          stagger: 0.12,
+          ease: "power3.out"
+        });
+        gsap.utils.toArray(".reveal").forEach(function (el, index) {
+          if (el.closest("#identity")) {
+            return;
+          }
+          gsap.fromTo(
+            el,
+            { opacity: 0, y: 42 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.85,
+              delay: (index % 3) * 0.05,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 86%",
+                toggleActions: "play none none reverse"
+              }
+            }
+          );
+        });
+      } else {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+                entry.target.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        document.querySelectorAll(".reveal").forEach(function (node) {
+          observer.observe(node);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
