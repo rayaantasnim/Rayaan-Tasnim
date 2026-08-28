@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rayaan Tasnim — Curriculam Vitae</title>
+  <title>Rayaan Tasnim — Curriculum Vitae</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <meta name="description" content="Official live CV of Rayaan Tasnim — Student, Aspiring Scientist, and Visionary Creator of the IDAI Universe. Programming, Olympiads, AI, MIT, NASA JPL." />
-  <meta name = "author" content="Rayaan Tasnim"/>
+  <meta name="author" content="Rayaan Tasnim"/>
   <meta name="theme-color" content="#020208" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700&family=Cinzel:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -39,8 +41,8 @@
       --navy: #070b18;
       --gold: #d4af37;
       --cyan: #00f3ff;
-      --glass: rgba(8, 14, 32, 0.62);
-      --line: rgba(0, 243, 255, 0.18);
+      --glass: rgba(8, 14, 32, 0.72);
+      --line: rgba(0, 243, 255, 0.22);
     }
 
     html {
@@ -54,14 +56,71 @@
       overflow-x: hidden;
     }
 
+    .cosmic-space {
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+      background: radial-gradient(circle at 50% 50%, #060b1e 0%, #020208 100%);
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 50%;
+      animation: twinkle var(--duration) infinite ease-in-out;
+      opacity: var(--opacity);
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 8px var(--cyan); }
+    }
+
+    #flashScreen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #020208;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    #flashScreen.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Super Nova Flash Explodation Effect */
+    .supernova-flash {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,243,255,0.8) 40%, rgba(212,175,55,0.4) 70%, transparent 100%);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10000;
+      transform: scale(0.1);
+      transition: none;
+    }
+
+    #flashScreen.exploding .supernova-flash {
+      animation: supernovaExplode 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    }
+
+    @keyframes supernovaExplode {
+      0% { opacity: 1; transform: scale(0.2); filter: brightness(2); }
+      50% { opacity: 0.9; transform: scale(1.5); filter: brightness(3); }
+      100% { opacity: 0; transform: scale(3); filter: brightness(1); }
+    }
+
     .cyber-grid {
-      background-color: var(--deep);
       background-image:
-        linear-gradient(rgba(0, 243, 255, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 243, 255, 0.045) 1px, transparent 1px),
-        radial-gradient(ellipse at 80% 0%, rgba(212, 175, 55, 0.12), transparent 46%),
-        radial-gradient(ellipse at 10% 40%, rgba(0, 243, 255, 0.08), transparent 42%);
-      background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%;
+        linear-gradient(rgba(0, 243, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.04) 1px, transparent 1px);
+      background-size: 50px 50px;
     }
 
     .scanlines::after {
@@ -74,29 +133,54 @@
         to bottom,
         transparent 0,
         transparent 2px,
-        rgba(2, 2, 8, 0.08) 3px
+        rgba(2, 2, 8, 0.06) 3px
       );
       mix-blend-mode: overlay;
-      opacity: 0.35;
+      opacity: 0.3;
     }
 
     .glass-panel {
-      background: linear-gradient(160deg, rgba(10, 18, 42, 0.78), rgba(4, 8, 20, 0.55));
+      background: linear-gradient(160deg, rgba(10, 18, 42, 0.85), rgba(4, 8, 20, 0.65));
       border: 1px solid var(--line);
-      backdrop-filter: blur(18px) saturate(140%);
-      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      backdrop-filter: blur(20px) saturate(150%);
+      -webkit-backdrop-filter: blur(20px) saturate(150%);
       box-shadow:
         0 0 0 1px rgba(212, 175, 55, 0.08) inset,
-        0 18px 50px rgba(0, 0, 0, 0.45),
-        0 0 32px rgba(0, 243, 255, 0.08);
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 35px rgba(0, 243, 255, 0.08);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-panel:hover {
+      transform: translateY(-6px) scale(1.01);
+      border-color: rgba(0, 243, 255, 0.6);
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.25) inset,
+        0 25px 60px rgba(0, 0, 0, 0.7),
+        0 0 45px rgba(0, 243, 255, 0.3);
+    }
+
+    button, a, article, img, .skill-chip {
+      transition: all 0.3s ease;
+    }
+
+    button:hover, a:hover {
+      filter: brightness(1.2);
+    }
+
+    .skill-chip:hover {
+      background: rgba(0, 243, 255, 0.15);
+      border-color: var(--cyan);
+      box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+      transform: translateY(-2px);
     }
 
     .neon-gold {
-      text-shadow: 0 0 18px rgba(212, 175, 55, 0.55);
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
     }
 
     .neon-cyan {
-      text-shadow: 0 0 16px rgba(0, 243, 255, 0.55);
+      text-shadow: 0 0 18px rgba(0, 243, 255, 0.6);
     }
 
     .hero-frame {
@@ -104,16 +188,16 @@
       overflow: hidden;
       border: 1px solid rgba(212, 175, 55, 0.45);
       box-shadow:
-        0 0 40px rgba(0, 243, 255, 0.18),
-        0 0 80px rgba(212, 175, 55, 0.12),
-        inset 0 0 40px rgba(0, 243, 255, 0.08);
+        0 0 45px rgba(0, 243, 255, 0.2),
+        0 0 90px rgba(212, 175, 55, 0.15),
+        inset 0 0 45px rgba(0, 243, 255, 0.1);
     }
 
     .hero-frame::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 35%, rgba(2, 2, 8, 0.82) 100%);
+      background: linear-gradient(180deg, transparent 35%, rgba(2, 2, 8, 0.85) 100%);
       z-index: 1;
       pointer-events: none;
     }
@@ -121,9 +205,9 @@
     .identity-badge {
       border: 3px solid var(--gold);
       box-shadow:
-        0 0 0 4px rgba(2, 2, 8, 0.85),
-        0 0 28px rgba(0, 243, 255, 0.55),
-        0 0 48px rgba(212, 175, 55, 0.35);
+        0 0 0 4px rgba(2, 2, 8, 0.9),
+        0 0 30px rgba(0, 243, 255, 0.6),
+        0 0 50px rgba(212, 175, 55, 0.4);
     }
 
     .section-kicker {
@@ -137,14 +221,11 @@
 
     .nav-drawer {
       transform: translateX(110%);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .nav-drawer.is-open {
       transform: translateX(0);
-    }
-
-    .js-gsap .nav-drawer {
-      transform: none;
     }
 
     .nav-overlay {
@@ -182,6 +263,12 @@
     .reveal {
       opacity: 0;
       transform: translateY(42px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .timeline-rail {
@@ -212,7 +299,7 @@
 
     .contact-banner {
       background-image:
-        linear-gradient(120deg, rgba(2, 2, 8, 0.88), rgba(2, 8, 22, 0.72)),
+        linear-gradient(120deg, rgba(2, 2, 8, 0.9), rgba(2, 8, 22, 0.78)),
         url("Contact.jpg");
       background-size: cover;
       background-position: center;
@@ -221,6 +308,12 @@
     .skill-chip {
       border: 1px solid rgba(0, 243, 255, 0.28);
       background: rgba(0, 243, 255, 0.06);
+    }
+
+    /* Justified text formatting for paragraphs */
+    .justify-text {
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     ::-webkit-scrollbar {
@@ -238,12 +331,29 @@
   </style>
 </head>
 <body class="cyber-grid scanlines antialiased">
+  <!-- Fantastic Progress Bar Landing Screen -->
+  <div id="flashScreen">
+    <div class="supernova-flash"></div>
+    <div class="text-center px-4 max-w-xl w-full">
+      <p id="flashQuote" class="font-orbit text-xs sm:text-sm uppercase tracking-[0.3em] text-gold mb-4 animate-pulse min-h-[2rem]">“Don't stay a consumer. Build your legacy.”</p>
+      <div class="w-full h-2 mx-auto bg-deep border border-cyan/40 rounded-full overflow-hidden relative mb-3 shadow-neon">
+        <div id="flashBar" class="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-gold via-cyan to-white w-0 transition-all duration-300 ease-out"></div>
+      </div>
+      <div class="flex justify-between items-center text-xs font-orbit text-cyan/90 tracking-widest px-1">
+        <span>INITIALIZING PORTAL</span>
+        <span id="flashPercentage" class="text-gold font-bold">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cosmic-space" id="cosmicSpace"></div>
+
   <a href="#identity" class="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:bg-deep focus:text-cyan focus:p-3">Skip to identity</a>
 
   <button
     id="navToggle"
     type="button"
-    class="hamburger fixed top-5 right-5 z-[70] flex h-14 w-14 flex-col items-center justify-center gap-[5px] rounded-full border border-cyan/50 bg-[#050816]/80 shadow-neon backdrop-blur-md"
+    class="hamburger fixed top-5 right-5 z-[70] flex h-14 w-14 flex-col items-center justify-center gap-[5px] rounded-full border border-cyan/50 bg-[#050816]/90 shadow-neon backdrop-blur-md cursor-pointer hover:scale-105"
     aria-label="Open cosmic navigation"
     aria-controls="navDrawer"
     aria-expanded="false"
@@ -253,48 +363,51 @@
     <span></span>
   </button>
 
-  <div id="navOverlay" class="nav-overlay fixed inset-0 z-[60] bg-[#020208]/70 backdrop-blur-sm"></div>
+  <div id="navOverlay" class="nav-overlay fixed inset-0 z-[60] bg-[#020208]/80 backdrop-blur-sm"></div>
 
   <aside
     id="navDrawer"
-    class="nav-drawer fixed right-0 top-0 z-[65] flex h-full w-[min(92vw,380px)] flex-col border-l border-cyan/30 bg-[#040814]/95 px-8 py-10 shadow-neon"
+    class="nav-drawer fixed right-0 top-0 z-[65] flex h-full w-[min(92vw,380px)] flex-col border-l border-cyan/30 bg-[#040814]/98 px-8 py-10 shadow-neon overflow-y-auto"
     aria-hidden="true"
   >
     <p class="font-orbit text-[10px] uppercase tracking-[0.4em] text-gold">IDAI Universe</p>
     <h2 class="mt-2 font-orbit text-xl text-cyan neon-cyan">Command Index</h2>
     <div class="gold-rule mt-4 mb-8"></div>
     <nav class="flex flex-col gap-2 font-orbit text-xs uppercase tracking-[0.22em]">
-      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#identity">01 — Identity</a>
-      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#dynasty">02 — Dynasty</a>
-      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#academy">03 — Academy</a>
-      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#milestones">04 — Milestones</a>
-      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#arsenal">05 — Arsenal</a>
-      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#creations">06 — Creations</a>
-      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#vision">07 — Vision</a>
-      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/90 transition hover:border-gold/40 hover:bg-cyan/5 hover:text-gold" href="#intel">08 — Intel</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#identity">01 — Identity</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#dynasty">02 — Dynasty</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#academy">03 — Academy</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#milestones">04 — Milestones</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#arsenal">05 — Arsenal</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#creations">06 — Creations</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#metrics">07 — Metrics</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#hobby">08 — Hobby</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#future-goals">09 — Future Goals</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#vision">10 — Vision</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#intel">11 — Intel</a>
     </nav>
     <p class="mt-auto pt-8 text-sm text-cyan/60">“More than what you imagine.”</p>
   </aside>
 
   <main>
-    <section id="identity" class="relative min-h-screen px-4 pb-20 pt-8 sm:px-8 lg:px-16">
-      <div class="mx-auto grid max-w-7xl items-end gap-10 lg:grid-cols-12 lg:gap-12">
-        <div class="reveal relative z-10 lg:col-span-5 lg:pb-16">
+    <section id="identity" class="relative min-h-screen px-4 pb-20 pt-16 sm:px-8 lg:px-16 flex items-center">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-12 lg:gap-12 w-full">
+        <div class="reveal relative z-10 lg:col-span-5">
           <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 01 · Identity</p>
           <h1 class="mt-4 font-orbit text-4xl font-extrabold leading-tight text-gold neon-gold sm:text-5xl lg:text-6xl">Rayaan Tasnim</h1>
           <p class="mt-3 font-orbit text-sm uppercase tracking-[0.28em] text-cyan neon-cyan">Founder of IDAI Universe</p>
-          <p class="mt-4 text-lg text-cyan/80">Student | Aspiring Scientist<br />Visionary Creator of the IDAI Universe</p>
+          <p class="mt-4 text-lg text-cyan/85">Student | Aspiring Scientist<br />Visionary Creator of the IDAI Universe</p>
           <blockquote class="mt-6 border-l-2 border-gold pl-4 font-cinzel text-xl italic text-gold">“More than what you imagine.”</blockquote>
-          <p class="mt-2 text-base uppercase tracking-widest text-cyan/70">Inspiring Trust Through Innovation</p>
+          <p class="mt-2 text-base uppercase tracking-widest text-cyan/75">Inspiring Trust Through Innovation</p>
           <div class="mt-8 flex flex-wrap gap-3 text-sm">
-            <span class="skill-chip rounded-full px-4 py-2">Age: 13</span>
-            <span class="skill-chip rounded-full px-4 py-2">City: Mymensingh</span>
-            <span class="skill-chip rounded-full px-4 py-2">Codeforces 660</span>
+            <span class="skill-chip rounded-full px-4 py-2 cursor-pointer">Age: 13</span>
+            <span class="skill-chip rounded-full px-4 py-2 cursor-pointer">City: Mymensingh</span>
+            <span class="skill-chip rounded-full px-4 py-2 cursor-pointer">Codeforces 662</span>
           </div>
-          <p class="mt-8 max-w-xl text-lg leading-relaxed text-cyan/85">To blend science, creativity, and faith into innovations that inspire humanity.</p>
+          <p class="mt-8 max-w-xl text-lg leading-relaxed text-cyan/90 justify-text">To blend science, creativity, and faith into innovations that inspire humanity.</p>
           <div class="mt-8 glass-panel rounded-2xl p-6">
             <h2 class="font-orbit text-xs uppercase tracking-[0.28em] text-gold">Introduction</h2>
-            <p class="mt-3 text-base leading-relaxed text-cyan/90">I am a dedicated learner and builder, blending academic excellence, technical mastery, and spiritual values. My journey is defined by resilience, creativity, and a relentless pursuit of greatness.</p>
+            <p class="mt-3 text-base leading-relaxed text-cyan/95 justify-text">I am a dedicated learner and builder, blending academic excellence, technical mastery, and spiritual values. My journey is defined by resilience, creativity, and a relentless pursuit of greatness.</p>
           </div>
         </div>
         <div class="reveal relative lg:col-span-7">
@@ -320,47 +433,59 @@
         <header class="reveal mb-10">
           <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 02 · Dynasty</p>
           <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Family Structure</h2>
-          <p class="mt-2 text-cyan/70">The house that forged the founder.</p>
+          <p class="mt-2 text-cyan/75">The house that forged the founder.</p>
         </header>
         <figure class="reveal mb-10 overflow-hidden rounded-3xl border border-gold/30 shadow-gold">
           <img src="Family.jpg" alt="Rayaan Tasnim family" class="h-64 w-full object-cover object-center sm:h-80" />
         </figure>
         <div class="grid gap-6 md:grid-cols-3">
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Father</h3>
-            <p class="mt-2 text-xl font-semibold">Md. Jobayer Hasan Shiplu</p>
-            <p class="mt-3 text-cyan/85"><strong class="text-gold">Current:</strong> General Manager, Denimach (Armana Group)</p>
-            <p class="mt-3 text-sm uppercase tracking-widest text-cyan/50">Former Roles</p>
-            <ul class="mt-2 list-disc space-y-1 pl-5 text-cyan/85">
-              <li>CEO, AWPL, ABA Group</li>
-              <li>DGM, Square Denim Ltd.</li>
-            </ul>
-            <p class="mt-4"><strong class="text-gold">Education:</strong> Graduate of BUTEX</p>
-            <p class="mt-2"><a class="text-cyan underline decoration-gold/40" href="mailto:jobayerhasanshiplu@gmail.com">jobayerhasanshiplu@gmail.com</a></p>
-            <p class="mt-1"><a class="text-cyan" href="tel:01734200012">01734200012</a></p>
+          <article class="reveal glass-panel rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <h3 class="font-orbit text-lg text-gold">Father</h3>
+              <p class="mt-2 text-xl font-semibold">Md. Jobayer Hasan Shiplu</p>
+              <p class="mt-3 text-cyan/90"><strong class="text-gold">Current:</strong> General Manager, Denimach (Armana Group)</p>
+              <p class="mt-3 text-sm uppercase tracking-widest text-cyan/60">Former Roles</p>
+              <ul class="mt-2 list-disc space-y-1 pl-5 text-cyan/90">
+                <li>CEO, AWPL, ABA Group</li>
+                <li>DGM, Square Denim Ltd.</li>
+              </ul>
+              <p class="mt-4"><strong class="text-gold">Education:</strong> Graduate of BUTEX</p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-cyan/10">
+              <p><a class="text-cyan underline decoration-gold/40 hover:text-gold text-sm break-all" href="mailto:jobayerhasanshiplu@gmail.com">jobayerhasanshiplu@gmail.com</a></p>
+              <p class="mt-1"><a class="text-cyan hover:text-gold text-sm" href="tel:01734200012">01734200012</a></p>
+            </div>
           </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Mother</h3>
-            <p class="mt-2 text-xl font-semibold">Dr. Shahnaz Sultana</p>
-            <p class="mt-3 text-cyan/85"><strong class="text-gold">Current:</strong> Assistant Director, Jamalpur Medical College &amp; Hospital</p>
-            <p class="mt-3 text-sm uppercase tracking-widest text-cyan/50">Former Roles</p>
-            <ul class="mt-2 list-disc space-y-1 pl-5 text-cyan/85">
-              <li>UH&amp;FPO, Dhanbari Health Complex</li>
-              <li>Medical Officer, Netrokona</li>
-            </ul>
-            <p class="mt-4"><strong class="text-gold">Education:</strong> MBBS, Major Ziaur Rahman Medical College, Bogura</p>
-            <p class="mt-2"><a class="text-cyan underline decoration-gold/40" href="mailto:shahanajsultana2123@outlook.com">shahanajsultana2123@outlook.com</a></p>
-            <p class="mt-1"><a class="text-cyan" href="tel:01919421292">01919421292</a></p>
+          <article class="reveal glass-panel rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <h3 class="font-orbit text-lg text-gold">Mother</h3>
+              <p class="mt-2 text-xl font-semibold">Dr. Shahnaz Sultana</p>
+              <p class="mt-3 text-cyan/90"><strong class="text-gold">Current:</strong> Assistant Director, Jamalpur Medical College &amp; Hospital</p>
+              <p class="mt-3 text-sm uppercase tracking-widest text-cyan/60">Former Roles</p>
+              <ul class="mt-2 list-disc space-y-1 pl-5 text-cyan/90">
+                <li>UH&amp;FPO, Dhanbari Health Complex</li>
+                <li>Medical Officer, Netrokona</li>
+              </ul>
+              <p class="mt-4"><strong class="text-gold">Education:</strong> MBBS, Major Ziaur Rahman Medical College, Bogura</p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-cyan/10">
+              <p><a class="text-cyan underline decoration-gold/40 hover:text-gold text-sm break-all" href="mailto:shahanajsultana2123@outlook.com">shahanajsultana2123@outlook.com</a></p>
+              <p class="mt-1"><a class="text-cyan hover:text-gold text-sm" href="tel:01919421292">01919421292</a></p>
+            </div>
           </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Sister</h3>
-            <p class="mt-2 text-xl font-semibold">Rifah Tasnia</p>
-            <p class="mt-3 text-sm uppercase tracking-widest text-cyan/50">Education</p>
-            <ul class="mt-2 list-disc space-y-1 pl-5 text-cyan/85">
-              <li>HSC: Muminunnesa Govt. Women College, Mymensingh</li>
-              <li>SSC: Shaheed Smrity Higher Secondary School, Madhupur, Tangail</li>
-            </ul>
-            <p class="mt-4"><a class="text-cyan underline decoration-gold/40" href="mailto:rifahtasnia312@gmail.com">rifahtasnia312@gmail.com</a></p>
+          <article class="reveal glass-panel rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <h3 class="font-orbit text-lg text-gold">Sister</h3>
+              <p class="mt-2 text-xl font-semibold">Rifah Tasnia</p>
+              <p class="mt-3 text-sm uppercase tracking-widest text-cyan/60">Education</p>
+              <ul class="mt-2 list-disc space-y-1 pl-5 text-cyan/90">
+                <li>HSC: Muminunnesa Govt. Women College, Mymensingh</li>
+                <li>SSC: Shaheed Smrity Higher Secondary School, Madhupur, Tangail</li>
+              </ul>
+            </div>
+            <div class="mt-4 pt-4 border-t border-cyan/10">
+              <p><a class="text-cyan underline decoration-gold/40 hover:text-gold text-sm break-all" href="mailto:rifahtasnia312@gmail.com">rifahtasnia312@gmail.com</a></p>
+            </div>
           </article>
         </div>
       </div>
@@ -412,7 +537,7 @@
         <div class="grid gap-8 lg:grid-cols-2">
           <article class="reveal glass-panel rounded-3xl p-8">
             <h3 class="font-orbit text-xl text-gold">Technical</h3>
-            <ul class="mt-6 space-y-3 text-cyan/90">
+            <ul class="mt-6 space-y-3 text-cyan/95">
               <li class="border-b border-cyan/10 pb-3">Object Oriented Program (Python) – completed</li>
               <li class="border-b border-cyan/10 pb-3">AI module and CDNs course – completed</li>
               <li class="border-b border-cyan/10 pb-3">Python 3.12 version – completed</li>
@@ -420,20 +545,20 @@
               <li class="border-b border-cyan/10 pb-3">HTML (Hyper Text Markup Language) – completed</li>
               <li class="border-b border-cyan/10 pb-3">CSS (Cascading Style Sheet) – completed</li>
               <li class="border-b border-cyan/10 pb-3">Duolingo Chess Course - Completed</li>
-              <li>CodeForces Competitive Programming Community join — <span class="text-gold">660 Rating in 5 days</span></li>
+              <li>CodeForces Competitive Programming Community join — <span class="text-gold">662 Rating in 5 days</span></li>
             </ul>
           </article>
           <article class="reveal glass-panel rounded-3xl p-8">
             <h3 class="font-orbit text-xl text-gold">Academic</h3>
-            <ul class="mt-6 space-y-3 text-cyan/90">
-              <li class="border-b border-cyan/10 pb-3">National High School Programming Contest 2025: Finalist</li>
+            <ul class="mt-6 space-y-3 text-cyan/95">
+              <li class="border-b border-cyan/10 pb-3">National High School Programming Contest 2025: Finalist (141th in the final stage)</li>
               <li class="border-b border-cyan/10 pb-3">Math Olympiad 2026: Online Selection Round Champion</li>
               <li class="border-b border-cyan/10 pb-3">Math Olympiad 2025: Online Selection Round</li>
               <li class="border-b border-cyan/10 pb-3">Math Olympiad 2024: Regional Selection Round</li>
               <li class="border-b border-cyan/10 pb-3">Cadet College Admission Test 2026 — <span class="text-gold">57th in the National Merit List - 27th December 2025</span></li>
               <li>
                 NGO Scholarships:
-                <ul class="mt-2 list-disc pl-5 text-sm">
+                <ul class="mt-2 list-disc pl-5 text-sm space-y-1">
                   <li>Madhupur Kinder Garten Association (2022–2024)</li>
                   <li>Akashi Library and Science Club (2022–2024)</li>
                   <li>Teacher's Club Scholarship 2024</li>
@@ -471,7 +596,7 @@
               <span class="skill-chip rounded-full px-3 py-1 text-sm">ML5</span>
               <span class="skill-chip rounded-full px-3 py-1 text-sm">C++</span>
             </div>
-            <ul class="mt-5 space-y-2 text-cyan/90">
+            <ul class="mt-5 space-y-2 text-cyan/95">
               <li>C++ Learning for Competitive Programming Contest favour</li>
               <li>AI based extraordinary drawing</li>
               <li>3 Dimensional Picture Drawing</li>
@@ -481,13 +606,13 @@
           </article>
           <article class="reveal glass-panel rounded-2xl p-6">
             <h3 class="font-orbit text-lg text-gold">Creative &amp; Development</h3>
-            <p class="mt-3 text-sm uppercase tracking-widest text-cyan/50">Creative</p>
-            <ul class="mt-2 space-y-2 text-cyan/90">
+            <p class="mt-3 text-sm uppercase tracking-widest text-cyan/60">Creative</p>
+            <ul class="mt-2 space-y-2 text-cyan/95">
               <li>Story writing</li>
               <li>Normal object drawing</li>
             </ul>
-            <p class="mt-5 text-sm uppercase tracking-widest text-cyan/50">Personal Development</p>
-            <ul class="mt-2 space-y-2 text-cyan/90">
+            <p class="mt-5 text-sm uppercase tracking-widest text-cyan/60">Personal Development</p>
+            <ul class="mt-2 space-y-2 text-cyan/95">
               <li>Self Defence: Karate</li>
               <li>Scout team membership</li>
               <li>Duolingo Chess Club Membership</li>
@@ -518,213 +643,447 @@
       </div>
     </section>
 
-    <section id="creations" class="relative px-4 py-24 sm:px-8 lg:px-16">
-      <div class="mx-auto max-w-7xl">
-        <header class="reveal mb-10">
-          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 06 · Creations</p>
-          <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Project Chronicles</h2>
-        </header>
-        <div class="grid gap-8 lg:grid-cols-3">
-          <article class="reveal glass-panel flex flex-col overflow-hidden rounded-3xl">
-            <img src="IDAI 1.jpg" alt="IDAI Universe Logo" class="h-56 w-full object-cover" />
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-orbit text-lg text-gold">IDAI Universe</h3>
-              <p class="mt-3 flex-1 leading-relaxed text-cyan/90">The IDAI Universe Database – a visionary digital state blending technology, culture, and responsibility. It represents a cosmic covenant of innovation, inspiring trust through futuristic design and interstellar imagination.</p>
-              <a href="https://rayaantasnim.github.io/IDAI/" class="mt-5 inline-flex items-center justify-center rounded-full border border-gold/60 px-5 py-2 font-orbit text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-deep">Explore this legacy</a>
-            </div>
-          </article>
-          <article class="reveal glass-panel flex flex-col overflow-hidden rounded-3xl">
-            <img src="IDAI 2.jpg" alt="IDAI Company Logo" class="h-56 w-full object-cover" />
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-orbit text-lg text-gold">IDAI Company</h3>
-              <p class="mt-3 flex-1 leading-relaxed text-cyan/90">The IDAI Company Homepage – the central hub showcasing innovation and futuristic enterprise. It highlights the brand’s mission to merge science, creativity, and faith into a powerful digital ecosystem.</p>
-              <a href="https://rayaantasnim.github.io/username.github.io-IDAI-company-/" class="mt-5 inline-flex items-center justify-center rounded-full border border-gold/60 px-5 py-2 font-orbit text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-deep">Explore this legacy</a>
-            </div>
-          </article>
-          <article class="reveal glass-panel flex flex-col overflow-hidden rounded-3xl">
-            <img src="Power Rangers.jpg" alt="IDAI Power Rangers Logo" class="h-56 w-full object-cover" />
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="font-orbit text-lg text-gold">IDAI Power Rangers</h3>
-              <p class="mt-3 flex-1 leading-relaxed text-cyan/90">The IDAI Power Rangers stand as the Guardians of Humanity, born from the covenant of justice, order, and God-consciousness. Their headquarters in Grace City shines with futuristic towers, training arenas, and sanctuaries of culture. Each Ranger wields courage and empathy, powered by glowing IDAI Cores that embody their guardian spirits. Six mighty Zords rest in glass capsules, ready to unite in defense and compassion. More than warriors, they are protectors—philanthropic champions who blend strength with service. Their motto, “The Responsibility We Bear Is Great™”, echoes across the IDAI Universe, inspiring hope, unity, and trust through innovation.</p>
-              <a href="https://rayaantasnim.github.io/Power-Rangers/" class="mt-5 inline-flex items-center justify-center rounded-full border border-gold/60 px-5 py-2 font-orbit text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-deep">Explore this legacy</a>
-            </div>
-          </article>
-        </div>
-        <div class="reveal mt-16 overflow-hidden rounded-3xl border border-cyan/20">
-          <img src="Minor Project.jpg" alt="Minor projects mosaic" class="h-56 w-full object-cover sm:h-72" />
-        </div>
-        <h3 class="reveal mt-10 font-orbit text-2xl text-gold">Minor Projects</h3>
-        <div class="mt-6 grid gap-6 lg:grid-cols-3">
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h4 class="font-orbit text-lg text-cyan">Python Projects</h4>
-            <ol class="mt-4 list-decimal space-y-2 pl-5 text-cyan/90">
-              <li>Full bank transaction process design</li>
-              <li>Official Members and Staff management system</li>
-              <li>Calculator design</li>
-              <li>Passcode generator</li>
-              <li>Snake game</li>
-              <li>Number management</li>
-              <li>Flag design</li>
-              <li>Loop design drawing</li>
-            </ol>
-          </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h4 class="font-orbit text-lg text-cyan">JavaScript Projects</h4>
-            <ol class="mt-4 list-decimal space-y-2 pl-5 text-cyan/90">
-              <li>Auto Draw system</li>
-              <li>Voice Recognition</li>
-              <li>Voice controlled website</li>
-              <li>Real time object detection web</li>
-              <li>Canvas preparing</li>
-            </ol>
-          </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h4 class="font-orbit text-lg text-cyan">AI Projects</h4>
-            <ol class="mt-4 list-decimal space-y-2 pl-5 text-cyan/90">
-              <li>AI based websites</li>
-              <li>Object detection or recognition</li>
-              <li>House based app</li>
-              <li>Filter app building up</li>
-              <li>Prime Number Factorization based Gaming web-app <br> 
-              <a href="https://prime-factor-app--rayaantasnim.replit.app/">Explore more here</a></li>
-            </ol>
-          </article>
-        </div>
-      </div>
-    </section>
+    <!-- SECTION 06: Creations with perfectly equalized Major Project Cards & Centered Minor Project Button -->
+<section id="creations" class="relative px-4 py-24 sm:px-8 lg:px-16">
+  <div class="mx-auto max-w-7xl">
+    <header class="reveal mb-10 text-center">
+      <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 06 · Creations</p>
+      <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Project Chronicles</h2>
+    </header>
 
-    <section id="vision" class="relative px-4 py-24 sm:px-8 lg:px-16">
-      <div class="mx-auto max-w-7xl">
-        <header class="reveal mb-10">
-          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 07 · Vision</p>
-          <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">The Eternal Horizon</h2>
-        </header>
-        <div class="reveal mb-10 grid gap-4 md:grid-cols-3">
-          <figure class="overflow-hidden rounded-3xl border border-gold/30">
-            <img src="Vision.jpg" alt="Vision emblem" class="h-52 w-full object-cover" />
-          </figure>
-          <figure class="overflow-hidden rounded-3xl border border-cyan/30">
-            <img src="Target.jpg" alt="Future targets emblem" class="h-52 w-full object-cover" />
-          </figure>
-          <figure class="overflow-hidden rounded-3xl border border-gold/30">
-            <img src="Hobbies.jpg" alt="Hobbies and discipline" class="h-52 w-full object-cover" />
-          </figure>
-        </div>
-        <article class="reveal glass-panel mb-10 rounded-3xl p-8">
-          <p><strong class="text-gold">Vision:</strong> To blend science, creativity, and faith into innovations that inspire humanity.</p>
-          <p class="mt-2"><strong class="text-gold">Slogan:</strong> Inspiring Trust Through Innovation</p>
-          <p class="mt-4 font-orbit text-xs uppercase tracking-[0.28em] text-cyan">Moral Values</p>
-          <div class="mt-3 flex flex-wrap gap-3">
-            <span class="skill-chip rounded-full px-4 py-2">Faith</span>
-            <span class="skill-chip rounded-full px-4 py-2">Resilience</span>
-            <span class="skill-chip rounded-full px-4 py-2">Innovation</span>
-            <span class="skill-chip rounded-full px-4 py-2">Trust</span>
+    <!-- Major Project Cards -->
+    <div class="grid gap-8 lg:grid-cols-3 items-stretch">
+      <!-- Card 1 -->
+      <article class="reveal glass-panel flex flex-col justify-between overflow-hidden rounded-3xl">
+        <div>
+          <img src="IDAI 1.jpg" alt="IDAI Universe Logo" class="h-56 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="font-orbit text-lg text-gold">IDAI Universe</h3>
+            <p class="mt-3 leading-relaxed text-cyan/95 justify-text">
+              The IDAI Universe Database – a visionary digital state blending technology, culture, and responsibility. It represents a cosmic covenant of innovation, inspiring trust through futuristic design and interstellar imagination. Through its archives, monuments, and futuristic systems, the Universe stands as a beacon of unity, guiding humanity toward progress while preserving heritage. A cosmic legacy of trust, innovation, and imagination.
+            </p>
           </div>
-        </article>
-        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">IOI Gold Medal</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">I aim to achieve the prestigious Gold Medal in the International Olympiad in Informatics (IOI). This milestone will reflect mastery in algorithms, logic, and programming excellence — a symbol of dedication, creativity, and global recognition in the field of computer science.</p>
-          </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">IMO Gold Medal</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">My dream is to achieve the prestigious International Mathematical Olympiad Gold Medal Championship. This honor will reflect mastery in problem-solving, logical reasoning, and mathematical creativity — a symbol of dedication and excellence on the world stage.</p>
-          </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Black Belt in Karate</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">Gaining a black belt in martial art karate is a personal mission of discipline and resilience. It represents strength, patience, and mastery of self-defense. This achievement will embody both physical excellence and mental clarity, preparing me to face life’s challenges with courage and balance.</p>
-          </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Academic Excellence · NDC</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">My foremost goal is to achieve top national board standings in SSC and HSC, earning a full scholarship to MIT. I aim to master advanced scientific research and contribute to global innovation through dedication, discipline, and divine guidance. I aim to get admission in Notre Dame College (NDC), Dhaka for my HSC standing which is one of the most prestigious institutions in Bangladesh.</p>
-          </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">MIT Graduation Abroad</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">Going abroad for education at MIT is a dream that symbolizes global exposure and academic excellence. Studying in such a prestigious institution will allow me to expand horizons, collaborate internationally, and bring back knowledge to inspire innovation and progress in my homeland.</p>
-          </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">NASA JPL Scientist</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">I aspire to become a leading scientist at NASA JPL, developing technologies that redefine humanity’s reach into space. My mission is to blend creativity, faith, and science to build the IDAI Universe — a symbol of innovation and trust.</p>
-          </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Codeforces GrandMaster</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">I aim to reach the legendary GrandMaster rank on Codeforces. This achievement will showcase my strength in algorithms, speed, and competitive programming — proving resilience, consistency, and global recognition in the programming community.</p>
-          </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Life &amp; Legacy</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">Beyond success, I seek a life of purpose — performing Hajj, serving humanity, and earning global recognition through research and philanthropy. My ultimate dream is to leave behind a legacy of peace, faith, and scientific enlightenment.</p>
-          </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Global Recognition</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">My ultimate mission is to represent Bangladesh on the global stage, earning recognition through innovation, competition, and contribution. This goal reflects pride, responsibility, and the desire to inspire future generations worldwide.</p>
-          </article>
         </div>
-        <div class="mt-12 grid gap-6 md:grid-cols-3">
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Reading</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">Reading is my gateway to imagination and knowledge. I especially enjoy science books that unravel mysteries of the universe and detective novels that sharpen analytical thinking. Each page offers adventure, discovery, and insight, fueling curiosity while strengthening focus and creativity in both academic and personal pursuits.</p>
+        <div class="p-6 pt-0">
+          <a href="https://rayaantasnim.github.io/IDAI/" class="w-full inline-flex items-center justify-center rounded-full border border-gold/60 px-5 py-2 font-orbit text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-deep">Explore this legacy</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="reveal glass-panel flex flex-col justify-between overflow-hidden rounded-3xl">
+        <div>
+          <img src="IDAI 2.jpg" alt="IDAI Company Logo" class="h-56 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="font-orbit text-lg text-gold">IDAI Company</h3>
+            <p class="mt-3 leading-relaxed text-cyan/95 justify-text">
+              The IDAI Company Homepage – the central hub showcasing innovation and futuristic enterprise. It highlights the brand’s mission to merge science, creativity, and faith into a powerful digital ecosystem. With its premium design, futuristic navigation, and cosmic branding, the Company portal reflects ambition and responsibility. It is more than a homepage—it is a gateway to innovation, enterprise, and imagination.
+            </p>
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="https://rayaantasnim.github.io/username.github.io-IDAI-company-/" class="w-full inline-flex items-center justify-center rounded-full border border-gold/60 px-5 py-2 font-orbit text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-deep">Explore this legacy</a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="reveal glass-panel flex flex-col justify-between overflow-hidden rounded-3xl">
+        <div>
+          <img src="Power Rangers.jpg" alt="IDAI Power Rangers Logo" class="h-56 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="font-orbit text-lg text-gold">IDAI Power Rangers</h3>
+            <p class="mt-3 leading-relaxed text-cyan/95 justify-text">
+              The IDAI Power Rangers – Guardians of Humanity born from justice, order, and God-consciousness. Their headquarters in Grace City shines with futuristic towers, sanctuaries, and training arenas. Each Ranger embodies courage and empathy, powered by glowing IDAI Cores. Six mighty Zords rest in capsules, ready to unite in defense and compassion. Their motto, “The Responsibility We Bear Is Great™”, inspires hope and unity.
+            </p>
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="https://rayaantasnim.github.io/Power-Rangers/" class="w-full inline-flex items-center justify-center rounded-full border border-gold/60 px-5 py-2 font-orbit text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-deep">Explore this legacy</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Centered Minor Project Button -->
+    <div class="mt-12 flex justify-center">
+      <a href="https://rayaantasnim.github.io/IDAI-all-link/Home.html" class="inline-flex items-center justify-center rounded-full border border-cyan/60 px-6 py-3 font-orbit text-[11px] uppercase tracking-[0.25em] text-cyan transition hover:bg-cyan hover:text-deep neon-cyan">
+        Explore the Galactic Universe of IDAI
+      </a>
+    </div>
+
+    <div class="reveal mt-16 overflow-hidden rounded-3xl border border-cyan/20">
+      <img src="Minor Project.jpg" alt="Minor projects mosaic" class="h-56 w-full object-cover sm:h-72" />
+    </div>
+    <h3 class="reveal mt-10 font-orbit text-2xl text-gold">Minor Projects</h3>
+    <div class="mt-6 grid gap-6 lg:grid-cols-3">
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h4 class="font-orbit text-lg text-cyan">Python Projects</h4>
+        <ol class="mt-4 list-decimal space-y-2 pl-5 text-cyan/95">
+          <li>Full bank transaction process design</li>
+          <li>Official Members and Staff management system</li>
+          <li>Calculator design</li>
+          <li>Passcode generator</li>
+          <li>Snake game</li>
+          <li>Number management</li>
+          <li>Flag design</li>
+          <li>Loop design drawing</li>
+        </ol>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h4 class="font-orbit text-lg text-cyan">JavaScript Projects</h4>
+        <ol class="mt-4 list-decimal space-y-2 pl-5 text-cyan/95">
+          <li>Auto Draw system</li>
+          <li>Voice Recognition</li>
+          <li>Voice controlled website</li>
+          <li>Real time object detection web</li>
+          <li>Canvas preparing</li>
+        </ol>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <h4 class="font-orbit text-lg text-cyan">AI Projects</h4>
+          <ol class="mt-4 list-decimal space-y-2 pl-5 text-cyan/95">
+            <li>AI based websites</li>
+            <li>Object detection or recognition</li>
+            <li>House based app</li>
+            <li>Filter app building up</li>
+            <li>Prime Number Factorization based Gaming web-app</li>
+          </ol>
+        </div>
+        <div class="mt-6 text-center">
+          <a href="https://prime-factor-app--rayaantasnim.replit.app/" class="inline-flex items-center justify-center rounded-full border border-cyan/60 px-5 py-2 font-orbit text-[10px] uppercase tracking-[0.2em] text-cyan hover:bg-cyan hover:text-deep transition">Explore more here</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+    <!-- SECTION 07: Metrics with requested updates -->
+    <section id="metrics" class="relative px-4 py-24 sm:px-8 lg:px-16">
+      <div class="mx-auto max-w-7xl">
+        <header class="reveal mb-10">
+          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 07 · Metrics</p>
+          <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Dynamic Numeral Achievements</h2>
+        </header>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+            <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="440">0</div>
+            <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">Chess.com Rating</p>
           </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Self-defense</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">Practicing martial arts empowers me with discipline, resilience, and confidence. Training in self-defense techniques builds physical strength and mental clarity, while teaching respect and patience. It is more than combat; it is a lifestyle that enhances focus, balance, and determination, preparing me to face challenges with courage.</p>
+          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+            <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="662">0</div>
+            <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">CodeForces Rating</p>
           </article>
-          <article class="reveal glass-panel rounded-2xl p-6">
-            <h3 class="font-orbit text-lg text-gold">Sports</h3>
-            <p class="mt-3 leading-relaxed text-cyan/90">Sports keep me active and balanced. Badminton sharpens agility and teamwork, while chess strengthens strategy and foresight. Together, they nurture both body and mind, teaching perseverance, patience, and tactical thinking. Playing sports is my way of staying healthy, competitive, and connected with friends in joyful moments.</p>
+          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+            <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="64">0</div>
+            <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">GitHub Repositories</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+            <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="50">0</div>
+            <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">SEO Sites</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+            <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="4.7" data-decimals="1">0</div>
+            <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">User Rating ★</p>
+          </article>
+          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+            <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="429">0</div>
+            <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">GitHub Contributions</p>
           </article>
         </div>
       </div>
     </section>
 
+<!-- SECTION 08: Hobby -->
+<section id="hobby" class="relative px-4 py-24 sm:px-8 lg:px-16">
+  <div class="mx-auto max-w-7xl">
+    <header class="reveal mb-10">
+      <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 08 · Hobby</p>
+      <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Passions &amp; Interests</h2>
+    </header>
+    <div class="grid gap-6 md:grid-cols-3">
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">Reading</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">Reading is my gateway to imagination and knowledge. I especially enjoy science books that unravel mysteries of the universe and detective novels that sharpen analytical thinking. Each page offers adventure, discovery, and insight, fueling curiosity while strengthening focus and creativity in both academic and personal pursuits.</p>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">Self-defense</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">Practicing martial arts empowers me with discipline, resilience, and confidence. Training in self-defense techniques builds physical strength and mental clarity, while teaching respect and patience. It is more than combat; it is a lifestyle that enhances focus, balance, and determination, preparing me to face challenges with courage.</p>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">Sports</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">Sports keep me active and balanced. Badminton sharpens agility and teamwork, while chess strengthens strategy and foresight. Together, they nurture both body and mind, teaching perseverance, patience, and tactical thinking. Playing sports is my way of staying healthy, competitive, and connected with friends in joyful moments.</p>
+      </article>
+    </div>
+
+    <!-- Hobby Image -->
+    <div class="reveal mt-10 w-full">
+      <figure class="w-full overflow-hidden rounded-3xl border border-gold/30 bg-[#070b18]/80 p-3">
+        <img src="Hobbies.jpg" alt="Passions & Interests" class="h-64 sm:h-80 lg:h-96 w-full object-cover object-center rounded-2xl" />
+        <figcaption class="mt-3 font-orbit text-xs text-gold uppercase tracking-widest text-center">Passions & Interests</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 09: Future Goals -->
+<section id="future-goals" class="relative px-4 py-24 sm:px-8 lg:px-16">
+  <div class="mx-auto max-w-7xl">
+    <header class="reveal mb-10">
+      <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 09 · Future Goals</p>
+      <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Ambitions &amp; Targets</h2>
+    </header>
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">IOI Gold Medal</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">I aim to achieve the prestigious Gold Medal in the International Olympiad in Informatics (IOI)...</p>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">IMO Gold Medal</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">My dream is to achieve the prestigious International Mathematical Olympiad Gold Medal Championship...</p>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">Black Belt in Karate</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">Gaining a black belt in martial art karate is a personal mission of discipline and resilience...</p>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">Academic Excellence · NDC</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">My foremost goal is to achieve top national board standings in SSC and HSC...</p>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">MIT Graduation Abroad</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">Going abroad for education at MIT is a dream that symbolizes global exposure and academic excellence...</p>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">NASA JPL Scientist</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">I aspire to become a leading scientist at NASA JPL, developing technologies that redefine humanity’s reach into space...</p>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">Codeforces GrandMaster</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">I aim to reach the legendary GrandMaster rank on Codeforces...</p>
+      </article>
+    </div>
+
+    <!-- Future Targets Image -->
+    <div class="reveal mt-10 w-full">
+      <figure class="w-full overflow-hidden rounded-3xl border border-cyan/30 bg-[#070b18]/80 p-3">
+        <img src="Target.jpg" alt="Future Targets & Ambitions" class="h-64 sm:h-80 lg:h-96 w-full object-cover object-center rounded-2xl" />
+        <figcaption class="mt-3 font-orbit text-xs text-cyan uppercase tracking-widest text-center">Future Targets & Ambitions</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10: Vision -->
+<section id="vision" class="relative px-4 py-24 sm:px-8 lg:px-16">
+  <div class="mx-auto max-w-7xl">
+    <header class="reveal mb-10">
+      <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 10 · Vision</p>
+      <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">The Eternal Horizon</h2>
+    </header>
+    <div class="reveal mb-10 w-full">
+      <figure class="w-full overflow-hidden rounded-3xl border border-gold/30 bg-[#070b18]/80 p-3">
+        <img src="Vision.jpg" alt="Mission and Core Vision Hub" class="h-64 sm:h-80 lg:h-96 w-full object-cover object-center rounded-2xl" />
+        <figcaption class="mt-3 font-orbit text-xs text-gold uppercase tracking-widest text-center">Mission &amp; Core Vision</figcaption>
+      </figure>
+    </div>
+    <article class="reveal glass-panel mb-10 rounded-3xl p-8">
+      <p class="justify-text"><strong class="text-gold">Vision:</strong> To blend science, creativity, and faith into innovations that inspire humanity.</p>
+      <p class="mt-2 justify-text"><strong class="text-gold">Slogan:</strong> Inspiring Trust Through Innovation</p>
+      <p class="mt-4 font-orbit text-xs uppercase tracking-[0.28em] text-cyan">Moral Values</p>
+      <div class="mt-3 flex flex-wrap gap-3">
+        <span class="skill-chip rounded-full px-4 py-2">Faith</span>
+        <span class="skill-chip rounded-full px-4 py-2">Resilience</span>
+        <span class="skill-chip rounded-full px-4 py-2">Innovation</span>
+        <span class="skill-chip rounded-full px-4 py-2">Trust</span>
+      </div>
+    </article>
+    <div class="grid gap-6 md:grid-cols-2">
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">Purpose</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">To transform ambitious ideas into meaningful work through science, creativity, disciplined learning, and responsible innovation.</p>
+      </article>
+      <article class="reveal glass-panel rounded-2xl p-6">
+        <h3 class="font-orbit text-lg text-gold">Direction</h3>
+        <p class="mt-3 leading-relaxed text-cyan/95 justify-text">To keep learning, building, and contributing toward a future where technology serves people and expands the boundaries of human possibility.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+    <!-- SECTION 11: Intel -->
     <section id="intel" class="relative px-4 py-24 sm:px-8 lg:px-16">
       <div class="mx-auto max-w-7xl">
         <header class="reveal mb-10">
-          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 08 · Intel</p>
+          <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Section 11 · Intel</p>
           <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Contact Portal</h2>
         </header>
-        <div class="reveal contact-banner rounded-3xl border border-gold/40 p-8 sm:p-12">
-          <div class="grid gap-6 md:grid-cols-2">
+        <div class="reveal contact-banner rounded-3xl border border-gold/40 p-6 sm:p-10 lg:p-12">
+          <div class="mb-8">
+            <p class="font-orbit text-[10px] uppercase tracking-[0.3em] text-cyan">Direct Communication Channels</p>
+            <p class="mt-2 max-w-2xl text-cyan/75">Choose the appropriate contact below for direct communication.</p>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
             <article class="glass-panel rounded-2xl p-6">
-              <p class="font-orbit text-xs uppercase tracking-widest text-gold">Personal</p>
-              <p class="mt-2 text-xl">Rayaan Tasnim</p>
-              <a class="mt-2 block text-cyan" href="mailto:rayaantasnim@gmail.com">rayaantasnim@gmail.com</a>
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-cyan/40 text-cyan"><i class="fa-solid fa-user"></i></span>
+                <div>
+                  <p class="font-orbit text-xs uppercase tracking-widest text-gold">Personal</p>
+                  <p class="mt-1 text-xl">Rayaan Tasnim</p>
+                </div>
+              </div>
+              <div class="mt-5 border-t border-cyan/10 pt-4">
+                <p class="text-[10px] uppercase tracking-widest text-cyan/50">Email</p>
+                <a class="mt-1 block text-cyan hover:text-gold text-sm break-all" href="mailto:rayaantasnim@gmail.com">rayaantasnim@gmail.com</a>
+              </div>
             </article>
+
             <article class="glass-panel rounded-2xl p-6">
-              <p class="font-orbit text-xs uppercase tracking-widest text-gold">Father</p>
-              <p class="mt-2 text-xl">Md. Jobayer Hasan Shiplu</p>
-              <a class="mt-2 block text-cyan" href="mailto:jobayerhasanshiplu@gmail.com">jobayerhasanshiplu@gmail.com</a>
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 text-gold"><i class="fa-solid fa-user-tie"></i></span>
+                <div>
+                  <p class="font-orbit text-xs uppercase tracking-widest text-gold">Father</p>
+                  <p class="mt-1 text-xl">Md. Jobayer Hasan Shiplu</p>
+                </div>
+              </div>
+              <div class="mt-5 border-t border-cyan/10 pt-4 space-y-2">
+                <p class="text-[10px] uppercase tracking-widest text-cyan/50">Email</p>
+                <a class="block text-cyan hover:text-gold text-sm break-all" href="mailto:jobayerhasanshiplu@gmail.com">jobayerhasanshiplu@gmail.com</a>
+                <p class="pt-1 text-[10px] uppercase tracking-widest text-cyan/50">Phone</p>
+                <a class="block text-cyan hover:text-gold text-sm" href="tel:01734200012">01734200012</a>
+              </div>
             </article>
+
             <article class="glass-panel rounded-2xl p-6">
-              <p class="font-orbit text-xs uppercase tracking-widest text-gold">Mother</p>
-              <p class="mt-2 text-xl">Dr. Shahnaz Sultana</p>
-              <a class="mt-2 block text-cyan" href="mailto:shahanajsultana2123@outlook.com">shahanajsultana2123@outlook.com</a>
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 text-gold"><i class="fa-solid fa-user-doctor"></i></span>
+                <div>
+                  <p class="font-orbit text-xs uppercase tracking-widest text-gold">Mother</p>
+                  <p class="mt-1 text-xl">Dr. Shahnaz Sultana</p>
+                </div>
+              </div>
+              <div class="mt-5 border-t border-cyan/10 pt-4 space-y-2">
+                <p class="text-[10px] uppercase tracking-widest text-cyan/50">Email</p>
+                <a class="block text-cyan hover:text-gold text-sm break-all" href="mailto:shahanajsultana2123@outlook.com">shahanajsultana2123@outlook.com</a>
+                <p class="pt-1 text-[10px] uppercase tracking-widest text-cyan/50">Phone</p>
+                <a class="block text-cyan hover:text-gold text-sm" href="tel:01919421292">01919421292</a>
+              </div>
             </article>
+
             <article class="glass-panel rounded-2xl p-6">
-              <p class="font-orbit text-xs uppercase tracking-widest text-gold">Sister</p>
-              <p class="mt-2 text-xl">Rifah Tasnia</p>
-              <a class="mt-2 block text-cyan" href="mailto:rifahtasnia312@gmail.com">rifahtasnia312@gmail.com</a>
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-cyan/40 text-cyan"><i class="fa-solid fa-user-group"></i></span>
+                <div>
+                  <p class="font-orbit text-xs uppercase tracking-widest text-gold">Sister</p>
+                  <p class="mt-1 text-xl">Rifah Tasnia</p>
+                </div>
+              </div>
+              <div class="mt-5 border-t border-cyan/10 pt-4">
+                <p class="text-[10px] uppercase tracking-widest text-cyan/50">Email</p>
+                <a class="mt-1 block text-cyan hover:text-gold text-sm break-all" href="mailto:rifahtasnia312@gmail.com">rifahtasnia312@gmail.com</a>
+              </div>
             </article>
           </div>
+
           <div class="mt-10 flex flex-wrap gap-4">
-            <a href="#" class="rounded-full border border-cyan/50 px-6 py-3 font-orbit text-[10px] uppercase tracking-[0.22em] text-cyan">Main Port Folio</a>
-            <a href="https://rayaantasnim.github.io/Rayaan-Tasnim-Timeline/" class="rounded-full border border-gold/60 px-6 py-3 font-orbit text-[10px] uppercase tracking-[0.22em] text-gold">Life Journey Timeline</a>
+            <a href="#identity" class="inline-flex items-center gap-2 rounded-full border border-cyan/50 px-6 py-3 font-orbit text-[10px] uppercase tracking-[0.22em] text-cyan hover:bg-cyan hover:text-deep">
+              <i class="fa-solid fa-house"></i> Main Portfolio
+            </a>
+            <a href="https://rayaantasnim.github.io/Rayaan-Tasnim-Timeline/" class="inline-flex items-center gap-2 rounded-full border border-gold/60 px-6 py-3 font-orbit text-[10px] uppercase tracking-[0.22em] text-gold hover:bg-gold hover:text-deep">
+              <i class="fa-solid fa-timeline"></i> Life Journey Timeline
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-cyan/10 px-6 py-10 text-center">
+  <!-- Footer with Icons -->
+  <footer class="border-t border-cyan/10 px-6 py-12 text-center bg-[#030612]/90">
+    <div class="flex flex-wrap justify-center items-center gap-6 mb-8 text-lg font-orbit">
+      <a href="https://github.com/rayaantasnim" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-cyan hover:text-gold transition">
+        <i class="fa-brands fa-github text-xl"></i> GitHub
+      </a>
+      <a href="mailto:rayaantasnim@gmail.com" class="flex items-center gap-2 text-cyan hover:text-gold transition">
+        <i class="fa-solid fa-envelope text-xl"></i> Email
+      </a>
+      <a href="https://www.chess.com/member/rayaantasnim" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-cyan hover:text-gold transition">
+        <i class="fa-solid fa-chess text-xl"></i> Chess
+      </a>
+      <a href="https://codeforces.com/profile/rayaan1" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-cyan hover:text-gold transition">
+        <i class="fa-solid fa-code text-xl"></i> Codeforces
+      </a>
+    </div>
     <p class="font-orbit text-sm text-gold">© 2026 IDAI Universe</p>
-    <p class="mt-2 text-cyan/70">Inspiring Trust Through Innovation</p>
+    <p class="mt-2 text-cyan/75">Inspiring Trust Through Innovation</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script>
     (function () {
       "use strict";
 
+      // Fantastic Loader Handler with Percentage, Quote Rotation, and Super Nova Explodation
+      var quotes = [
+        "“Don't stay a consumer. Build your legacy.”",
+        "“More than what you imagine”"
+      ];
+      var quoteIdx = 0;
+      var quoteEl = document.getElementById("flashQuote");
+      
+      // Cycle quotes every 1.5 seconds during loading
+      var quoteInterval = setInterval(function() {
+        quoteIdx = (quoteIdx + 1) % quotes.length;
+        if (quoteEl) quoteEl.textContent = quotes[quoteIdx];
+      }, 1500);
+
+      var progress = 0;
+      var bar = document.getElementById("flashBar");
+      var percentageEl = document.getElementById("flashPercentage");
+      var flashScreen = document.getElementById("flashScreen");
+
+      var loadingInterval = setInterval(function() {
+        progress += Math.floor(Math.random() * 8) + 5;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(loadingInterval);
+          clearInterval(quoteInterval);
+          if (quoteEl) quoteEl.textContent = "“More than what you imagine”";
+          if (percentageEl) percentageEl.textContent = "100%";
+          if (bar) bar.style.width = "100%";
+          
+          // Trigger White Super Nova Flash Explodation
+          setTimeout(function() {
+            if (flashScreen) {
+              flashScreen.classList.add("exploding");
+              setTimeout(function() {
+                flashScreen.classList.add("fade-out");
+              }, 400);
+            }
+          }, 200);
+        } else {
+          if (bar) bar.style.width = progress + "%";
+          if (percentageEl) percentageEl.textContent = progress + "%";
+        }
+      }, 120);
+
+      // Generate Cosmic Starfield Background
+      var space = document.getElementById("cosmicSpace");
+      if (space) {
+        var starCount = 120;
+        for (var i = 0; i < starCount; i++) {
+          var s = document.createElement("div");
+          s.className = "star";
+          var size = Math.random() * 2.5 + 0.5;
+          s.style.width = size + "px";
+          s.style.height = size + "px";
+          s.style.left = Math.random() * 100 + "%";
+          s.style.top = Math.random() * 100 + "%";
+          s.style.setProperty("--duration", (Math.random() * 3 + 2) + "s");
+          s.style.setProperty("--opacity", Math.random() * 0.7 + 0.3);
+          space.appendChild(s);
+        }
+      }
+
+      // Navigation Drawer Handler
       var toggle = document.getElementById("navToggle");
       var drawer = document.getElementById("navDrawer");
       var overlay = document.getElementById("navOverlay");
@@ -740,22 +1099,18 @@
         toggle.setAttribute("aria-label", open ? "Close cosmic navigation" : "Open cosmic navigation");
         drawer.setAttribute("aria-hidden", String(!open));
         document.body.style.overflow = open ? "hidden" : "";
-        if (window.gsap) {
-          gsap.to(drawer, {
-            x: open ? 0 : "110%",
-            duration: 0.55,
-            ease: "power3.out",
-            overwrite: true
-          });
-        }
       }
 
-      toggle.addEventListener("click", function () {
-        setDrawer(!drawerOpen);
-      });
-      overlay.addEventListener("click", function () {
-        setDrawer(false);
-      });
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          setDrawer(!drawerOpen);
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener("click", function () {
+          setDrawer(false);
+        });
+      }
       links.forEach(function (link) {
         link.addEventListener("click", function () {
           setDrawer(false);
@@ -767,54 +1122,55 @@
         }
       });
 
-      if (window.gsap && window.ScrollTrigger) {
-        document.documentElement.classList.add("js-gsap");
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.set(drawer, { x: "110%" });
-        gsap.to("#identity .reveal", {
-          opacity: 1,
-          y: 0,
-          duration: 1.05,
-          stagger: 0.12,
-          ease: "power3.out"
-        });
-        gsap.utils.toArray(".reveal").forEach(function (el, index) {
-          if (el.closest("#identity")) {
-            return;
-          }
-          gsap.fromTo(
-            el,
-            { opacity: 0, y: 42 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.85,
-              delay: (index % 3) * 0.05,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: el,
-                start: "top 86%",
-                toggleActions: "play none none reverse"
-              }
+      // Scroll Reveal Observer
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
             }
-          );
-        });
-      } else {
-        var observer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-                entry.target.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-              }
-            });
-          },
-          { threshold: 0.12 }
-        );
-        document.querySelectorAll(".reveal").forEach(function (node) {
-          observer.observe(node);
-        });
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll(".reveal").forEach(function (node) {
+        observer.observe(node);
+      });
+
+      // Dynamic Numeral Count-Up Animation
+      var counters = document.querySelectorAll(".counter");
+      var animatedCounters = false;
+
+      var metricsSection = document.getElementById("metrics");
+      if (metricsSection) {
+        var metricsObserver = new IntersectionObserver(function(entries, obs) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting && !animatedCounters) {
+              animatedCounters = true;
+              counters.forEach(function(counter) {
+                var target = parseFloat(counter.getAttribute("data-target"));
+                var decimals = counter.getAttribute("data-decimals") ? parseInt(counter.getAttribute("data-decimals")) : 0;
+                var duration = 2000;
+                var startTime = null;
+
+                function updateCount(currentTime) {
+                  if (!startTime) startTime = currentTime;
+                  var progressTime = currentTime - startTime;
+                  var currentVal = Math.min(progressTime / duration, 1) * target;
+                  counter.textContent = currentVal.toFixed(decimals);
+                  if (progressTime < duration) {
+                    requestAnimationFrame(updateCount);
+                  } else {
+                    counter.textContent = decimals > 0 ? target.toFixed(decimals) : target;
+                  }
+                }
+                requestAnimationFrame(updateCount);
+              });
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        metricsObserver.observe(metricsSection);
       }
     })();
   </script>
