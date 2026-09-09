@@ -328,6 +328,32 @@
       background: linear-gradient(var(--gold), var(--cyan));
       border-radius: 999px;
     }
+
+    /* 3D Interactive Timeline Section Styles */
+    #cp-journey-section {
+      position: relative;
+      height: 600vh; /* creates scroll height for sticky pinning */
+    }
+    .cp-sticky-container {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 1rem;
+    }
+    .cp-card-3d {
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease, border-color 0.6s ease;
+    }
+    .cp-card-inner {
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease;
+    }
   </style>
 </head>
 <body class="cyber-grid scanlines antialiased">
@@ -379,6 +405,7 @@
       <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#academy">03 — Academy</a>
       <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#milestones">04 — Milestones</a>
       <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#arsenal">05 — Arsenal</a>
+      <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#competitive-programming" style="color:var(--gold);">05.5 — CP Journey</a>
       <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#creations">06 — Creations</a>
       <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#metrics">07 — Metrics</a>
       <a class="nav-link rounded-md border border-transparent px-3 py-3 text-cyan/95 transition hover:border-gold/40 hover:bg-cyan/10 hover:text-gold" href="#hobby">08 — Hobby</a>
@@ -638,6 +665,32 @@
               </div>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW SECTION: Competitive Programming Journey -->
+    <section id="competitive-programming" class="relative">
+      <div id="cp-journey-section">
+        <div class="cp-sticky-container">
+          <div class="mx-auto max-w-4xl w-full px-4 text-center mb-6">
+            <p class="section-kicker font-orbit text-[10px] uppercase text-gold">Special Section · CP Journey</p>
+            <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Competitive Programming Journey</h2>
+            <p class="mt-2 text-cyan/75">3D Interactive Timeline — Scroll to experience the evolution</p>
+          </div>
+          <div class="w-full max-w-3xl px-4">
+            <div id="cpCard3D" class="cp-card-3d glass-panel rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-cyan/40 shadow-neon">
+              <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+              <div class="absolute -left-10 -top-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+              <div class="cp-card-inner">
+                <span id="cpCardBadge" class="inline-block px-3 py-1 mb-4 rounded-full bg-cyan/10 border border-cyan/30 font-orbit text-[10px] uppercase tracking-widest text-cyan">Milestone 01 / 06</span>
+                <h3 id="cpCardTitle" class="font-orbit text-xl sm:text-2xl text-gold neon-gold mb-4">1. CodeForces Join: August 6, 2026</h3>
+                <p id="cpCardText" class="text-cyan/90 text-base sm:text-lg leading-relaxed justify-text">
+                  Small step for a man, Big step for the champion. Joining Codeforces marked the official beginning of my algorithmic warfare. Stepping into this massive global arena felt like gazing into an infinite digital cosmos where every problem is a puzzle waiting to be unlocked by logic and determination.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1080,7 +1133,6 @@
       var quoteIdx = 0;
       var quoteEl = document.getElementById("flashQuote");
       
-      // Cycle quotes every 1.5 seconds during loading
       var quoteInterval = setInterval(function() {
         quoteIdx = (quoteIdx + 1) % quotes.length;
         if (quoteEl) quoteEl.textContent = quotes[quoteIdx];
@@ -1101,7 +1153,6 @@
           if (percentageEl) percentageEl.textContent = "100%";
           if (bar) bar.style.width = "100%";
           
-          // Trigger White Super Nova Flash Explodation
           setTimeout(function() {
             if (flashScreen) {
               flashScreen.classList.add("exploding");
@@ -1186,6 +1237,72 @@
       );
       document.querySelectorAll(".reveal").forEach(function (node) {
         observer.observe(node);
+      });
+
+      // 3D Interactive Timeline Card Scroll Handler
+      var cpSteps = [
+        {
+          badge: "Milestone 01 / 06",
+          title: "1. CodeForces Join: August 6, 2026",
+          text: "Small step for a man, Big step for the champion. Joining Codeforces marked the official beginning of my algorithmic warfare. Stepping into this massive global arena felt like gazing into an infinite digital cosmos where every problem is a puzzle waiting to be unlocked by logic and determination."
+        },
+        {
+          badge: "Milestone 02 / 06",
+          title: "2. Aug/07/2026: Educational Codeforces Round 193 (Rated for Div. 2)",
+          text: "Rating 374 - Solved 1 - Global Rank 11394. My very first rated contest baptism under fire! Facing tough Div. 2 problems taught me humility and hunger. Solving that single problem wasn't just about points; it proved I belonged in the arena and ignited a fierce resolve to climb higher."
+        },
+        {
+          badge: "Milestone 03 / 06",
+          title: "3. Aug/09/2026: Codeforces Round 1116 (Div. 2)",
+          text: "Rating 662 - Solved 2 - Global Rank 7845. Doubling down on problem-solving speed and mental endurance! Solving two problems in quick succession gave me a massive dopamine rush and boosted my rating significantly. Every contest is a mirror reflecting my growing problem-solving intuition and code structure discipline."
+        },
+        {
+          badge: "Milestone 04 / 06",
+          title: "4. Aug/29/2026: Codeforces Round 1118 (Div. 2)",
+          text: "Rating 996 - Solved 3 - Global Rank 2692. Breaking into the upper echelons of Div. 2 with three solved problems and an elite global rank! This breakthrough proved that consistency, relentless practice, and reviewing editorials pay off exponentially. My mind operates with sharper mathematical clarity during crunch moments now."
+        },
+        {
+          badge: "Milestone 05 / 06",
+          title: "5. Sep/05/2026: Codeforces Round 1119 (Div. 3)",
+          text: "Rating 1106 - Solved 3 - Global Rank 7085. Crashing through the 1100 rating milestone in record time! Achieving a four-digit rating within 28 days of joining Codeforces is a testament to unwavering discipline, laser-focused algorithm study, and the relentless pursuit of excellence that defines my entire IDAI philosophy."
+        }
+      ];
+
+      var cpSection = document.getElementById("cp-journey-section");
+      var cpCard = document.getElementById("cpCard3D");
+      var cpBadge = document.getElementById("cpCardBadge");
+      var cpTitle = document.getElementById("cpCardTitle");
+      var cpText = document.getElementById("cpCardText");
+      var currentStepIndex = -1;
+
+      window.addEventListener("scroll", function() {
+        if (!cpSection || !cpCard) return;
+        var rect = cpSection.getBoundingClientRect();
+        var sectionHeight = cpSection.offsetHeight - window.innerHeight;
+        if (sectionHeight <= 0) return;
+        
+        var scrollProgress = -rect.top / sectionHeight;
+        scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+
+        var step = Math.floor(scrollProgress * cpSteps.length);
+        if (step >= cpSteps.length) step = cpSteps.length - 1;
+
+        if (step !== currentStepIndex) {
+          currentStepIndex = step;
+          var data = cpSteps[step];
+
+          // Apply 3D card tilt & transform animation on change
+          cpCard.style.transform = "rotateX(" + (Math.sin(step * 2) * 15) + "deg) rotateY(" + (Math.cos(step * 2) * 15) + "deg) scale(1.05)";
+          cpCard.style.borderColor = step % 2 === 0 ? "rgba(0, 243, 255, 0.8)" : "rgba(212, 175, 55, 0.8)";
+          cpCard.style.boxShadow = step % 2 === 0 ? "0 0 50px rgba(0, 243, 255, 0.5)" : "0 0 50px rgba(212, 175, 55, 0.5)";
+
+          setTimeout(function() {
+            cpBadge.textContent = data.badge;
+            cpTitle.textContent = data.title;
+            cpText.textContent = data.text;
+            cpCard.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+          }, 300);
+        }
       });
 
       // Dynamic Numeral Count-Up Animation
