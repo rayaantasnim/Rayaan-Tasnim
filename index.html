@@ -254,7 +254,7 @@
       background: linear-gradient(90deg, transparent, var(--gold), var(--cyan), transparent);
     }
 
-    /* Top Navbar: Impressive Fixed Navbar (Instruction 1 & 7) */
+    /* Top Navbar: Impressive Fixed Navbar */
     #topNavbar {
       position: fixed;
       top: 0;
@@ -270,7 +270,7 @@
       transition: all 0.3s ease;
     }
 
-    /* 3D Floating Brand Style for "Rayaan's Codex" (Instruction 7) */
+    /* 3D Floating Brand Style for "Rayaan's Codex" */
     .brand-3d {
       font-family: 'Audiowide', sans-serif;
       font-size: 1.1rem;
@@ -289,19 +289,7 @@
       filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 25px rgba(212, 175, 55, 0.8));
     }
 
-    /* Navigation Mapping Toggler & Folded Right Drawer (Instruction 1) */
-    #navTogglerBtn {
-      background: rgba(0, 243, 255, 0.1);
-      border: 1px solid rgba(0, 243, 255, 0.4);
-      box-shadow: 0 0 12px rgba(0, 243, 255, 0.3);
-      transition: all 0.3s ease;
-    }
-    #navTogglerBtn:hover {
-      background: rgba(0, 243, 255, 0.3);
-      box-shadow: 0 0 20px rgba(0, 243, 255, 0.7);
-      border-color: var(--cyan);
-    }
-
+    /* Folded Right Drawer */
     #foldedNavDrawer {
       position: fixed;
       top: 0;
@@ -338,7 +326,35 @@
       pointer-events: auto;
     }
 
-    /* Dashboard Light-Themed Part (Instruction 4) */
+    /* Glassy Transparent Drop-down Menu Card for Smaller Screens (Instruction 3 & 8) */
+    #mobileMenuCard {
+      position: absolute;
+      top: 100%;
+      right: 1rem;
+      width: 220px;
+      background: rgba(8, 14, 32, 0.82);
+      border: 1px solid rgba(0, 243, 255, 0.4);
+      backdrop-filter: blur(20px) saturate(150%);
+      -webkit-backdrop-filter: blur(20px) saturate(150%);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 243, 255, 0.25);
+      border-radius: 1rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75krem;
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 80;
+    }
+    #mobileMenuCard.is-open {
+      opacity: 1;
+      transform: translateY(10px);
+      pointer-events: auto;
+    }
+
+    /* Dashboard Light-Themed Part with Enhanced Media Queries for Smaller Screens */
     #megaMenuOverlay {
       position: fixed;
       inset: 0;
@@ -368,6 +384,44 @@
     #megaMenuOverlay .glass-panel:hover {
       border-color: rgba(0, 180, 216, 0.9);
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 35px rgba(0, 180, 216, 0.5);
+    }
+
+    /* Media query enhancements for smaller screens on dashboard segment to trigger 6-sections precisely one by one without horizontal scroll */
+    @media (max-width: 768px) {
+      #megaMenuOverlay > div {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+      #megaMenuOverlay .grid {
+        display: flex !important;
+        flex-direction: column !important;
+        overflow-x: visible !important;
+        overflow-y: auto !important;
+        scroll-snap-type: none !important;
+        gap: 1rem !important;
+        padding-bottom: 1.5rem !important;
+        padding-top: 0.5rem !important;
+        -webkit-overflow-scrolling: touch;
+      }
+      #megaMenuOverlay .grid > div {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        flex: 1 1 auto !important;
+        scroll-snap-align: none !important;
+        margin-bottom: 0 !important;
+      }
+      /* Precise button section positioning for smaller screens */
+      #megaMenuOverlay .flex.flex-wrap.justify-center {
+        margin-top: 1rem !important;
+        gap: 0.5rem !important;
+        padding: 0 0.5rem !important;
+      }
+      #megaMenuOverlay h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.25rem !important;
+      }
     }
 
     /* Three.js Dashboard Background Canvas */
@@ -448,7 +502,7 @@
 
     #cp-journey-section {
       position: relative;
-      height: 600vh;
+      height: 700vh; /* Adjusted for 6 cards */
     }
     .cp-sticky-container {
       position: sticky;
@@ -469,6 +523,38 @@
     .cp-card-inner {
       transform-style: preserve-3d;
       transition: transform 0.6s ease;
+    }
+
+    /* Instruction 1 & 3: Padding, margin & font adjustments for smaller screens, plus preventing button splicing */
+    @media (max-width: 640px) {
+      body {
+        font-size: 14px;
+      }
+      section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+      }
+      #topNavbar {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+      .brand-3d {
+        font-size: 0.9rem !important;
+      }
+      /* Ensure IDAI Web and Dashboard buttons do not splice into several lines on smaller screens */
+      .nav-btn-group {
+        white-space: nowrap !important;
+        flex-shrink: 0;
+      }
+    }
+
+    /* Instruction 5: Extra hover effects for all cards */
+    .glass-panel:hover {
+      box-shadow: 0 0 35px rgba(0, 243, 255, 0.6), 0 0 60px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(0, 243, 255, 0.3);
+      border-color: var(--cyan);
+      transform: translateY(-8px) scale(1.02);
     }
   </style>
 </head>
@@ -494,26 +580,46 @@
 
   <a href="#identity" class="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:bg-deep focus:text-cyan focus:p-3">Skip to identity</a>
 
-  <!-- Impressive Top Navbar with 3D Brand & Folded Navigation Toggler (Instructions 1 & 7) -->
+  <!-- Impressive Top Navbar with 3D Brand & Folded Navigation Toggler (Instructions 1, 3, 8) -->
   <header id="topNavbar" class="px-6 py-3 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <span class="brand-3d">Rayaan's Legacy</span>
       <span class="h-2 w-2 rounded-full bg-cyan animate-pulse shadow-neon"></span>
     </div>
     
-    <div class="flex items-center gap-4">
-      <a href="https://rayaantasnim.github.io/IDAI/" target="_blank" rel="noopener noreferrer" class="font-orbit text-[10px] uppercase text-cyan hover:text-gold font-bold tracking-wider">IDAI Web</a>
-      <button id="megaMenuToggleBtn" class="border border-cyan/60 bg-cyan/10 px-3.5 py-1.5 rounded-full font-orbit text-[10px] uppercase tracking-widest text-cyan hover:bg-cyan hover:text-deep shadow-neon font-bold">DashBoard</button>
+    <div class="flex items-center gap-2 sm:gap-4 relative">
+      <!-- Buttons protected from splicing (Instruction 3) & Drop-down glassy menu card triggered manually via "Menu" button (Instruction 8) -->
+      <div class="hidden md:flex items-center gap-4 nav-btn-group">
+        <a href="https://rayaantasnim.github.io/IDAI/" target="_blank" rel="noopener noreferrer" class="font-orbit text-[10px] uppercase text-cyan hover:text-gold font-bold tracking-wider">IDAI Web</a>
+        <button id="megaMenuToggleBtn" class="border border-cyan/60 bg-cyan/10 px-3.5 py-1.5 rounded-full font-orbit text-[10px] uppercase tracking-widest text-cyan hover:bg-cyan hover:text-deep shadow-neon font-bold">DashBoard</button>
+      </div>
+
+      <!-- Manual Trigger "Menu" Button for Smaller Screens (Instruction 8) -->
+      <div class="md:hidden relative">
+        <button id="menuDropdownBtn" class="border border-cyan/60 bg-cyan/10 px-3.5 py-1.5 rounded-full font-orbit text-[10px] uppercase tracking-widest text-cyan hover:bg-cyan hover:text-deep shadow-neon font-bold flex items-center gap-1.5">
+          <span>Menu</span>
+          <i class="fa-solid fa-chevron-down text-[9px]"></i>
+        </button>
+        <!-- Drop-down Glassy Menu Card (Instruction 8: not overlapping main body, transparent, attractive) -->
+        <div id="mobileMenuCard">
+          <a href="https://rayaantasnim.github.io/IDAI/" target="_blank" rel="noopener noreferrer" class="font-orbit text-[10px] uppercase text-cyan hover:text-gold font-bold tracking-wider py-1.5 border-b border-cyan/20">IDAI Web</a>
+          <button id="mobileDashboardBtn" class="w-full text-left font-orbit text-[10px] uppercase tracking-widest text-cyan hover:text-gold font-bold py-1.5 border-b border-cyan/20">DashBoard</button>
+          <button id="navDrawerTriggerBtn" class="w-full text-left font-orbit text-[10px] uppercase tracking-widest text-gold hover:text-white font-bold py-1.5 flex items-center justify-between">
+            <span>Navigation Index</span>
+            <i class="fa-solid fa-bars text-xs"></i>
+          </button>
+        </div>
+      </div>
       
-      <!-- Folded Right Navigation Toggler Icon (Instruction 1) -->
-      <button id="navTogglerBtn" class="flex items-center gap-2 px-3 py-1.5 rounded-full font-orbit text-[10px] uppercase tracking-widest text-cyan cursor-pointer">
+      <!-- Folded Right Navigation Toggler Icon (Desktop / Drawer) -->
+      <button id="navTogglerBtn" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full font-orbit text-[10px] uppercase tracking-widest text-cyan cursor-pointer">
         <i class="fa-solid fa-bars text-sm"></i>
-        <span class="hidden sm:inline">Menu</span>
+        <span>Menu</span>
       </button>
     </div>
   </header>
 
-  <!-- Folded Right Navigation Drawer (Instruction 1) -->
+  <!-- Folded Right Navigation Drawer -->
   <div id="foldedNavOverlay"></div>
   <aside id="foldedNavDrawer">
     <div class="flex items-center justify-between mb-8">
@@ -536,7 +642,7 @@
     </nav>
   </aside>
 
-  <!-- Full-Screen Dashboard Overlay with Light Themed Part (Instruction 4) -->
+  <!-- Full-Screen Dashboard Overlay with Light Themed Part -->
   <div id="megaMenuOverlay" aria-hidden="true">
     <canvas id="dashboardCanvas"></canvas>
     <button id="megaMenuCloseBtn" class="absolute top-6 right-8 z-10 font-orbit text-xs uppercase tracking-widest text-slate-800 border border-slate-600/40 px-4 py-2 rounded-full hover:bg-slate-800 hover:text-white transition shadow-sm">Close [ESC]</button>
@@ -847,6 +953,7 @@
       </div>
     </section>
 
+    <!-- Competitive Programming Journey Section (Instructions 2, 6) -->
     <section id="competitive-programming" class="relative">
       <div id="cp-journey-section">
         <div class="cp-sticky-container">
@@ -865,9 +972,9 @@
                 </div>
                 <div class="md:col-span-7">
                   <span id="cpCardBadge" class="inline-block px-3 py-1 mb-3 rounded-full bg-cyan/10 border border-cyan/30 font-orbit text-[10px] uppercase tracking-widest text-cyan">Milestone 01 / 06</span>
-                  <h3 id="cpCardTitle" class="font-orbit text-lg sm:text-xl text-gold neon-gold mb-3">1. CodeForces Join: August 6, 2026</h3>
+                  <h3 id="cpCardTitle" class="font-orbit text-lg sm:text-xl text-gold neon-gold mb-3">National High School Programming Contest 2025</h3>
                   <p id="cpCardText" class="text-cyan/90 text-sm sm:text-base leading-relaxed justify-text">
-                    Small step for a man, Big step for the champion. Joining Codeforces marked the official beginning of my algorithmic warfare. Stepping into this massive global arena felt like gazing into an infinite digital cosmos where every problem is a puzzle waiting to be unlocked by logic and determination.
+                    As a student of class 6, I took part at my first contest being 141th finalist in the national merit list. Stepping into this prestigious arena laid the strong foundational stone for my algorithmic expedition.
                   </p>
                 </div>
               </div>
@@ -984,7 +1091,7 @@
   </div>
 </section>
 
-    <!-- Metrics Section with Dynamic Numeral Achievements increasing from 0 in 3 seconds after user scrolls there (Instruction 5) -->
+    <!-- Metrics Section with Dynamic Numeral Achievements & Neon Glow (Instruction 7) -->
     <section id="metrics" class="relative px-4 py-24 sm:px-8 lg:px-16">
       <div class="mx-auto max-w-7xl">
         <header class="reveal mb-10">
@@ -992,27 +1099,27 @@
           <h2 class="mt-3 font-orbit text-3xl text-cyan neon-cyan sm:text-4xl">Dynamic Numeral Achievements</h2>
         </header>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+          <article class="reveal glass-panel rounded-2xl p-6 text-center shadow-neon transition duration-500 hover:shadow-[0_0_35px_rgba(0,243,255,0.7)] hover:border-cyan">
             <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="440">0</div>
             <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">Chess.com Rating</p>
           </article>
-          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+          <article class="reveal glass-panel rounded-2xl p-6 text-center shadow-neon transition duration-500 hover:shadow-[0_0_35px_rgba(0,243,255,0.7)] hover:border-cyan">
             <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="1106">0</div>
             <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">CodeForces Rating</p>
           </article>
-          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+          <article class="reveal glass-panel rounded-2xl p-6 text-center shadow-neon transition duration-500 hover:shadow-[0_0_35px_rgba(0,243,255,0.7)] hover:border-cyan">
             <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="67">0</div>
             <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">GitHub Repositories</p>
           </article>
-          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+          <article class="reveal glass-panel rounded-2xl p-6 text-center shadow-neon transition duration-500 hover:shadow-[0_0_35px_rgba(0,243,255,0.7)] hover:border-cyan">
             <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="50">0</div>
             <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">SEO Sites</p>
           </article>
-          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+          <article class="reveal glass-panel rounded-2xl p-6 text-center shadow-neon transition duration-500 hover:shadow-[0_0_35px_rgba(0,243,255,0.7)] hover:border-cyan">
             <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="4.7" data-decimals="1">0</div>
             <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">User Rating ★</p>
           </article>
-          <article class="reveal glass-panel rounded-2xl p-6 text-center">
+          <article class="reveal glass-panel rounded-2xl p-6 text-center shadow-neon transition duration-500 hover:shadow-[0_0_35px_rgba(0,243,255,0.7)] hover:border-cyan">
             <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="480">0</div>
             <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">GitHub Contributions</p>
           </article>
@@ -1445,6 +1552,7 @@
 
       // Mega Menu Overlay (Dashboard) Handler
       var megaToggle = document.getElementById("megaMenuToggleBtn");
+      var mobileDashboardBtn = document.getElementById("mobileDashboardBtn");
       var megaOverlay = document.getElementById("megaMenuOverlay");
       var megaClose = document.getElementById("megaMenuCloseBtn");
       var megaLinks = document.querySelectorAll(".mega-menu-link");
@@ -1462,6 +1570,12 @@
           setMegaMenu(true);
         });
       }
+      if (mobileDashboardBtn) {
+        mobileDashboardBtn.addEventListener("click", function() {
+          setMobileMenuCard(false);
+          setMegaMenu(true);
+        });
+      }
       if (megaClose) {
         megaClose.addEventListener("click", function() {
           setMegaMenu(false);
@@ -1473,7 +1587,32 @@
         });
       });
 
-      // Folded Navigation Drawer Handler (Instruction 1)
+      // Manual Drop-down Glassy Menu Card Handler for Smaller Screens (Instruction 8)
+      var menuDropdownBtn = document.getElementById("menuDropdownBtn");
+      var mobileMenuCard = document.getElementById("mobileMenuCard");
+      var navDrawerTriggerBtn = document.getElementById("navDrawerTriggerBtn");
+
+      function setMobileMenuCard(open) {
+        if (mobileMenuCard) {
+          mobileMenuCard.classList.toggle("is-open", open);
+        }
+      }
+
+      if (menuDropdownBtn) {
+        menuDropdownBtn.addEventListener("click", function(e) {
+          e.stopPropagation();
+          var isOpen = mobileMenuCard.classList.contains("is-open");
+          setMobileMenuCard(!isOpen);
+        });
+      }
+
+      document.addEventListener("click", function(e) {
+        if (mobileMenuCard && !mobileMenuCard.contains(e.target) && e.target !== menuDropdownBtn) {
+          setMobileMenuCard(false);
+        }
+      });
+
+      // Folded Navigation Drawer Handler
       var navToggler = document.getElementById("navTogglerBtn");
       var navDrawer = document.getElementById("foldedNavDrawer");
       var navOverlay = document.getElementById("foldedNavOverlay");
@@ -1490,6 +1629,12 @@
 
       if (navToggler) {
         navToggler.addEventListener("click", function() {
+          setFoldedDrawer(true);
+        });
+      }
+      if (navDrawerTriggerBtn) {
+        navDrawerTriggerBtn.addEventListener("click", function() {
+          setMobileMenuCard(false);
           setFoldedDrawer(true);
         });
       }
@@ -1513,6 +1658,7 @@
         if (event.key === "Escape") {
           setFoldedDrawer(false);
           setMegaMenu(false);
+          setMobileMenuCard(false);
         }
       });
 
@@ -1531,37 +1677,43 @@
         observer.observe(node);
       });
 
-      // CP 3D Interactive Timeline
+      // CP 3D Interactive Timeline with 6 Cards (Instructions 2 & 6: Added NHSPC 2025 as card 1 and enhanced differentiation)
       var cpSteps = [
         {
           badge: "Milestone 01 / 06",
-          title: "1. CodeForces Join: August 6, 2026",
-          text: "Small step for a man, Big step for the champion. Joining Codeforces marked the official beginning of my algorithmic warfare. Stepping into this massive global arena felt like gazing into an infinite digital cosmos where every problem is a puzzle waiting to be unlocked by logic and determination.",
+          title: "National High School Programming Contest 2025",
+          text: "As a student of class 6, I took part at my first contest being 141th finalist in the national merit list. Stepping into this prestigious arena laid the strong foundational stone for my algorithmic expedition.",
           img: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
         {
           badge: "Milestone 02 / 06",
-          title: "2. Aug/07/2026: Educational Codeforces Round 193 (Rated for Div. 2)",
-          text: "Rating 374 - Solved 1 - Global Rank 11394. My very first rated contest baptism under fire! Facing tough Div. 2 problems taught me humility and hunger. Solving that single problem wasn't just about points; it proved I belonged in the arena and ignited a fierce resolve to climb higher.",
+          title: "1. CodeForces Join: August 6, 2026",
+          text: "Small step for a man, Big step for the champion. Joining Codeforces marked the official beginning of my algorithmic warfare. Stepping into this massive global arena felt like gazing into an infinite digital cosmos where every problem is a puzzle waiting to be unlocked by logic and determination.",
           img: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
         {
           badge: "Milestone 03 / 06",
-          title: "3. Aug/09/2026: Codeforces Round 1116 (Div. 2)",
-          text: "Rating 662 - Solved 2 - Global Rank 7845. Doubling down on problem-solving speed and mental endurance! Solving two problems in quick succession gave me a massive dopamine rush and boosted my rating significantly. Every contest is a mirror reflecting my growing problem-solving intuition and code structure discipline.",
+          title: "2. Aug/07/2026: Educational Codeforces Round 193 (Rated for Div. 2)",
+          text: "Rating 374 - Solved 1 - Global Rank 11394. My very first rated contest baptism under fire! Facing tough Div. 2 problems taught me humility and hunger. Solving that single problem wasn't just about points; it proved I belonged in the arena and ignited a fierce resolve to climb higher.",
           img: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
         {
           badge: "Milestone 04 / 06",
-          title: "4. Aug/29/2026: Codeforces Round 1118 (Div. 2)",
-          text: "Rating 996 - Solved 3 - Global Rank 2692. Breaking into the upper echelons of Div. 2 with three solved problems and an elite global rank! This breakthrough proved that consistency, relentless practice, and reviewing editorials pay off exponentially. My mind operates with sharper mathematical clarity during crunch moments now.",
+          title: "3. Aug/09/2026: Codeforces Round 1116 (Div. 2)",
+          text: "Rating 662 - Solved 2 - Global Rank 7845. Doubling down on problem-solving speed and mental endurance! Solving two problems in quick succession gave me a massive dopamine rush and boosted my rating significantly. Every contest is a mirror reflecting my growing problem-solving intuition and code structure discipline.",
           img: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
         {
           badge: "Milestone 05 / 06",
+          title: "4. Aug/29/2026: Codeforces Round 1118 (Div. 2)",
+          text: "Rating 996 - Solved 3 - Global Rank 2692. Breaking into the upper echelons of Div. 2 with three solved problems and an elite global rank! This breakthrough proved that consistency, relentless practice, and reviewing editorials pay off exponentially. My mind operates with sharper mathematical clarity during crunch moments now.",
+          img: "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=800"
+        },
+        {
+          badge: "Milestone 06 / 06",
           title: "5. Sep/05/2026: Codeforces Round 1119 (Div. 3)",
           text: "Rating 1106 - Solved 3 - Global Rank 7085. Crashing through the 1100 rating milestone in record time! Achieving a four-digit rating within 28 days of joining Codeforces is a testament to unwavering discipline, laser-focused algorithm study, and the relentless pursuit of excellence that defines my entire IDAI philosophy.",
-          img: "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=800"
+          img: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800"
         }
       ];
 
@@ -1589,9 +1741,22 @@
           currentStepIndex = step;
           var data = cpSteps[step];
 
+          // Make each card look different (Instruction 6)
+          if (step === 0) {
+            cpCard.style.background = "linear-gradient(160deg, rgba(30, 20, 8, 0.92), rgba(10, 6, 2, 0.8))";
+            cpCard.style.borderColor = "rgba(212, 175, 55, 0.8)";
+            cpCard.style.boxShadow = "0 0 45px rgba(212, 175, 55, 0.4)";
+          } else if (step % 2 === 0) {
+            cpCard.style.background = "linear-gradient(160deg, rgba(8, 22, 38, 0.9), rgba(3, 8, 18, 0.75))";
+            cpCard.style.borderColor = "rgba(0, 243, 255, 0.8)";
+            cpCard.style.boxShadow = "0 0 50px rgba(0, 243, 255, 0.5)";
+          } else {
+            cpCard.style.background = "linear-gradient(160deg, rgba(22, 12, 28, 0.9), rgba(8, 4, 12, 0.75))";
+            cpCard.style.borderColor = "rgba(212, 175, 55, 0.8)";
+            cpCard.style.boxShadow = "0 0 50px rgba(212, 175, 55, 0.5)";
+          }
+
           cpCard.style.transform = "rotateX(" + (Math.sin(step * 2) * 15) + "deg) rotateY(" + (Math.cos(step * 2) * 15) + "deg) scale(1.05)";
-          cpCard.style.borderColor = step % 2 === 0 ? "rgba(0, 243, 255, 0.8)" : "rgba(212, 175, 55, 0.8)";
-          cpCard.style.boxShadow = step % 2 === 0 ? "0 0 50px rgba(0, 243, 255, 0.5)" : "0 0 50px rgba(212, 175, 55, 0.5)";
 
           setTimeout(function() {
             cpBadge.textContent = data.badge;
@@ -1603,7 +1768,7 @@
         }
       });
 
-      // Count-Up Animation (Instruction 5: increase from 0 in 3 seconds after user scroll there)
+      // Count-Up Animation (Instruction 7: increase from 0 in 3 seconds after user scroll there)
       var counters = document.querySelectorAll(".counter");
       var animatedCounters = false;
 
