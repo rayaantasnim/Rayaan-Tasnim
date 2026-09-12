@@ -522,6 +522,24 @@
       overflow: hidden;
       padding: 1rem;
     }
+
+    /* Enhanced Media Query specifically for CP Journey section: decreased side margins/paddings and 95% width on smaller screens */
+    @media (max-width: 640px) {
+      #cp-journey-section .cp-sticky-container {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+      }
+      #cp-journey-section .w-full.max-w-3xl {
+        width: 95% !important;
+        max-width: 95% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      #cpCard3D {
+        padding: 1rem !important;
+      }
+    }
+
     .cp-card-3d {
       perspective: 1200px;
       transform-style: preserve-3d;
@@ -658,7 +676,7 @@
         <!-- Card 2 -->
         <div class="glass-panel p-5 rounded-2xl">
           <p class="font-orbit text-xs text-amber-700 uppercase tracking-widest mb-2 font-bold">CP Status</p>
-          <p class="font-rajdhani text-sm text-slate-900 font-semibold">CodeForces Handle: rayaan1<br>Rating: 1106 (Div. 2/3)</p>
+          <p class="font-rajdhani text-sm text-slate-900 font-semibold">CodeForces Handle: rayaan1<br>Rating: 1191 (Div. 2/3)</p>
           <a href="https://codeforces.com/profile/rayaan1" target="_blank" rel="noopener noreferrer" class="mt-3 inline-block font-orbit text-xs text-cyan-700 underline font-bold">View Profile →</a>
         </div>
         <!-- Card 3 -->
@@ -709,7 +727,7 @@
           <div class="mt-8 flex flex-wrap gap-3 text-sm">
             <span class="skill-chip rounded-full px-4 py-2 cursor-pointer">Age: 13</span>
             <span class="skill-chip rounded-full px-4 py-2 cursor-pointer">City: Mymensingh</span>
-            <span class="skill-chip rounded-full px-4 py-2 cursor-pointer">Codeforces 1106</span>
+            <span class="skill-chip rounded-full px-4 py-2 cursor-pointer">Codeforces 1191</span>
           </div>
           <p class="mt-8 max-w-xl text-lg leading-relaxed text-cyan/90 justify-text">To blend science, creativity, and faith into innovations that inspire humanity.</p>
           <div class="mt-8 glass-panel rounded-2xl p-6">
@@ -853,7 +871,7 @@
               <li class="border-b border-cyan/10 pb-3">HTML (Hyper Text Markup Language) – completed</li>
               <li class="border-b border-cyan/10 pb-3">CSS (Cascading Style Sheet) – completed</li>
               <li class="border-b border-cyan/10 pb-3">Duolingo Chess Course - Completed</li>
-              <li>CodeForces Competitive Programming Community join — <br>Handle / Username - rayaan1 <br><span class="text-gold">1106 Rating in 28 days</span></li>
+              <li>CodeForces Competitive Programming Community join — <br>Handle / Username - rayaan1 <br><span class="text-gold">1191 Rating in 28 days</span></li>
             </ul>
           </article>
           <article class="reveal glass-panel rounded-3xl p-8">
@@ -1101,7 +1119,7 @@
             <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">Chess.com Rating</p>
           </article>
           <article class="reveal glass-panel rounded-2xl p-6 text-center shadow-neon transition duration-500 hover:shadow-[0_0_35px_rgba(0,243,255,0.7)] hover:border-cyan">
-            <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="1106">0</div>
+            <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="1191">0</div>
             <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">CodeForces Rating</p>
           </article>
           <article class="reveal glass-panel rounded-2xl p-6 text-center shadow-neon transition duration-500 hover:shadow-[0_0_35px_rgba(0,243,255,0.7)] hover:border-cyan">
@@ -1655,39 +1673,45 @@
 
       var cpSteps = [
         {
-          badge: "Milestone 01 / 06",
+          badge: "Milestone 01 / 07",
           title: "National High School Programming Contest 2025",
           text: "As a student of class 6, I took part at my first contest being 141th finalist in the national merit list. Stepping into this prestigious arena laid the strong foundational stone for my algorithmic expedition.",
           img: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
         {
-          badge: "Milestone 02 / 06",
+          badge: "Milestone 02 / 07",
           title: "1. CodeForces Join: August 6, 2026",
           text: "Small step for a man, Big step for the champion. Joining Codeforces marked the official beginning of my algorithmic warfare. Stepping into this massive global arena felt like gazing into an infinite digital cosmos where every problem is a puzzle waiting to be unlocked by logic and determination.",
           img: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
         {
-          badge: "Milestone 03 / 06",
+          badge: "Milestone 03 / 07",
           title: "2. Aug/07/2026: Educational Codeforces Round 193 (Rated for Div. 2)",
           text: "Rating 374 - Solved 1 - Global Rank 11394. My very first rated contest baptism under fire! Facing tough Div. 2 problems taught me humility and hunger. Solving that single problem wasn't just about points; it proved I belonged in the arena and ignited a fierce resolve to climb higher.",
           img: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
         {
-          badge: "Milestone 04 / 06",
+          badge: "Milestone 04 / 07",
           title: "3. Aug/09/2026: Codeforces Round 1116 (Div. 2)",
           text: "Rating 662 - Solved 2 - Global Rank 7845. Doubling down on problem-solving speed and mental endurance! Solving two problems in quick succession gave me a massive dopamine rush and boosted my rating significantly. Every contest is a mirror reflecting my growing problem-solving intuition and code structure discipline.",
           img: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
         {
-          badge: "Milestone 05 / 06",
+          badge: "Milestone 05 / 07",
           title: "4. Aug/29/2026: Codeforces Round 1118 (Div. 2)",
           text: "Rating 996 - Solved 3 - Global Rank 2692. Breaking into the upper echelons of Div. 2 with three solved problems and an elite global rank! This breakthrough proved that consistency, relentless practice, and reviewing editorials pay off exponentially. My mind operates with sharper mathematical clarity during crunch moments now.",
           img: "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
         {
-          badge: "Milestone 06 / 06",
+          badge: "Milestone 06 / 07",
           title: "5. Sep/05/2026: Codeforces Round 1119 (Div. 3)",
-          text: "Rating 1106 - Solved 3 - Global Rank 7085. Crashing through the 1100 rating milestone in record time! Achieving a four-digit rating within 28 days of joining Codeforces is a testament to unwavering discipline, laser-focused algorithm study, and the relentless pursuit of excellence that defines my entire IDAI philosophy.",
+          text: "Rating 1191 - Solved 3 - Global Rank 7085. Crashing through the 1100 rating milestone in record time! Achieving a four-digit rating within 28 days of joining Codeforces is a testament to unwavering discipline, laser-focused algorithm study, and the relentless pursuit of excellence that defines my entire IDAI philosophy.",
+          img: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800"
+        },
+        {
+          badge: "Milestone 07 / 07",
+          title: "Codeforces Round 1120 (Div. 2)",
+          text: "Entering Codeforces Round 1120 (Div. 2) on Sep/12/2026 at 20:35 UTC+6 tested true competitive resilience. Facing intense algorithmic pressure, I successfully solved 3 problems, securing rank 3445. This performance delivered a solid +85 rating boost, elevating my new rating to 1191 and continuing my relentless ascent through division battles.",
           img: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800"
         }
       ];
