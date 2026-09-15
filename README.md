@@ -3,8 +3,8 @@
 # 🌌 Rayaan Nexus
 ### *Official Command Center & Curriculum Vitae Dashboard*
 
-[![Codeforces](https://img.shields.io/badge/Codeforces-1451%20(Cyan%20Specialist)-00C0C0?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/rayaan1)
-[![GitHub](https://img.shields.io/badge/GitHub-67%20Repositories-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rayaan1)
+[![Codeforces](https://img.shields.io/badge/Codeforces-1451%20(Cyan%20Specialist)-00C0C0?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/codingchampion)
+[![GitHub](https://img.shields.io/badge/GitHub-67%20Repositories-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rayaantasnim)
 [![Deployment](https://img.shields.io/badge/Status-Active%20Deployment-00FF66?style=for-the-badge)](#)
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-IDAI%20Universe-8A2BE2?style=for-the-badge)](#)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
@@ -51,7 +51,6 @@
 
 | Classification | Metric / Standing | Historical Record & Telemetry Data |
 | :--- | :--- | :--- |
-| **Codeforces** | `1451` *(Cyan Specialist)* | **+260 rating delta** in a rapid 37-day sprint. Bypassed Pupil tier entirely. Placed **231st overall** (Div. 2 Round 1121) solving 4 problems. |
 | **NHSPC 2025** | `National Finalist` | Secured **141st nationally** competing as a Class 6 student against senior high school cohorts. |
 | **Cadet College** | `Rank 57` | National Merit List position for the 2026 Bangladesh Cadet College Admission Test. |
 | **BdMO 2026** | `Regional Qualifier` | Selected for the elite Mymensingh Regional Mathematical Olympiad. |
