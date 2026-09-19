@@ -578,6 +578,43 @@
       border-color: var(--cyan);
       transform: translateY(-8px) scale(1.02);
     }
+
+#tech-stacks .skill-chip {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;   /* just enough space */
+  font-size: 0.85rem;
+  line-height: 1.2;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  white-space: nowrap;
+}
+
+#tech-stacks .flex.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* chips spread evenly */
+  gap: 0.5rem;                     /* balanced spacing */
+}
+
+/* Default: cards in flex grid (3 columns on large screens) */
+#tech-stacks article {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+/* On smaller screens (phones/tablets), cards expand to 95% width */
+@media (max-width: 768px) {
+  #tech-stacks article {
+    flex: none;
+    width: 95%;
+    max-width: none;
+    margin: 0 auto; /* center the card */
+  }
+}
+
+
   </style>
 </head>
 <body class="cyber-grid scanlines antialiased">
@@ -759,120 +796,125 @@
     <!-- ========================================== -->
 <!-- SECTION 3: Tech Stacks I mastered -->
 <!-- ========================================== -->
-<section id="tech-stacks" class="relative py-24 px-4 sm:px-8 max-w-7xl mx-auto">
-  <div class="text-center mb-16 reveal">
+<section id="tech-stacks" class="py-24 px-4 sm:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-16">
     <p class="section-kicker font-orbit text-xs text-gold uppercase mb-2">Technical Proficiency</p>
     <h2 class="font-orbit text-2xl sm:text-4xl text-white font-bold tracking-wider">
-      Tech Stacks I mastered
+      Tech-stacks I mastered
     </h2>
     <div class="gold-rule w-32 mx-auto mt-4"></div>
   </div>
 
-  <div class="flex flex-col md:flex-row md:overflow-x-auto gap-6 pb-6 scrollbar-thin">
+  <div class="flex flex-wrap justify-center gap-6">
+    
     <!-- Stack 1 -->
-    <article class="glass-panel min-w-full md:min-w-[320px] rounded-2xl p-6 bg-gradient-to-b from-cyan/10 to-deep border border-cyan/20 hover:border-cyan hover:shadow-neon transition-all duration-300 flex flex-col justify-between">
-      <div>
-        <div class="relative h-40 w-full mb-4 rounded-xl overflow-hidden border border-cyan/20">
-          <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg" alt="Programming Languages" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-deep to-transparent"></div>
-        </div>
-        <h3 class="font-orbit text-lg font-bold text-cyan mb-2">01. 🖥️ Programming Languages</h3>
-        <p class="font-cinzel text-xs text-gold mb-3">C++, JavaScript, TypeScript, Python</p>
-        <p class="font-sans text-xs text-slate-300 justify-text">
-          Utilized for algorithmic competitive programming, object-oriented software engineering, and scientific data manipulation.
-        </p>
+    <article class="glass-panel flex-1 min-w-[300px] max-w-[400px] rounded-2xl p-6">
+      <h3 class="font-orbit text-lg font-bold text-blue-400 mb-4">01. 🖥 Programming Languages</h3>
+      <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Programming Languages Cloud" class="w-full h-40 object-cover rounded-lg mb-4">
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="skill-chip">C++</span>
+        <span class="skill-chip">JavaScript</span>
+        <span class="skill-chip">TypeScript</span>
+        <span class="skill-chip">Python</span>
       </div>
+      <p class="text-slate-300 text-sm text-justify">
+        Programming languages are the foundation of my craft. C++ drives high-performance solutions, JavaScript and TypeScript power dynamic web ecosystems, and Python supports scientific research and automation. Together, they enable me to solve problems across diverse domains with precision and creativity.
+      </p>
     </article>
 
     <!-- Stack 2 -->
-    <article class="glass-panel min-w-full md:min-w-[320px] rounded-2xl p-6 bg-gradient-to-b from-amber-500/10 to-deep border border-amber-500/20 hover:border-amber-400 hover:shadow-gold transition-all duration-300 flex flex-col justify-between">
-      <div>
-        <div class="relative h-40 w-full mb-4 rounded-xl overflow-hidden border border-amber-500/20">
-          <img src="https://images.pexels.com/photos/1591060/pexels-photo-1591060.jpeg" alt="Web Standards" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-deep to-transparent"></div>
-        </div>
-        <h3 class="font-orbit text-lg font-bold text-amber-400 mb-2">02. 🌐 Web Standards</h3>
-        <p class="font-cinzel text-xs text-gold mb-3">HTML5, CSS3</p>
-        <p class="font-sans text-xs text-slate-300 justify-text">
-          Applied to construct semantically structured, fully accessible, and highly aesthetic modern web architectures.
-        </p>
+    <article class="glass-panel flex-1 min-w-[300px] max-w-[400px] rounded-2xl p-6">
+      <h3 class="font-orbit text-lg font-bold text-green-400 mb-4">02. 🌐 Web Standards</h3>
+      <img src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Web Standards Cloud" class="w-full h-40 object-cover rounded-lg mb-4">
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="skill-chip">HTML5</span>
+        <span class="skill-chip">CSS3</span>
       </div>
+      <p class="text-slate-300 text-sm text-justify">
+        Web standards provide the backbone of accessible and aesthetic design. HTML5 ensures semantic clarity and structure, while CSS3 unlocks responsive, visually appealing layouts. They harmonize usability and creativity, allowing me to craft modern, user-friendly architectures.
+      </p>
     </article>
 
     <!-- Stack 3 -->
-    <article class="glass-panel min-w-full md:min-w-[320px] rounded-2xl p-6 bg-gradient-to-b from-blue-500/10 to-deep border border-blue-500/20 hover:border-blue-400 hover:shadow-neon transition-all duration-300 flex flex-col justify-between">
-      <div>
-        <div class="relative h-40 w-full mb-4 rounded-xl overflow-hidden border border-blue-500/20">
-          <img src="https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg" alt="Frameworks & Libraries" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-deep to-transparent"></div>
-        </div>
-        <h3 class="font-orbit text-lg font-bold text-blue-400 mb-2">03. ⚡ Frameworks & Libraries</h3>
-        <p class="font-cinzel text-xs text-gold mb-3">React, Next.js, Vue.js, Node.js, Express.js, Three.js, TailwindCSS, Bootstrap, GSAP, WebGL, P5.js</p>
-        <p class="font-sans text-xs text-slate-300 justify-text">
-          Leveraged to build interactive 3D web applications, performant full-stack systems, and reactive user interfaces.
-        </p>
+    <article class="glass-panel flex-1 min-w-[300px] max-w-[400px] rounded-2xl p-6">
+      <h3 class="font-orbit text-lg font-bold text-purple-400 mb-4">03. ⚡ Frameworks & Libraries</h3>
+      <img src="https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Frameworks Cloud" class="w-full h-40 object-cover rounded-lg mb-4">
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="skill-chip">React</span>
+        <span class="skill-chip">Next.js</span>
+        <span class="skill-chip">Vue.js</span>
+        <span class="skill-chip">Node.js</span>
+        <span class="skill-chip">Express.js</span>
+        <span class="skill-chip">Three.js</span>
+        <span class="skill-chip">TailwindCSS</span>
+        <span class="skill-chip">Bootstrap</span>
+        <span class="skill-chip">GSAP</span>
+        <span class="skill-chip">WebGL</span>
+        <span class="skill-chip">P5.js</span>
       </div>
+      <p class="text-slate-300 text-sm text-justify">
+        Frameworks and libraries expand the creative frontier. React and Vue power reactive interfaces, Next.js streamlines performance, Node.js and Express anchor backend logic, while Three.js and WebGL bring immersive 3D worlds to life. Each tool adds depth, speed, and artistry to my projects.
+      </p>
     </article>
 
     <!-- Stack 4 -->
-    <article class="glass-panel min-w-full md:min-w-[320px] rounded-2xl p-6 bg-gradient-to-b from-purple-500/10 to-deep border border-purple-500/20 hover:border-purple-400 hover:shadow-neon transition-all duration-300 flex flex-col justify-between">
-      <div>
-        <div class="relative h-40 w-full mb-4 rounded-xl overflow-hidden border border-purple-500/20">
-          <img src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg" alt="Platforms & Services" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-deep to-transparent"></div>
-        </div>
-        <h3 class="font-orbit text-lg font-bold text-purple-400 mb-2">04. ☁️ Platforms & Services</h3>
-        <p class="font-cinzel text-xs text-gold mb-3">Vercel, Supabase</p>
-        <p class="font-sans text-xs text-slate-300 justify-text">
-          Employed for seamless serverless continuous deployment pipelines and real-time backend database infrastructure.
-        </p>
+    <article class="glass-panel flex-1 min-w-[300px] max-w-[400px] rounded-2xl p-6">
+      <h3 class="font-orbit text-lg font-bold text-cyan-400 mb-4">04. ☁️ Platforms & Services</h3>
+      <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Platforms Cloud" class="w-full h-40 object-cover rounded-lg mb-4">
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="skill-chip">Vercel</span>
+        <span class="skill-chip">Supabase</span>
       </div>
+      <p class="text-slate-300 text-sm text-justify">
+        Platforms like Vercel and Supabase simplify the complex. Vercel ensures frictionless deployment pipelines, while Supabase provides real-time database infrastructure. Together, they accelerate iteration, reduce overhead, and empower scalable, modern applications.
+      </p>
     </article>
 
     <!-- Stack 5 -->
-    <article class="glass-panel min-w-full md:min-w-[320px] rounded-2xl p-6 bg-gradient-to-b from-pink-500/10 to-deep border border-pink-500/20 hover:border-pink-400 hover:shadow-gold transition-all duration-300 flex flex-col justify-between">
-      <div>
-        <div class="relative h-40 w-full mb-4 rounded-xl overflow-hidden border border-pink-500/20">
-          <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg" alt="Design Tools" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-deep to-transparent"></div>
-        </div>
-        <h3 class="font-orbit text-lg font-bold text-pink-400 mb-2">05. 🎨 Design Tools</h3>
-        <p class="font-cinzel text-xs text-gold mb-3">Illustrator, Photoshop, Canva, Figma</p>
-        <p class="font-sans text-xs text-slate-300 justify-text">
-          Used to craft high-fidelity UI mockups, custom vector graphics, brand identities, and multimedia visual assets.
-        </p>
+    <article class="glass-panel flex-1 min-w-[300px] max-w-[400px] rounded-2xl p-6">
+      <h3 class="font-orbit text-lg font-bold text-pink-400 mb-4">05. 🎨 Design Tools</h3>
+      <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Design Tools Cloud" class="w-full h-40 object-cover rounded-lg mb-4">
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="skill-chip">Illustrator</span>
+        <span class="skill-chip">Photoshop</span>
+        <span class="skill-chip">Canva</span>
+        <span class="skill-chip">Figma</span>
       </div>
+      <p class="text-slate-300 text-sm text-justify">
+        Design tools transform ideas into visuals. Illustrator and Photoshop refine intricate graphics, Canva speeds up creative assets, and Figma enables collaborative prototyping. They ensure every interface is polished, expressive, and aligned with brand identity.
+      </p>
     </article>
 
     <!-- Stack 6 -->
-    <article class="glass-panel min-w-full md:min-w-[320px] rounded-2xl p-6 bg-gradient-to-b from-emerald-500/10 to-deep border border-emerald-500/20 hover:border-emerald-400 hover:shadow-neon transition-all duration-300 flex flex-col justify-between">
-      <div>
-        <div class="relative h-40 w-full mb-4 rounded-xl overflow-hidden border border-emerald-500/20">
-          <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg" alt="Data & Analysis" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-deep to-transparent"></div>
-        </div>
-        <h3 class="font-orbit text-lg font-bold text-emerald-400 mb-2">06. 📊 Data & Analysis</h3>
-        <p class="font-cinzel text-xs text-gold mb-3">Pandas, NumPy, Matplotlib</p>
-        <p class="font-sans text-xs text-slate-300 justify-text">
-          Utilized for processing mathematical datasets, executing array computations, and visualizing scientific graphs.
-        </p>
+    <article class="glass-panel flex-1 min-w-[300px] max-w-[400px] rounded-2xl p-6">
+      <h3 class="font-orbit text-lg font-bold text-emerald-400 mb-4">06. 📊 Data & Analysis</h3>
+      <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Data Cloud" class="w-full h-40 object-cover rounded-lg mb-4">
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="skill-chip">Pandas</span>
+        <span class="skill-chip">NumPy</span>
+        <span class="skill-chip">Matplotlib</span>
       </div>
+      <p class="text-slate-300 text-sm text-justify">
+        Data analysis tools unlock insights hidden in raw numbers. Pandas structures datasets, NumPy powers numerical computation, and Matplotlib visualizes trends. Together, they transform complexity into clarity, guiding decisions with evidence and precision.
+      </p>
     </article>
 
     <!-- Stack 7 -->
-    <article class="glass-panel min-w-full md:min-w-[320px] rounded-2xl p-6 bg-gradient-to-b from-yellow-500/10 to-deep border border-yellow-500/20 hover:border-yellow-400 hover:shadow-gold transition-all duration-300 flex flex-col justify-between">
-      <div>
-        <div class="relative h-40 w-full mb-4 rounded-xl overflow-hidden border border-yellow-500/20">
-          <img src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg" alt="DevOps & Utilities" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-deep to-transparent"></div>
-        </div>
-        <h3 class="font-orbit text-lg font-bold text-yellow-400 mb-2">07. 🔧 DevOps & Utilities</h3>
-        <p class="font-cinzel text-xs text-gold mb-3">Git, GitHub, GitHub Actions, Selenium, Prettier</p>
-        <p class="font-sans text-xs text-slate-300 justify-text">
-          Applied for distributed version control, automated CI/CD integration, web scraping, and code standardization.
-        </p>
+    <article class="glass-panel flex-1 min-w-[300px] max-w-[400px] rounded-2xl p-6">
+      <h3 class="font-orbit text-lg font-bold text-yellow-400 mb-4">07. 🔧 DevOps & Utilities</h3>
+      <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800" alt="DevOps Cloud" class="w-full h-40 object-cover rounded-lg mb-4">
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="skill-chip">Git</span>
+        <span class="skill-chip">GitHub</span>
+        <span class="skill-chip">GitHub Actions</span>
+        <span class="skill-chip">Selenium</span>
+        <span class="skill-chip">Prettier</span>
       </div>
+      <p class="text-slate-300 text-sm text-justify">
+        DevOps and utilities streamline workflows. Git and GitHub anchor collaboration, GitHub Actions automate pipelines, Selenium enables testing and automation, and Prettier enforces code consistency. These tools ensure efficiency, reliability, and discipline across every project.
+      </p>
     </article>
+
   </div>
 </section>
 
@@ -1473,7 +1515,7 @@
             <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">User Rating ★</p>
           </article>
           <article class="reveal glass-panel rounded-2xl p-6 text-center shadow-neon transition duration-500 hover:shadow-[0_0_35px_rgba(0,243,255,0.7)] hover:border-cyan">
-            <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="500">0</div>
+            <div class="font-orbit text-4xl sm:text-5xl font-extrabold text-cyan neon-cyan counter" data-target="507">0</div>
             <p class="mt-3 font-orbit text-xs uppercase tracking-widest text-gold">GitHub Contributions</p>
           </article>
         </div>
@@ -2128,5 +2170,8 @@
     });
   });
 </script>
+
+<!-- <script src ="CP Journey Template.js" ></script>
+
 </body>
 </html>
