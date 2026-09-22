@@ -125,3 +125,19 @@ img:hover {
     0 0 120px #00f3ff;
   filter: brightness(1.2);
 }
+
+#competitive-programming{
+    #cp-journey-section{
+        #mx-auto max-w-4xl w-full px-4 text-center mb-6{
+            width:90% !important;
+        }
+        
+    }
+    
+}
+
+@media (max-width:1100px) {
+    #competitive-programming{
+        width:97% !important;
+    }
+}
