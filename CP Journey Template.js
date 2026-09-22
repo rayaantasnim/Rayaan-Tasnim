@@ -16,7 +16,7 @@ var cpSteps = [
         {
           badge: "Milestone 03",
           title: "Codeforces Round 1122 (Div. 3) ",
-          text: "------------------------------",
+          text: "I completely crushed my very first contest! By solving 4 problems in Codeforces Round 1122 (Div. 3), I secured 2904th place and locked in a massive +519 rating boost. Instantly leaping to a 519 rating is an incredible debut, and I am ready to keep this momentum going.",
           img: "GOAT Quote.jpg"
         }
       ];
