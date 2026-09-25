@@ -1,13 +1,12 @@
 #-------------------------- Final Overview ----------------------------- #
 
-index_html = 1650
+index_html = 1661
 
 index_js = 24
 index_css = 575
 
 style_css = 127
 javascript_js = 359
-
 Competitive_Programming_Records = 22
 
 print (index_html, index_js, index_css, style_css, javascript_js)
@@ -26,10 +25,7 @@ stacks = """
 """
 
 print("Stacks used: ", stacks)
-print ("\n\n\nTotal Line of code: ", index_html + index_js + index_css + style_css + javascript_js + Competitive_Programming_Records)
-
-
+print ("Total Line of code: ", index_html + index_js + index_css + style_css + javascript_js + Competitive_Programming_Records)
 
 USD_Value = 3550
-print(f"Pricings: BDT {USD_Value*122} and \nUSD: {USD_Value}")
-
+print(f"Pricings: BDT {USD_Value*122} and USD: {USD_Value}")
