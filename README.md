@@ -3,7 +3,7 @@
 # 🌌 Rayaan Nexus
 ### *Official Command Center & Curriculum Vitae Dashboard*
 
-[![Codeforces](https://img.shields.io/badge/Codeforces-1451%20(Cyan%20Specialist)-00C0C0?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/codingchampion)
+[![Codeforces](https://img.shields.io/badge/Codeforces-519%20(Gray%20Newbie)-00C0C0?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/codingchampion)
 [![GitHub](https://img.shields.io/badge/GitHub-67%20Repositories-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rayaantasnim)
 [![Deployment](https://img.shields.io/badge/Status-Active%20Deployment-00FF66?style=for-the-badge)](#)
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-IDAI%20Universe-8A2BE2?style=for-the-badge)](#)
