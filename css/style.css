@@ -1,0 +1,153 @@
+
+        .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Ambient background glow mesh */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            background: 
+                radial-gradient(circle at 20% 15%, rgba(129, 140, 248, 0.18) 0%, transparent 40%),
+                radial-gradient(circle at 80% 50%, rgba(52, 211, 153, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 50% 85%, rgba(244, 63, 94, 0.18) 0%, transparent 45%);
+            filter: blur(80px);
+        }
+
+        /* Glowing Animated Main Title */
+        .neon-title {
+            background: linear-gradient(135deg, #38bdf8 0%, #a855f7 35%, #ec4899 70%, #34d399 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 6s ease infinite alternate;
+            filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.4));
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* CARD 1: ASTROPHYSICS (Indigo -> Violet -> Cyan) */
+        .card-astro {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 27, 75, 0.85) 50%, rgba(12, 74, 110, 0.8) 100%);
+            border: 1px solid rgba(129, 140, 248, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.3);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-astro:hover {
+            transform: translateY(-6px) scale(1.005);
+            border-color: rgba(56, 189, 248, 0.8);
+            box-shadow: 0 0 35px rgba(99, 102, 241, 0.5), 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* CARD 2: ELECTROCHEMISTRY (Emerald -> Teal -> Cyan) */
+        .card-electro {
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.85) 0%, rgba(15, 23, 42, 0.9) 50%, rgba(19, 78, 74, 0.85) 100%);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.3);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-electro:hover {
+            transform: translateY(-6px) scale(1.005);
+            border-color: rgba(52, 211, 153, 0.8);
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.5), 0 0 15px rgba(52, 211, 153, 0.4);
+        }
+
+        /* CARD 3: HUMAN ANATOMY (Rose -> Crimson -> Amber) */
+        .card-anatomy {
+            background: linear-gradient(135deg, rgba(136, 19, 55, 0.85) 0%, rgba(15, 23, 42, 0.9) 50%, rgba(120, 53, 15, 0.8) 100%);
+            border: 1px solid rgba(251, 113, 133, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.3);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-anatomy:hover {
+            transform: translateY(-6px) scale(1.005);
+            border-color: rgba(251, 113, 133, 0.8);
+            box-shadow: 0 0 35px rgba(244, 63, 94, 0.5), 0 0 15px rgba(251, 113, 133, 0.4);
+        }
+
+        /* Interactive Pill Highlights */
+        .pill-highlight {
+            transition: all 0.3s ease;
+        }
+        .pill-highlight:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.25);
+        }
+
+        /* Custom Image Overlay Effects */
+        .card-img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        .card-img-container img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .group:hover .card-img-container img,
+        article:hover .card-img-container img {
+            transform: scale(1.08);
+        }
+
+        /* Sub-cards inside elements with neon borders on hover */
+        .feature-box {
+            background: rgba(3, 7, 18, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .feature-box:hover {
+            background: rgba(15, 23, 42, 0.8);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+
+img {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.08);
+  opacity: 1;
+  box-shadow: 
+    0 0 10px #00f3ff,
+    0 0 20px #00f3ff,
+    0 0 40px #00f3ff,
+    0 0 80px #00f3ff,
+    0 0 120px #00f3ff;
+  filter: brightness(1.2);
+}
+
+#competitive-programming{
+    #cp-journey-section{
+        #mx-auto max-w-4xl w-full px-4 text-center mb-6{
+            width:90% !important;
+        }
+        
+    }
+    
+}
+
+@media (max-width:1100px) {
+    #competitive-programming{
+        width:97% !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
