@@ -114,7 +114,7 @@ An analytical mind requires multidisciplinary calibration. Rayaan actively bridg
 <div align="center">
 
 ### Let's Build the Future
-[🌐 Personal Portal](https://github.io) &nbsp;&bull;&nbsp; [💻 Codeforces (`codingchampion`)](https://codeforces.com/profile/codingchampion) &nbsp;&bull;&nbsp; [🐙 GitHub Portfolio](https://github.com)
+[🌐 Personal Portal](https://rayaantasnim.github.io/Rayaan-Tasnim/) &nbsp;&bull;&nbsp; [💻 Codeforces (`codingchampion`)](https://codeforces.com/profile/codingchampion) &nbsp;&bull;&nbsp; [🐙 GitHub Portfolio](https://rayaantasnim.github.io/Rayaan-Tasnim/)
 
 <br/>
 
