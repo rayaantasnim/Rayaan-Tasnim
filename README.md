@@ -15,16 +15,14 @@
 
 </div>
 
-## 📑 Table of Contents
-- [Executive Summary](#-executive-summary)
-- [Operator Profile](#-operator-profile)
-- [Verified Telemetry & Milestones](#-verified-telemetry--milestones)
-- [System Architecture](#-system-architecture)
-- [IDAI Ecosystem Modules](#-idai-ecosystem-modules)
-- [Strategic Roadmap](#-strategic-roadmap)
-- [Deployment Sandbox](#-deployment-sandbox)
-- [License & Copyright](#-license--copyright)
-
+  <p>
+    <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge">
+    <img src="https://img.shields.io/badge/C++20-Competitive-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++ Badge">
+    <img src="https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript Badge">
+    <img src="https://img.shields.io/badge/ML5.js%20%2F%20TF.js-Client%20AI-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="AI Badge">
+    <img src="https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase Badge">
+    <img src="https://img.shields.io/badge/Vercel-Edge%20Network-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel Badge">
+  </p>
 ---
 
 ## ❖ Executive Summary
