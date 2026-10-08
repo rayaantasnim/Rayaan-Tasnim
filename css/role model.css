@@ -1,0 +1,34 @@
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .cosmic-container {
+            background: linear-gradient(135deg, #030712 0%, #090d1e 35%, #16103a 70%, #060b21 100%);
+            position: relative;
+        }
+        .cosmic-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.1) 0%, transparent 45%);
+            pointer-events: none;
+        }
+        .nebula-glass {
+            background: rgba(18, 24, 54, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .nebula-glass:hover {
+            border-color: rgba(139, 92, 246, 0.35);
+            box-shadow: 0 15px 35px -10px rgba(139, 92, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        .image-overlay {
+            background: linear-gradient(to top, rgba(9, 13, 30, 0.9) 0%, rgba(9, 13, 30, 0.2) 60%, transparent 100%);
+        }
+
