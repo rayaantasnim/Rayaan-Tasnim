@@ -4,28 +4,19 @@
 ### *Official Command Center & Curriculum Vitae Dashboard*
 
 [![Codeforces](https://img.shields.io/badge/Codeforces-519%20(Grey%20Newbie)-00C0C0?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/codingchampion)
-[![GitHub](https://img.shields.io/badge/GitHub-67%20Repositories-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rayaantasnim)
+[![GitHub](https://img.shields.io/badge/GitHub-80+%20Repositories-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rayaantasnim)
 [![Deployment](https://img.shields.io/badge/Status-Active%20Deployment-00FF66?style=for-the-badge)](#)
-[![Ecosystem](https://img.shields.io/badge/Ecosystem-IDAI%20Universe-8A2BE2?style=for-the-badge)](#)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
 
+[![Ecosystem](https://img.shields.io/badge/Ecosystem-IDAI%20Universe-8A2BE2?style=for-the-badge)](#)
+[![Ecosystem](https://img.shields.io/badge/Open%20Source%20Real%20world%20Project-%20Olymiad%20Edge-ACF01A?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
 > *"Don't stay a consumer. Build your legacy."*
 
 ---
 
 </div>
 
-## 📑 Table of Contents
-- [Executive Summary](#-executive-summary)
-- [Operator Profile](#-operator-profile)
-- [Verified Telemetry & Milestones](#-verified-telemetry--milestones)
-- [System Architecture](#-system-architecture)
-- [IDAI Ecosystem Modules](#-idai-ecosystem-modules)
-- [Strategic Roadmap](#-strategic-roadmap)
-- [Deployment Sandbox](#-deployment-sandbox)
-- [License & Copyright](#-license--copyright)
 
----
 
 ## ❖ Executive Summary
 
@@ -54,7 +45,7 @@
 | **NHSPC 2025** | `National Finalist` | Secured **141st nationally** competing as a Class 6 student against senior high school cohorts. |
 | **Cadet College** | `Rank 57` | National Merit List position for the 2026 Bangladesh Cadet College Admission Test. |
 | **BdMO 2026** | `Regional Qualifier` | Selected for the elite Mymensingh Regional Mathematical Olympiad. |
-| **Open Source** | `67 Repositories` | Deployed over 200 websites, algorithmic scripts, and interactive canvas environments. |
+| **Open Source** | `80+ Repositories` | Deployed over 200 websites, algorithmic scripts, and interactive canvas environments. |
 
 ---
 
@@ -78,19 +69,33 @@
 
 ```text
 rayaan-nexus/
-├── index.html                  # Main Sci-Fi Dashboard UI
+├── .py [Source code overview]
+├── favicon.ico
+├── index.html
+├── README.md
+├── Main Page/
 ├── css/
-│   ├── main.css                # Base Layout Matrices
-│   └── components.css          # Modular HUD Panels & Badges
-├── js/
-│   ├── app.js                  # Central State Controller
-│   ├── telemetry.js            # Codeforces REST API Aggregator
-│   └── canvas-bg.js            # Three.js Particle Field Engine
-├── assets/
-│   ├── images/
-│   │   ├── Myself.png          # Operator Asset
-│   │   ├── IDAI_1.png          # Ecosystem Branding
-│   │   └── Target.png          # Strategic Vectors
-│   └── docs/
-│       └── Resume.pdf          # Encrypted CV Data
-└── README.md                   # Command Center Blueprint
+│   ├── footer.css
+│   ├── index.css
+│   └── style.css
+├── images/
+│   ├── Contact.jpg
+│   ├── Family.jpg
+│   ├── GOAT Quote.jpg
+│   ├── Hobbies.jpg
+│   ├── IDAI 1.jpg
+│   ├── IDAI 2.jpg
+│   ├── Language.jpg
+│   ├── Logo.jpg
+│   ├── Minor Project.jpg
+│   ├── Myself.jpg
+│   ├── Power Rangers.jpg
+│   ├── Rayaan Tasnim looking over his empire.jpg
+│   ├── School.jpg
+│   ├── Skill.jpg
+│   ├── Target.jpg
+│   └── Vision.jpg
+└── js/
+    ├── CP Journey Template.js
+    ├── index.js
+    └── javascript.js
