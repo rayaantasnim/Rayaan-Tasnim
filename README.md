@@ -69,7 +69,7 @@
 
 ```text
 rayaan-nexus/
-├── .py [Source code overview]
+├── code overview.py [Source code overview]
 ├── favicon.ico
 ├── index.html
 ├── README.md
