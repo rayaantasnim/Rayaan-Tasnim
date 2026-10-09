@@ -77,6 +77,7 @@ rayaan-nexus/
 ├── css/
 │   ├── footer.css
 │   ├── index.css
+|   ├── role model.css
 │   └── style.css
 ├── images/
 │   ├── Contact.jpg
@@ -99,3 +100,4 @@ rayaan-nexus/
     ├── CP Journey Template.js
     ├── index.js
     └── javascript.js
+    └── design.js
