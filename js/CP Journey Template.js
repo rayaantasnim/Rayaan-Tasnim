@@ -8,20 +8,34 @@ var cpSteps = [
 
         {
           badge: "Milestone 02",
+          title: "Cadet College Admission Test 2026",
+          text: "Achieving excellence in the Cadet College Admission Test 2026 was a major milestone. Facing my first-ever admission test on 27 December 2025 at the Mymensingh Cantonment (Momenshahi) center, I handled the immense competition with focused preparation. This success proved my ability to excel under pressure and built strong academic confidence for my future.",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT95M8qR0q6YX9hozJZXl8rLQh8hHFf0aaL4c4_I4e0EQ&s=10"
+        },
+        
+        {
+          badge: "Milestone 03",
           title: "GitHub join: December 29, 2025",
           text: "On 29 December 2025, I stepped into GitHub — a universe of open collaboration and boundless creation. This moment was more than registration; it was ignition. My code now lived in a global constellation, each commit a spark, each repository a beacon guiding my journey toward innovation and mastery.",
           img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx1Lk4OKC3vvGqQTfWboSDNUhPVxYXAHji0FXLP4cIOQ&s=10"
         },
 
         {
-          badge: "Milestone 03",
+          badge: "Milestone 04",
+          title: "Cadet College Admission Result 2026",
+          text: "The midnight release of the Cadet College Admission Test results on 19 January 2026 marked an unforgettable milestone. Anxiously checking the online portal, discovering that I had secured 57th place nationally was an overwhelming and proud moment. Ranking among the top students in the country validated my dedication and instantly transformed my nervous anticipation into immense celebration.",
+          img:"https://images.pexels.com/photos/7267581/pexels-photo-7267581.jpeg" 
+        },
+
+        {
+          badge: "Milestone 05",
           title: "CodeForces Join: August 8, 2026.",
           text: "Small step for a man, Big step for the champion. Joining Codeforces marked the official beginning of my algorithmic warfare. Stepping into this massive global arena felt like gazing into an infinite digital cosmos where every problem is a puzzle waiting to be unlocked by logic and determination.",
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNkld4zT7iFdRe_90DHYzvYKgToU4rGlCOr_tEN9LRPw&s=10"
         },
 
         {
-          badge: "Milestone 04",
+          badge: "Milestone 06",
           title: "Prime Factor.app launched",
           text: "On 24 September 2026, PrimeFactor.app emerged as my first production-level client-side dynamic website via GitHub Pages. Integrating GenAI, HMAC security, browser tab isolation, Pollard’s Rho, and an advanced ELO system, it became a high-velocity mathematical arena where Olympiad competitors decompose composite integers at peak speed under strict competitive constraints.",
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR391s3OWMdxxW6GBCEYIQVsgHp5XPJyYB4Rv1hFbb3zQ&s"

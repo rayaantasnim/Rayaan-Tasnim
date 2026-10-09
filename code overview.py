@@ -12,7 +12,7 @@ css_role_model = 34
 # --- JavaScript Section ---
 js_index    = 24
 js_main     = 359
-js_records  = 22
+js_records  = 43
 js_design   = 47
 
 # --- Aggregated Totals ---
