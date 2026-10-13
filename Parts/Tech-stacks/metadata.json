@@ -1,0 +1,6 @@
+{
+  "name": "Rayaan's Nexus - The Kernel",
+  "description": "Production-ready, avant-garde architectural blueprint and Mega Stack Directory for Rayaan's Nexus.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

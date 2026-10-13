@@ -1,0 +1,63 @@
+/* ==========================================================================
+   THE DIVERGENT PASSIONS - ADVANCED CUSTOM UTILITIES & GRADIENT ENGINE
+   ========================================================================== */
+
+/* MULTICOLORED LINEAR GRADIENT BACKGROUND ENGINE */
+body {
+    background: linear-gradient(135deg, #030712 0%, #091326 25%, #130722 50%, #031e22 75%, #030712 100%);
+    background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: gradientShift 25s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* CUSTOM SCROLLBAR ENGINE */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(3, 7, 18, 0.8);
+    border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(6, 182, 212, 0.5);
+    border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(6, 182, 212, 0.9);
+}
+
+/* 3D PERSPECTIVE TRANSFORMS FOR BRAND ANCHOR */
+#brand-anchor {
+    perspective: 1000px;
+    display: inline-block;
+}
+
+/* OVERLAY MENU TRANSITION & VERTICAL SCROLLING SYSTEM */
+#menu-overlay {
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+    overflow-y: auto;
+}
+
+#menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ULTRA-SMOOTH HOVER ELEVATIONS */
+.node-card {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.node-card:hover {
+    box-shadow: 0 0 35px rgba(6, 182, 212, 0.3);
+    border-color: rgba(6, 182, 212, 0.8);
+}

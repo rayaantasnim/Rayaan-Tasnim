@@ -1,0 +1,36 @@
+/* 1. True Centered Grid */
+.footer-container {
+  display: grid;
+  grid-template-columns: 75px auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+/* 2. Strict Logo Dimensions */
+.footer-img {
+  width: 100%;
+  max-width: 75px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+/* Flatten wrapper to let children act as direct grid items */
+.footer-content-wrapper {
+  display: contents;
+}
+
+.footer-grid-mobile {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+/* 3. Drop Slogans Out of the Grid Row */
+.footer-container > p {
+  grid-column: 1 / -1;
+  text-align: center;
+  width: 100%;
+}

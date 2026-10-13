@@ -1,0 +1,59 @@
+/* CREATIONS.CSS - Advanced Custom Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
+
+/* Typography Assignment */
+.font-rajdhani, h1, h2, h3, .nav-brand, button {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.font-times, blockquote {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.font-arial, p, span, div {
+    font-family: Arial, sans-serif;
+}
+
+/* Multicolored Linear Gradient Background Engine */
+body {
+    background: linear-gradient(135deg, #020617 0%, #0f172a 25%, #1e1b4b 50%, #032d24 75%, #000000 100%);
+    background-attachment: fixed;
+    color: #f3f4f6;
+    overflow-x: hidden;
+}
+
+/* Custom Ultra-Sleek Minimalist Internal Vertical Scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(6, 182, 212, 0.5);
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(6, 182, 212, 0.8);
+}
+
+/* Neon Glow Button & Border FX */
+.neon-btn {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.neon-btn:hover {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    text-shadow: 0 0 8px rgba(6, 182, 212, 0.8);
+}
+
+/* Smooth Transitions for Overlay */
+#codex-overlay {
+    transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
+}

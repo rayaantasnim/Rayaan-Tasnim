@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rayaan Tasnim — Mentors and Idols </title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!--Core meta tags for browser briefings-->
+  <!-- Standard SEO Metadata -->
+<meta name="keywords" content="Rayaan Tasnim, competitive programming portfolio, 13-year-old full-stack engineer, Codeforces Bangladesh, algorithmic excellence, USACO, CSES, IDAI Universe, PrimeFactor.app, Rayaan Tasnim mentors, algorithmic idols, Codeforces legends, IOI champions, Benjamin Qi, Gennady Korotkevich, tourist Codeforces, jiangly, Shahjalal Sohag, Mahbubur Hasan Shanto">
+<meta name="description" content="Explore the portfolio, elite mentors, and algorithmic trajectory of Rayaan Tasnim, a 13-year-old full-stack engineer tracking the global benchmarks of international informatics titans.">
+  
+    <!--Mentors and Role Models-->
+  <meta name="Mentors" content="Art of Problem Solving (AoPS), W3Schools, Dreamers Academy (Yeashtaruna Zeem), CSES Problem Set, TopH, Codeforces, USACO Guide (Benjamin Qi)">
+  <meta name="Role Models" content="Mahbubur Hasan Shanto (dragoon), Shahjalal Sohag (YouKn0wWho), Rayaan Ferdous, Desh Acharjee, Deboti Das Soumya, Benjamin Qi (Benq), Jiangly (Lingyu Jiang), Gennady Korotkevich (Tourist)">
+
+  <!--Contributors-->
+  <meta name="author" content="Rayaan Tasnim"/>
+  <meta name="sponsor" content="IDAI Universe, Olympiad Edge"/>
+  <meta name="theme-color" content="#020208" />
+
+  <!--Stack integrated-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Share+Tech+Mono&family=Exo+2:ital,wght@0,300;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom CSS Links -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/role model.css">
+  
+  <!-- Three.js and GSAP CDN Integration for 3D Cursor Effects & Star-Flying Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body class="cyber-grid scanlines antialiased">
+  <div class="cosmic-space" id="cosmicSpace">
+    <canvas id="skyCanvas" class="absolute inset-0 block"></canvas>
+  </div>
+
+  <a href="#identity" class="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:bg-deep focus:text-cyan focus:p-3">Skip to identity</a>
+
+  <header id="topNavbar" class="px-6 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="brand-3d">RAYAAN's NEXUS</span>
+      <span class="h-2 w-2 rounded-full bg-cyan animate-pulse shadow-neon"></span>
+    </div>
+    
+    <div class="flex items-center gap-2 sm:gap-4 relative">
+      <div class="hidden md:flex items-center gap-4 nav-btn-group">
+        <a href="https://rayaantasnim.github.io/IDAI/" target="_blank" rel="noopener noreferrer" class="font-orbit text-[10px] uppercase text-cyan hover:text-gold font-bold tracking-wider">IDAI Web</a>
+        <button id="megaMenuToggleBtn" class="border border-cyan/60 bg-cyan/10 px-3.5 py-1.5 rounded-full font-orbit text-[10px] uppercase tracking-widest text-cyan hover:bg-cyan hover:text-deep shadow-neon font-bold">DashBoard</button>
+      </div>
+
+      <div class="md:hidden relative">
+        <button id="menuDropdownBtn" class="border border-cyan/60 bg-cyan/10 px-3.5 py-1.5 rounded-full font-orbit text-[10px] uppercase tracking-widest text-cyan hover:bg-cyan hover:text-deep shadow-neon font-bold flex items-center gap-1.5">
+          <span>Menu</span>
+          <i class="fa-solid fa-chevron-down text-[9px]"></i>
+        </button>
+        <div id="mobileMenuCard">
+          <a href="https://rayaantasnim.github.io/IDAI/" target="_blank" rel="noopener noreferrer" class="font-orbit text-[10px] uppercase text-cyan hover:text-gold font-bold tracking-wider py-1.5 border-b border-cyan/20">IDAI Web</a>
+          <button id="mobileDashboardBtn" class="w-full text-left font-orbit text-[10px] uppercase tracking-widest text-cyan hover:text-gold font-bold py-1.5 border-b border-cyan/20">DashBoard</button>
+          <button id="navDrawerTriggerBtn" class="w-full text-left font-orbit text-[10px] uppercase tracking-widest text-gold hover:text-white font-bold py-1.5 flex items-center justify-between">
+            <span>Navigation Index</span>
+            <i class="fa-solid fa-bars text-xs"></i>
+          </button>
+        </div>
+      </div>
+      
+      <button id="navTogglerBtn" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full font-orbit text-[10px] uppercase tracking-widest text-cyan cursor-pointer">
+        <i class="fa-solid fa-bars text-sm"></i>
+        <span>Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <div id="foldedNavOverlay"></div>
+  <aside id="foldedNavDrawer">
+    <div class="flex items-center justify-between mb-8">
+      <span class="font-orbit text-xs uppercase tracking-widest text-gold">Navigation Index</span>
+      <button id="navDrawerCloseBtn" class="text-cyan hover:text-gold text-lg p-2"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="flex flex-col gap-3 font-orbit text-xs uppercase tracking-[0.2em]">
+<a href="#role-models" class="nav-drawer-link px-3 py-2.5 rounded-md border border-cyan/20 text-cyan/90 hover:bg-cyan/20 hover:text-gold hover:border-cyan transition">Portal Intro</a>
+<a href="#mentors" class="nav-drawer-link px-3 py-2.5 rounded-md border border-cyan/20 text-cyan/90 hover:bg-cyan/20 hover:text-gold hover:border-cyan transition">Mentors</a>
+<a href="#idols" class="nav-drawer-link px-3 py-2.5 rounded-md border border-cyan/20 text-cyan/90 hover:bg-cyan/20 hover:text-gold hover:border-cyan transition">Idols</a>
+<a href="#footer" class="nav-drawer-link px-3 py-2.5 rounded-md border border-cyan/20 text-cyan/90 hover:bg-cyan/20 hover:text-gold hover:border-cyan transition">Footer</a>
+    </nav>
+     
+  </aside>
+
+  <!-- Full-Screen Dashboard Overlay with Increased margin-top and Precise 6-Button Segment Placement -->
+  <div id="megaMenuOverlay" aria-hidden="true">
+    <canvas id="dashboardCanvas"></canvas>
+    <button id="megaMenuCloseBtn" class="absolute top-6 right-8 z-10 font-orbit text-xs uppercase tracking-widest text-slate-800 border border-slate-600/40 px-4 py-2 rounded-full hover:bg-slate-800 hover:text-white transition shadow-sm">Close [ESC]</button>
+    <div class="max-w-6xl w-full px-6 py-12 text-center z-10 relative">
+      <p class="font-orbit text-xs uppercase tracking-[0.4em] text-cyan-700 mb-2 font-bold">Personalized User Session Codex</p>
+      <h2 class="font-orbit text-3xl sm:text-4xl text-amber-700 mb-8 font-extrabold" style="text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);">Rayaan Tasnim's Command Dashboard</h2>
+      
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left">
+<!-- Card 0 -->
+<div class="glass-panel p-5 rounded-2xl">
+  <p class="font-orbit text-xs text-amber-700 uppercase tracking-widest mb-2 font-bold">Node 00</p>
+  <p class="font-cinzel text-sm text-slate-900 font-semibold">Core Index (Home)</p>
+  <p class="font-rajdhani text-sm text-slate-900">
+    Return to the Central Processing Hub &amp; Global Identity.<br>
+    Collapse all active algorithmic sub-pages and exit the deep directory.
+  </p>
+  <a href="https://rayaantasnim.github.io/Rayaan-Tasnim/" class="mt-3 inline-block font-orbit text-xs text-cyan-700 underline font-bold">
+    Access Hub →
+  </a>
+</div>
+
+
+  <!-- Card 1 -->
+  <div class="glass-panel p-5 rounded-2xl">
+    <p class="font-orbit text-xs text-amber-700 uppercase tracking-widest mb-2 font-bold">Node 01</p>
+    <p class="font-cinzel text-sm text-slate-900 font-semibold">The Kernel </p>
+    <p class="font-rajdhani text-sm text-slate-900">Forged computational infrastructure &amp; 70+ tech stacks.<br>Registry of programming languages, frameworks, databases, and automation pipelines.</p>
+    <a href="___" class="mt-3 inline-block font-orbit text-xs text-cyan-700 underline font-bold">Active Context →</a>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="glass-panel p-5 rounded-2xl">
+    <p class="font-orbit text-xs text-amber-700 uppercase tracking-widest mb-2 font-bold">Node 02</p>
+    <p class="font-cinzel text-sm text-slate-900 font-semibold">Ideology</p>
+    <p class="font-rajdhani text-sm text-slate-900">Zen-mode philosophies &amp; personal annotates.<br>Typography-focused repository housing “The Unyielding Law” and analytical chronicles.</p>
+    <a href="#ideology" class="mt-3 inline-block font-orbit text-xs text-amber-700 underline font-bold">Enter Mindset →</a>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="glass-panel p-5 rounded-2xl">
+    <p class="font-orbit text-xs text-amber-700 uppercase tracking-widest mb-2 font-bold">Node 03</p>
+    <p class="font-cinzel text-sm text-slate-900 font-semibold">Creations</p>
+    <p class="font-rajdhani text-sm text-slate-900">Open-source portals &amp; system architectures.<br>Explore live ecosystems, product design blueprints, and repositories powering IDAI Universe &amp; Olympiad Edge.</p>
+    <a href="#creations" class="mt-3 inline-block font-orbit text-xs text-amber-700 underline font-bold">View Showroom →</a>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="glass-panel p-5 rounded-2xl">
+    <p class="font-orbit text-xs text-amber-700 uppercase tracking-widest mb-2 font-bold">Node 04</p>
+    <p class="font-cinzel text-sm text-slate-900 font-semibold">Brilliances</p>
+    <p class="font-rajdhani text-sm text-slate-900">Algorithmic supremacy &amp; Olympiad logic.<br>Competitive programming ratings, graph theory frameworks, and deterministic problem-solving matrices.</p>
+    <a href="#brilliances" class="mt-3 inline-block font-orbit text-xs text-cyan-700 underline font-bold">Access Records →</a>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="glass-panel p-5 rounded-2xl">
+    <p class="font-orbit text-xs text-amber-700 uppercase tracking-widest mb-2 font-bold">Node 05</p>
+    <p class="font-cinzel text-sm text-slate-900 font-semibold">Passions</p>
+    <p class="font-rajdhani text-sm text-slate-900">Cosmic horizons &amp; MIT aspirations.<br>Astrophysical telemetry, quantum computing, climate tech innovations, and NASA JPL roadmap.</p>
+    <a href="#passions" class="mt-3 inline-block font-orbit text-xs text-amber-700 underline font-bold">Explore Horizons →</a>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="glass-panel p-5 rounded-2xl">
+    <p class="font-orbit text-xs text-amber-700 uppercase tracking-widest mb-2 font-bold">Node 06</p>
+    <p class="font-cinzel text-sm text-slate-900 font-semibold">Oracle (FAQ)</p>
+    <p class="font-rajdhani text-sm text-slate-900">Conversational terminal &amp; autonomous intel.<br>Answers on time optimization, development velocity, and discipline for full-stack engineering at age 13.</p>
+    <a href="#oracle" class="mt-3 inline-block font-orbit text-xs text-cyan-700 underline font-bold">Consult Oracle →</a>
+  </div>
+
+
+
+</div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+<div id="role models" class="cosmic-container w-full min-h-screen py-12 px-3 sm:px-6 lg:px-8 relative">
+        <div class="max-w-7xl mx-auto space-y-16">
+
+            <header class="nebula-glass rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-20 -bottom-20 w-72 h-72 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="relative z-10 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-nebula-purple/10 border border-nebula-purple/30 text-nebula-purple text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-nebula-purple animate-pulse"></span>
+                        Rayaan Tasnim • Idols and Mentors
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Forging Algorithmic Brilliance & <span class="text-white bg-clip-text bg-gradient-to-r from-nebula-purple via-nebula-indigo to-nebula-cyan">Engineering Supremacy</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg lg:text-xl text-slate-300 font-light leading-relaxed max-w-5xl">
+                        At 13 years old, my journey as a full-stack engineer and competitive programmer has been sculpted by relentless intellectual rigor, elite ecosystems, and the towering standards of global informatics titans. These pillars of guidance and standard-bearers of algorithmic brilliance have forged my path toward international computer science excellence, laying the structural foundation for my work across <span class="text-white font-medium">IDAI Universe</span> and <span class="text-white font-medium">PrimeFactor.app</span>.
+                    </p>
+                </div>
+            </header>
+
+            <section class="space-y-8">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-nebula-purple to-nebula-indigo flex items-center justify-center text-white font-bold text-lg shadow-lg">01</div>
+                        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Architects of Intellect</h2>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-400 font-light max-w-4xl pl-13" id="mentors">
+                        The definitive platforms, ecosystems, and visionary mentors that laid my foundational engineering architecture, transforming raw curiosity into razor-sharp mathematical and programming execution.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Card 1: AoPS -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Art of Problem Solving" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=AoPS+Math'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-cyan-400 border border-white/10">Discrete Math</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Art of Problem Solving (AoPS)</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "The premier global ecosystem for advanced mathematical theory, serving as the core crucible where I forged my discrete math, advanced combinatorics, and number theory skills—the exact mathematical artillery needed to construct hyper-optimized logic."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Foundation Crucible</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: W3Schools -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800" alt="W3Schools" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=W3Schools+Code'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-purple-400 border border-white/10">Syntax & Architecture</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">W3Schools</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "The quintessential foundational sandbox online for core programming architectures, acting as the primary repository that helped me master C++ syntax for elite competitive brilliance."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Core Repository</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Dreamers Academy -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Dreamers Academy" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=Dreamers+Academy'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-indigo-400 border border-white/10">Mentorship & Catalyst</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Dreamers Academy</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "Instructed under the guidance of the honorable Yeashtaruna Zeem—a distinguished Bangladeshi computer science researcher, developer, and youth advocate—this academy served as my initial catalyst, pointing my vector directly into the infinite brilliance of the technology universe."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Guided by Yeashtaruna Zeem</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: CSES Problem Set -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800" alt="CSES Problem Set" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=CSES+Algorithms'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-emerald-400 border border-white/10">Dynamic Programming</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">CSES Problem Set</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "The definitive, universally respected foundational baseline dataset that I used to relentlessly drill, inherit, and absolute-master core dynamic programming, advanced graph structures, and complex data paradigms."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Algorithmic Baseline</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: TopH -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800" alt="TopH" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=TopH+Training'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-amber-400 border border-white/10">Speed & Constraints</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">TopH</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify text-justify">
+                                    "A world-class algorithmic training ground that heavily assisted me in refining my implementation speed and mastering deep, complex algorithms under rigorous constraints."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Implementation Arena</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Codeforces -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Codeforces" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=Codeforces+Contests'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-rose-400 border border-white/10">ELO Rating Matrix</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Codeforces</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify">
+                                    "An arena of live-rated contests integrated with an advanced ELO-based rating matrix. It has continually validated my growth as a raw logical thinker, razor-sharp analyst, and strategic problem solver."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Live Competitive Arena</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: USACO Guide -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 md:col-span-2 lg:col-span-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800" alt="USACO Guide" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=USACO+Guide'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-teal-400 border border-white/10">IOI Champion Framework</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">USACO Guide</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "Learning under the masterful instruction framework of Benjamin Qi (IOI Absolute Champion), this portal granted me the world-class blueprint required to dominate international arenas representing my country."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Masterful Instruction</div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="space-y-8 pt-6">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">02</div>
+                        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Vectors of Supremacy</h2>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-400 font-light max-w-4xl pl-13" id="idols">
+                        The legendary titans, role models, and global benchmarks whose structural achievements represent the milestones I am relentlessly tracking and preparing to eclipse.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Role Model 1: Mahbubur Hasan Shanto -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mahbubur Hasan Shanto" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=Google+Engineer+IOI'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-cyan-400 border border-white/10">IOI 2006 • Google Switzerland</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Mahbubur Hasan Shanto (dragoon)</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "An ultimate foundational pioneer who represented Bangladesh at IOI 2006, dominated dozens of national fixtures, and carried that engineering excellence straight into the peak of global tech infrastructure as a Senior Engineer at Google in Switzerland. He embodies the exact macro trajectory I am executing."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Macro Trajectory</div>
+                        </div>
+                    </div>
+
+                    <!-- Role Model 2: Shahjalal Sohag -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Shahjalal Sohag" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=ICPC+World+Finals'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-purple-400 border border-white/10">SUST • ICPC World Finals</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Shahjalal Sohag (YouKn0wWho)</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "The ultimate paradigm shift hailing from SUST straight to the ICPC World Finals. He stands as living proof for my career path: that deep mathematical purity in competitive programming can beautifully coexist with high-end, world-class Full-Stack Front-End Engineering. I model my dual-arena execution exactly after his brilliance."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Dual-Arena Execution</div>
+                        </div>
+                    </div>
+
+                    <!-- Role Model 3: Rayaan Ferdous -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Rayaan Ferdous" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=BAF+Shaheen+Prodigy'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-indigo-400 border border-white/10">BAF Shaheen College</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Rayaan Ferdous</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "A standout competitive programming prodigy from BAF Shaheen College whose rapid algorithmic assimilation and exceptional analytical trajectory serve as a powerful testament to peer-driven excellence, reminding me constantly to never ease my structural pacing."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Peer-Driven Excellence</div>
+                        </div>
+                    </div>
+
+                    <!-- Role Model 4: Desh Acharjee -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Desh Acharjee" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=BdOI+Gold+APIO+Silver'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-amber-400 border border-white/10">BdOI Gold & APIO Silver</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Desh Acharjee</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "A relentless titan of the high school circuit, locking down BdOI Gold and APIO Silver honors. His fierce tenacity and continuous presence at the absolute peak of high-stakes informatics benchmarks provide immediate, direct local friction that sharpens my own competitive blade."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Competitive Friction</div>
+                        </div>
+                    </div>
+
+                    <!-- Role Model 5: Deboti Das Soumya -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Deboti Das Soumya" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=IOI+Gold+MIT+Grandmaster'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-emerald-400 border border-white/10">IOI 2024 Gold • MIT • CF Grandmaster</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Deboti Das Soumya</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "One of the absolute greatest prodigious geniuses rising from Bangladesh, who shook the global circuit by claiming the country's historic first-ever Gold Medal at IOI 2024 before moving to MIT. As the youngest-ever CodeForces Grandmaster from my nation at age 15, he set a monumental benchmark—and I fully intend to break his record streak."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">The Ultimate National Benchmark</div>
+                        </div>
+                    </div>
+
+                    <!-- Role Model 6: Benjamin Qi -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Benjamin Qi" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=Benq+Legendary+Grandmaster'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-rose-400 border border-white/10">2x IOI Winner • 3857 Peak</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Benjamin Qi (Benq)</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "A virtual mentor turned legendary standard-bearer, he stands as a two-time IOI Absolute Winner and an unprecedented 3857-peak Legendary Grandmaster. His trajectory through MIT and into leading-edge reinforcement learning architectures defines the standard of greatness I aggressively pursue."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Standard of Greatness</div>
+                        </div>
+                    </div>
+
+                    <!-- Role Model 7: Jiangly -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Jiangly" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=Jiangly+4000+ELO'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-cyan-400 border border-white/10">4000+ ELO • ICPC Champion</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Jiangly (Lingyu Jiang)</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "A modern phenomenon who shattered the mythical 4000+ ELO barrier on Codeforces and captured the ICPC World Championship. His lightning-fast problem-solving pacing and hyper-optimized, beautiful C++ code templates serve as my ultimate architectural blueprint."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Architectural Blueprint</div>
+                        </div>
+                    </div>
+
+                    <!-- Role Model 8: Gennady Korotkevich -->
+                    <div class="nebula-glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 md:col-span-2 lg:col-span-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gennady Korotkevich" class="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x450/121836/ffffff?text=Tourist+6x+IOI+Gold'">
+                            <div class="image-overlay absolute inset-0"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-mono text-purple-400 border border-white/10">6x IOI Gold • Global King</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Gennady Korotkevich (Tourist)</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light text-justify text-justify">
+                                    "The undisputed, absolute king of competitive programming history with an unparalleled 6 consecutive IOI Gold Medals and sweeping titles across Google Code Jam and ICPC World Finals. His legacy remains my absolute North Star for global algorithmic supremacy."
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">Absolute North Star</div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+</div></div>
+
+
+
+
+
+
+
+<footer class="border-t border-cyan/10 px-6 py-12 text-center bg-[#030612]/90" id="footer">
+    <div class="flex flex-wrap justify-center items-center gap-6 mb-8 text-lg font-orbit">
+      <a href="https://github.com/rayaantasnim" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-cyan hover:text-gold transition">
+        <i class="fa-brands fa-github text-xl"></i> GitHub
+      </a>
+      <a href="mailto:rayaantasnim@gmail.com" class="flex items-center gap-2 text-cyan hover:text-gold transition">
+        <i class="fa-solid fa-envelope text-xl"></i> Email
+      </a>
+      <a href="https://www.chess.com/member/rayaantasnim" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-cyan hover:text-gold transition">
+        <i class="fa-solid fa-chess text-xl"></i> Chess
+      </a>
+      <a href="https://codeforces.com/profile/codingchampion" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-cyan hover:text-gold transition">
+        <i class="fa-solid fa-code text-xl"></i> Codeforces
+      </a>
+    </div>
+    
+    <div class="footer-container">
+
+          <p class="font-orbit text-sm text-gold">
+            © 2026 IDAI Universe<br> 
+            © 2026 Olympiad Edge <br> 
+            © 2026 Rayaan Tasnim
+          </p>
+
+        <p class="mt-2 text-cyan/75">Inspiring Trust Through Innovation</p>
+        <p class="mt-2 text-cyan/75">“Stop consuming the digital world. Architect your own empire.”</p>
+      </div>
+    </div>
+  </footer>
+
+<!--JS Integration-->
+<script src = "js/javascript.js"></script>
+<script src = "js/index.js"></script>
+
+<!--Competitive Programming Journey - Part Detabase-->
+<script src ="js/CP Journey Template.js" ></script>
+
+<!--TailWand CSS Integration-->
+<script src="js/design.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* ========================================================================== */
+/* ULTIMATE ENHANCED STYLE.CSS: UNIVERSAL HOVER FX & LANIER MULTI-COLOR PALETTE */
+/* ========================================================================== */
+
+/* Typography Mappings */
+.rajdhani-font, h1, h2, h3, h4, h5, h6, button, nav {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.times-font, blockquote {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body, p, span, a, li {
+    font-family: Arial, sans-serif;
+}
+
+/* Force Strict Justification on All Text & Center Boxes */
+p, blockquote, .text-justify, div, section {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Lenis Smooth Scroll Configuration */
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* Custom Scrollbar with Multicolored Glow */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #06b6d4, #8b5cf6, #10b981);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #38bdf8, #c084fc, #34d399);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
+}
+
+/* Selection and Glow FX */
+::selection {
+    background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+    color: #ffffff;
+}
+
+/* Global Clickable Hit-Box Enhancements */
+a, button {
+    cursor: pointer;
+}
+
+/* ========================================================================== */
+/* UNIVERSAL HOVER EFFECT SYSTEM FOR EVERY ELEMENT                            */
+/* ========================================================================== */
+
+/* General Element Transition & Interactive Glow Hover */
+* {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.3s ease, 
+                background-color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease, 
+                filter 0.3s ease;
+}
+
+/* Universal Paragraph & Span Hover Shift */
+p:hover, span:hover {
+    filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.3));
+    color: #f8fafc;
+}
+
+/* Universal Heading Hover Glow & Gradient Shift */
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.6), 0 0 40px rgba(6, 182, 212, 0.4);
+    transform: translateX(4px);
+}
+
+/* Universal Button & CTA Hover Pulse Matrix */
+button:hover, a.group:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.4), inset 0 0 15px rgba(139, 92, 246, 0.3);
+    border-color: #38bdf8;
+}
+
+/* Universal Image Zoom & Vivid Color Saturation Hover */
+img:hover {
+    transform: scale(1.06);
+    filter: contrast(1.15) saturate(1.2) drop-shadow(0 0 25px rgba(16, 185, 129, 0.4));
+}
+
+/* Universal Blockquote Floating Neon Border Glow */
+blockquote:hover {
+    border-left-color: #c084fc;
+    box-shadow: -8px 0 25px rgba(139, 92, 246, 0.3);
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.08), transparent);
+}
+
+/* Codex Node Matrix Card Interactive Hover Elevation */
+.codex-node:hover {
+    transform: translateY(-6px) scale(1.01);
+    border-color: #8b5cf6;
+    box-shadow: 0 0 35px rgba(139, 92, 246, 0.35), inset 0 0 20px rgba(6, 182, 212, 0.15);
+}
+
+/* Stacking Card Dynamic Elevation Hover */
+.stacking-card:hover {
+    border-color: #10b981;
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.25), 0 20px 40px rgba(0, 0, 0, 0.8);
+    transform: translateY(-4px);
+}
