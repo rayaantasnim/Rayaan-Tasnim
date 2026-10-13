@@ -1,83 +1,55 @@
 # ========================== Project Code Summary ========================== #
 
-# --- HTML Section ---
-html_lines = 2038
+# --- File Type Counts ---
+html_files   = 8
+css_files    = 17
+js_files     = 18
+tsx_files    = 2
+ts_files     = 1
+py_files     = 1
+json_files   = 3
+md_files     = 1
+jpg_files    = 16
+ico_files    = 8
 
-# --- CSS Section ---
-css_index   = 575
-css_style   = 143
-css_footer  = 36
-css_role_model = 34
-
-# --- JavaScript Section ---
-js_index    = 24
-js_main     = 359
-js_records  = 43
-js_design   = 47
+# --- Line Counts ---
+html_lines   = 7910
+css_lines    = 3226
+js_lines     = 2189
+tsx_lines    = 32
+ts_lines     = 30
+py_lines     = 83
+json_lines   = 69
+md_lines     = 103
+# jpg and ico are non-code assets, excluded from line totals
 
 # --- Aggregated Totals ---
-total_html = html_lines
-total_css  = css_index + css_style + css_footer + css_role_model
-total_js   = js_index + js_main + js_records + js_design
+total_code_files = html_files + css_files + js_files + tsx_files + ts_files + py_files + json_files + md_files
+total_asset_files = jpg_files + ico_files
+overall_files = total_code_files + total_asset_files
+
+total_code_lines = html_lines + css_lines + js_lines + tsx_lines + ts_lines + py_lines + json_lines + md_lines
+overall_lines = total_code_lines  # assets excluded from line count
 
 # --- Output Code Statistics ---
-print("Total HTML Lines:", total_html)
-print("Total CSS Lines:", total_css)
-print("Total JS Lines:", total_js)
+print("Total HTML Lines:", html_lines)
+print("Total CSS Lines:", css_lines)
+print("Total JS Lines:", js_lines)
+print("Total TSX Lines:", tsx_lines)
+print("Total TS Lines:", ts_lines)
+print("Total Python Lines:", py_lines)
+print("Total JSON Lines:", json_lines)
+print("Total Markdown Lines:", md_lines)
 
-# --- Overall Line Count ---
-overall_lines = total_html + total_css + total_js
-print("Total Lines of Code:", overall_lines)
+print("\n--- Aggregated Totals ---")
+print("Total Code Files:", total_code_files)
+print("Total Asset Files:", total_asset_files)
+print("Overall Files:", overall_files)
 
-# --- Technology Stack Used ---
-stacks = """
-Core Web & Front-End:
-- Modern Vanilla JavaScript, ECMAScript
-- React, Next.js, Vue.js
-- Tailwind CSS, Bootstrap
-- GSAP (Green Sock Animation), Three.js, WebGL, P5.js
-- Micro-Interactive Front-End Architecture
-- Gamified State Engineering
-
-Back-End & Databases:
-- Node.js, Express.js, FastAPI (Python)
-- MySQL, PostgreSQL, MongoDB, Redis, SQLite, Firebase
-- Dynamic Full-Stack Ideation & Cloud Deployment
-
-Cloud & Hosting:
-- Vercel, Supabase, Automation Cloud
-- CDN.js, GSTAtic
-
-Data Science & AI:
-- Pandas, NumPy, Matplotlib
-- Web ML, ML5.js, TensorFlow.js
-- Client-Side Inference, Real-Time Web Tracking
-- Applied Prompt Engineering & Generative AI Synergy
-- Browser-Based Training
-
-Automation & Testing:
-- Selenium, Requests (Python), Beautiful Soup (BS4)
-- Web Scraping, Automated Testing
-- Git, GitHub, GitHub Actions, Prettier
-
-Design & Creative Tools:
-- Adobe Illustrator, Photoshop, Canva, Figma
-- Immersive Narrative Lore Crafting & World-Building
-
-Advanced Concepts:
-- Quantum-Scale JavaScript Data Manipulation
-- Algorithmic Math Olympiad Logical Architecture
-- Touch Typing Skill
-
-AI & Cognitive Systems:
-- Voice Recognition, Speech Synthesis
-- Teachable Machine, CocoSSD
-- Natural Language Processing, Computer Vision
-"""
-
-print("\n\n\nStacks Utilized:", stacks)
+print("Total Code Lines:", total_code_lines)
+print("Overall Lines of Code:", overall_lines)
 
 # --- Pricing Information ---
-usd_value = 4500
+usd_value = 5000
 bdt_value = usd_value * 122
-print(f"Pricing: BDT {bdt_value} | USD {usd_value}")
+print(f"\nPricing: BDT {bdt_value} | USD {usd_value}")
