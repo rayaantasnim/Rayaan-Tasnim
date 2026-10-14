@@ -11,7 +11,7 @@
 
 <br />
 
-<img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Rayaan Nexus Core Telemetry Banner" width="100%" height="320px" style="object-fit: cover; border-radius: 8px;" />
+<img src="https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Rayaan Nexus Core Telemetry Banner" width="100%" height="320px" style="object-fit: cover; border-radius: 8px;" />
 
 </div>
 
