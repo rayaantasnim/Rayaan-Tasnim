@@ -63,6 +63,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const faqItems = document.querySelectorAll('.faq-item');
+    const faqContainer = document.getElementById('faq-container');
+
+    // Create and insert the "No results found" placeholder notification element dynamically
+    let noResultsMsg = document.getElementById('faq-no-results');
+    if (!noResultsMsg && faqContainer) {
+        noResultsMsg = document.createElement('div');
+        noResultsMsg.id = 'faq-no-results';
+        noResultsMsg.className = 'hidden border border-cyan-500/20 bg-slate-900/50 rounded-xl p-8 text-center text-slate-400 font-rajdhani tracking-wider uppercase text-sm';
+        noResultsMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation text-cyan-400 mb-2 block text-xl"></i>[SYSTEM PROTOCOL]: No matching telemetry or query parameters found in the registry.';
+        faqContainer.parentNode.insertBefore(noResultsMsg, faqContainer.nextSibling);
+    }
     
     faqItems.forEach(item => {
         const triggerBtn = item.querySelector('.faq-trigger') || item.querySelector('.faq-question') || item.querySelector('button');
@@ -140,10 +151,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            let matchCount = 0;
+
             faqItems.forEach(item => {
-                const textPool = item.textContent.toLowerCase();
-                if (textPool.includes(query)) {
+                const questionBtn = item.querySelector('.faq-question') || item.querySelector('button');
+                const questionText = questionBtn ? questionBtn.textContent.toLowerCase() : '';
+                
+                if (query !== '' && questionText.includes(query)) {
                     item.style.display = 'block';
+                    matchCount++;
                 } else {
                     item.style.display = 'none';
                     if (item.classList.contains('active')) {
@@ -158,14 +174,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             });
+
+            if (noResultsMsg) {
+                if (matchCount === 0 && query !== '') {
+                    noResultsMsg.classList.remove('hidden');
+                } else {
+                    noResultsMsg.classList.add('hidden');
+                }
+            }
         });
     }
 
     if (clearSearchBtn && searchInput) {
         clearSearchBtn.addEventListener('click', () => {
             searchInput.value = '';
-            searchInput.dispatchEvent(new Event('input'));
+            faqItems.forEach(item => {
+                item.style.display = 'none';
+            });
             clearSearchBtn.classList.add('hidden');
+            if (noResultsMsg) noResultsMsg.classList.add('hidden');
             searchInput.focus();
         });
     }

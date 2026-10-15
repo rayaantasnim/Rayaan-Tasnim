@@ -57,3 +57,20 @@ body {
 #codex-overlay {
     transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
 }
+
+/* Responsive dual grid collapse */
+#dual-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  #dual-grid-container {
+    grid-template-columns: 1fr; /* collapse into single column */
+  }
+
+  #tech-stack-list, #core-elements-list {
+    margin-bottom: 1.5rem; /* spacing between stacked lists */
+  }
+}
