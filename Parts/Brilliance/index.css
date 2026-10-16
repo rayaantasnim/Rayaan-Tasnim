@@ -573,3 +573,113 @@
     margin: 0 auto; /* center the card */
   }
 }
+
+
+/* Neon Repository Button */
+.repo-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #22d3ee; /* cyan */
+  border: 2px solid #22d3ee;
+  border-radius: 9999px;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.35s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.repo-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  padding: 2px;
+  background: linear-gradient(90deg, #22d3ee, #10b981);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0.6;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.repo-btn:hover {
+  background: #22d3ee;
+  color: #0f172a;
+  transform: scale(1.05);
+}
+.repo-btn:hover::before {
+  opacity: 1;
+}
+
+.repo-btn:active {
+  transform: scale(0.97);
+  background: #10b981;
+  border-color: #10b981;
+  color: #0f172a;
+}
+
+@media (max-width: 640px) {
+  .repo-btn {
+    font-size: 0.85rem;
+    padding: 10px 22px;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* ========================= */
+/* <li> Styling for Achievements */
+/* ========================= */
+.achievement-list li {
+  position: relative;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.9rem;
+  color: #f1f5f9; /* slate-100 */
+  border-radius: 10px;
+  transition: all 0.35s ease-in-out;
+  cursor: pointer;
+}
+
+/* Unique gradient backgrounds per item */
+.achievement-list li:nth-child(1) {
+  background: linear-gradient(135deg, #0f172a, #22d3ee40);
+}
+.achievement-list li:nth-child(2) {
+  background: linear-gradient(135deg, #0f172a, #10b98140);
+}
+.achievement-list li:nth-child(3) {
+  background: linear-gradient(135deg, #0f172a, #facc1540);
+}
+.achievement-list li:nth-child(4) {
+  background: linear-gradient(135deg, #0f172a, #ef444440);
+}
+
+/* Hover effect with neon glow */
+.achievement-list li:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 12px #22d3ee, 0 0 24px #10b981;
+  border: 1px solid #22d3ee;
+}
+
+/* Active click state */
+.achievement-list li:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 8px #22d3ee inset;
+}
+
+/* Responsive tweak */
+@media (max-width: 640px) {
+  .achievement-list li {
+    font-size: 0.8rem;
+    padding: 10px 14px;
+  }
+}
