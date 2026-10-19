@@ -74,3 +74,43 @@ body {
     margin-bottom: 1.5rem; /* spacing between stacked lists */
   }
 }
+
+
+/* Unique button styling */
+#btn-creations-view.creation-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    border: 1px solid rgba(0, 255, 255, 0.6);
+    border-radius: 9999px;
+    color: #22d3ee; /* cyan */
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+#btn-creations-view.creation-btn:hover {
+    background: #22d3ee;
+    color: #0f172a; /* deep background */
+    box-shadow: 0 0 12px #22d3ee, 0 0 24px #22d3ee;
+}
+
+/* Active state */
+#btn-creations-view.creation-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 8px #22d3ee inset;
+}
+
+/* Responsive scaling */
+@media (max-width: 640px) {
+    #btn-creations-view.creation-btn {
+        font-size: 0.75rem;
+        padding: 0.6rem 1.2rem;
+        letter-spacing: 0.15em;
+    }
+}
