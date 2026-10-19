@@ -1,0 +1,47 @@
+/* ==========================================================================
+   PRODUCTION OVERRIDE: MINIMAL SPACING & VERTICAL RESPONSIVE GRIDS
+   ========================================================================== */
+
+/* Strict minimal padding and explicit top margins for section spacing gaps */
+header, footer, section, main, .section-block, [class*="section"] {
+    margin-top: 16px !important;
+    margin-bottom: 4px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 6px 8px !important;
+}
+
+/* Force mobile viewports into a vertical column matrix stack */
+#dual-grid-container,
+.grid-container, 
+[class*="grid-"], 
+.showroom-matrix, 
+.projects-directory {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+/* Bigger screens - Restore multi-column grid architecture safely */
+@media screen and (min-width: 768px) {
+    header, footer, section, main, .section-block, [class*="section"] {
+        margin-top: 24px !important;
+        margin-bottom: 8px !important;
+        padding: 12px 16px !important;
+    }
+
+    #dual-grid-container {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 16px !important;
+    }
+
+    .grid-container, 
+    [class*="grid-"], 
+    .showroom-matrix, 
+    .projects-directory {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+        gap: 16px !important;
+    }
+}
