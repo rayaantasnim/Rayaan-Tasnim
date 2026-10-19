@@ -4,7 +4,7 @@
 ### *Official Command Center, Sovereignty Hub & Curriculum Vitae Dashboard*
 
 ![Codeforces Specialist](https://img.shields.io/badge/Codeforces-1451%20(Cyan%20Specialist)-00C0C0?style=for-the-badge&logo=codeforces&logoColor=white)
-![Repositories](https://img.shields.io/badge/GitHub-80%2B%20Repositories-181717?style=for-the-badge&logo=github&logoColor=white)
+![Repositories](https://img.shields.io/badge/GitHub-100%2B%20Repositories-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Deployment Status](https://img.shields.io/badge/Deployment-Active%20Edge%20Network-00E676?style=for-the-badge&logo=vercel&logoColor=white)
 ![Ecosystem](https://img.shields.io/badge/Ecosystem-IDAI%20Universe%20%7C%20Olympiad%20Edge-7C4DFF?style=for-the-badge&logo=hyperledger&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-FFD700?style=for-the-badge&logo=open-source-initiative&logoColor=black)
