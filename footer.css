@@ -1,0 +1,63 @@
+/* ==========================================================================
+   FOOTER BASE STYLES
+   ========================================================================== */
+footer {
+  background: #030004;
+  color: #cbd5e1;
+  padding: 40px 7% 30px 7%;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  /* Smooth physics transitions combining smooth system variable defaults */
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- HOVER ACTION --- */
+.social-btn:hover {
+  background: var(--accent-lime, #a3e635);
+  color: #051910;
+  transform: translateY(-5px) scale(1.05); /* Combined micro-interactions */
+  box-shadow: 0 8px 20px rgba(163, 230, 53, 0.25); /* Glow matches system aesthetic */
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
