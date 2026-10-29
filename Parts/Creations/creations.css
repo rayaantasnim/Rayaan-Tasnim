@@ -1,8 +1,8 @@
-/* CREATIONS.CSS - Advanced Custom Stylesheet */
+/* ==========================================================================
+   1. FONTS & TYPOGRAPHY ASSIGNMENT
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
-
-/* Typography Assignment */
 .font-rajdhani, h1, h2, h3, .nav-brand, button {
     font-family: 'Rajdhani', sans-serif;
 }
@@ -15,12 +15,15 @@
     font-family: Arial, sans-serif;
 }
 
-/* Multicolored Linear Gradient Background Engine */
+/* ==========================================================================
+   2. CORE GLOBAL SYSTEM ENGINE
+   ========================================================================== */
 body {
     background: linear-gradient(135deg, #020617 0%, #0f172a 25%, #1e1b4b 50%, #032d24 75%, #000000 100%);
     background-attachment: fixed;
     color: #f3f4f6;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Custom Ultra-Sleek Minimalist Internal Vertical Scrollbars */
@@ -36,45 +39,106 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb {
     background: rgba(6, 182, 212, 0.5);
     border-radius: 4px;
+    transition: background 0.3s ease;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(6, 182, 212, 0.8);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.8);
 }
 
+/* ==========================================================================
+   3. INTERACTIVE FX, NEON GLOW, ANIMATIONS & TRANSITIONS
+   ========================================================================== */
 /* Neon Glow Button & Border FX */
 .neon-btn {
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+}
+
+.neon-btn::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg, rgba(6, 182, 212, 0.6), rgba(34, 211, 238, 0.8), rgba(6, 182, 212, 0.6));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity 0.4s ease;
 }
 
 .neon-btn:hover {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
-    text-shadow: 0 0 8px rgba(6, 182, 212, 0.8);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.7), inset 0 0 12px rgba(6, 182, 212, 0.4);
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.9);
+    border-color: rgba(34, 211, 238, 1);
+    transform: translateY(-2px);
 }
 
-/* Smooth Transitions for Overlay */
+.neon-btn:hover::before {
+    opacity: 1;
+}
+
+.neon-btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* Smooth Transitions for Overlay & Portals */
 #codex-overlay {
-    transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.5s ease;
 }
 
-/* Responsive dual grid collapse */
-#dual-grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+.overlay-node {
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-@media (max-width: 768px) {
-  #dual-grid-container {
-    grid-template-columns: 1fr; /* collapse into single column */
-  }
-
-  #tech-stack-list, #core-elements-list {
-    margin-bottom: 1.5rem; /* spacing between stacked lists */
-  }
+.overlay-node:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(34, 211, 238, 0.8);
+    box-shadow: 0 0 35px rgba(6, 182, 212, 0.25), inset 0 0 15px rgba(6, 182, 212, 0.15);
 }
 
+/* ==========================================================================
+   4. VERTICAL MOUSE-CONTROLLED NAVIGATION MENU BAR SYSTEM
+   ========================================================================== */
+.vertical-mouse-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vertical-mouse-nav.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.vertical-nav-item {
+    width: 12px;
+    height: 36px;
+    background: rgba(6, 182, 212, 0.2);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+}
+
+.vertical-nav-item:hover,
+.vertical-nav-item.active {
+    width: 32px;
+    background: rgba(34, 211, 238, 0.8);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.8);
+    border-color: #22d3ee;
+}
 
 /* Unique button styling */
 #btn-creations-view.creation-btn {
@@ -82,35 +146,259 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0.75rem 1.5rem;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.25em;
     border: 1px solid rgba(0, 255, 255, 0.6);
     border-radius: 9999px;
-    color: #22d3ee; /* cyan */
+    color: #22d3ee;
     background: transparent;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Hover effect */
+#btn-creations-view.creation-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
 #btn-creations-view.creation-btn:hover {
     background: #22d3ee;
-    color: #0f172a; /* deep background */
-    box-shadow: 0 0 12px #22d3ee, 0 0 24px #22d3ee;
+    color: #0f172a;
+    box-shadow: 0 0 20px #22d3ee, 0 0 40px rgba(34, 211, 238, 0.6);
+    transform: translateY(-2px);
 }
 
-/* Active state */
+#btn-creations-view.creation-btn:hover::after {
+    transform: translateX(100%);
+}
+
 #btn-creations-view.creation-btn:active {
-    transform: scale(0.97);
-    box-shadow: 0 0 8px #22d3ee inset;
+    transform: translateY(1px) scale(0.97);
+    box-shadow: 0 0 10px #22d3ee inset;
 }
 
-/* Responsive scaling */
+/* ==========================================================================
+   5. PRODUCTION RESPONSIVE OVERRIDES & SPACING (MOBILE / DEFAULT)
+   ========================================================================== */
+footer, section, main, .section-block, [class*="section"] {
+    margin-top: 16px !important;
+    margin-bottom: 4px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 6px 8px !important;
+}
+
+header, 
+nav, 
+.nav-brand, 
+#menu-toggle-btn {
+    margin-top: 0px !important;
+    margin-bottom: 4px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 6px 8px !important;
+}
+
+#dual-grid-container,
+.grid-container, 
+[class*="grid-"], 
+.showroom-matrix, 
+.projects-directory {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
 @media (max-width: 640px) {
     #btn-creations-view.creation-btn {
         font-size: 0.75rem;
         padding: 0.6rem 1.2rem;
         letter-spacing: 0.15em;
     }
+}
+
+@media (max-width: 768px) {
+    #tech-stack-list, #core-elements-list {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   6. PRODUCTION RESPONSIVE OVERRIDES (DESKTOP GRID ARCHITECTURE)
+   ========================================================================== */
+@media screen and (min-width: 768px) {
+    footer, section, main, .section-block, [class*="section"] {
+        margin-top: 24px !important;
+        margin-bottom: 8px !important;
+        padding: 12px 16px !important;
+    }
+
+    header, 
+    nav, 
+    .nav-brand {
+        margin-top: 0px !important;
+        margin-bottom: 8px !important;
+        padding: 12px 16px !important;
+    }
+
+    #dual-grid-container {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 16px !important;
+    }
+
+    .grid-container, 
+    [class*="grid-"], 
+    .showroom-matrix, 
+    .projects-directory {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+        gap: 16px !important;
+    }
+}
+
+/* ==========================================================================
+   7. EXPLORE WRAPPER & GLASS CARDS ANIMATION SYSTEM
+   ========================================================================== */
+.explore-wrapper {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.explore-container {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px 60px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  max-width: 600px;
+  width: 100%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.explore-container:hover {
+  box-shadow: 0 25px 60px rgba(6, 182, 212, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.explore-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+.explore-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.explore-card {
+  position: relative;
+  text-decoration: none;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+}
+
+.explore-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1.5px; 
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  transition: opacity 0.4s;
+}
+
+.card-1:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.3), inset 0 0 15px rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.card-2:hover {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.3), inset 0 0 15px rgba(6, 182, 212, 0.2);
+  color: #22d3ee;
+}
+
+.card-3:hover {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.3), inset 0 0 15px rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+}
+
+.explore-card:hover {
+  transform: translateY(-6px) scale(1.05);
+}
+
+.explore-card:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .explore-container {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+  
+  .explore-title {
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .explore-links {
+    gap: 16px;
+  }
+  
+  .explore-card {
+    width: 60px;
+    height: 60px;
+    font-size: 1.25rem;
+    border-radius: 12px;
+  }
 }
