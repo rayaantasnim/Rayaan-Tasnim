@@ -1,0 +1,6 @@
+{
+  "name": "Rayaan's Nexus - Command Dashboard",
+  "description": "The command dashboard and interactive engineering matrix of Rayaan Tasnim.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
