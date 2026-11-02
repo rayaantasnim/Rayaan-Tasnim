@@ -77,3 +77,43 @@ body {
 .text-slate-300 .font-arial .text-base .leading-relaxed{
     text-align: justify  !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Core Heading Override */
+.text-bright-white {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Secondary Description Labels */
+.text-bright-gray {
+  color: #e2e8f0 !important; /* Forces a crisp slate-200 level visibility */
+}
+
+/* Cyan Data & Accents with Neon Illumination */
+.text-neon-cyan {
+  color: #00f0ff !important; /* Pure, vibrant cyber cyan */
+  font-weight: 700 !important;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.4) !important;
+}
+
+/* Emerald Metadata Status */
+.text-neon-emerald {
+  color: #39ff14 !important; /* High-visibility vivid lime/emerald green */
+  font-weight: 500 !important;
+  text-shadow: 0 0 6px rgba(57, 255, 20, 0.25) !important;
+}
