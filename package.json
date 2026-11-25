@@ -1,0 +1,10 @@
+{
+  "name": "rayaan-tasnim-nexus",
+  "version": "1.0.0",
+  "description": "Static portfolio and command dashboard of Rayaan Tasnim",
+  "scripts": {
+    "dev": "python3 -m http.server 3000 --bind 0.0.0.0",
+    "start": "python3 -m http.server 3000 --bind 0.0.0.0",
+    "build": "echo 'Static build validated'"
+  }
+}

@@ -1,0 +1,473 @@
+/* ==========================================================================
+   THE KERNEL — CORE ARCHITECTURAL STYLESHEET (stack.css)
+   Avant-Garde Futuristic Monospace System | Rayaan's Nexus
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
+
+/* 1. Global Reset & Base Setup */
+:root {
+  --color-pitch-black: #000000;
+  --color-surface-obsidian: #05070a;
+  --color-surface-card: #090d14;
+  --color-surface-elevated: #0f1622;
+  --color-neon-cyan: #00f3ff;
+  --color-neon-emerald: #00ff88;
+  --color-neon-purple: #b026ff;
+  --color-hairline: rgba(0, 243, 255, 0.12);
+  --color-hairline-bright: rgba(0, 243, 255, 0.35);
+  --color-text-dim: #718096;
+  --color-text-body: #a0aec0;
+  --color-text-bright: #f7fafc;
+  --font-mono-primary: 'JetBrains Mono', 'SF Pro Display', monospace;
+  --font-sans-display: 'Space Grotesk', sans-serif;
+  --vibe-hue: 185deg;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--color-pitch-black);
+  color: var(--color-text-bright);
+  font-family: var(--font-mono-primary);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at 50% 15%, rgba(176, 38, 255, 0.18) 0%, transparent 55%), 
+              radial-gradient(circle at 10% 85%, rgba(0, 243, 255, 0.15) 0%, transparent 50%), 
+              radial-gradient(circle at 90% 90%, rgba(0, 255, 136, 0.12) 0%, transparent 50%), 
+              linear-gradient(135deg, #030508 0%, #070212 35%, #010a0e 70%, #000805 100%);
+  background-attachment: fixed;
+  color: var(--color-text-bright);
+  font-family: var(--font-mono-primary);
+  position: relative;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(0, 243, 255, 0.08) 1px, transparent 0);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+/* 1.1 Multi-Fonts Architecture Integration */
+h1, h2, h3, h4, h5, h6,
+.group-designation, .node-code, 
+[class*="group-"], [class*="node-"],
+.brand-text-layer {
+  font-family: 'Rajdhani', 'Algerian', sans-serif;
+}
+
+p, span, li, a, 
+.tech-chip, 
+.codex-grid-tile p, 
+.universal-hitbox p {
+  font-family: 'Arial', 'Vrinda', sans-serif;
+}
+
+.annotation, .slogan, .motto, 
+blockquote, 
+.special-annotation {
+  font-family: 'Times New Roman', serif;
+}
+
+/* Smooth Scrolling with Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020408;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(0, 243, 255, 0.4), rgba(176, 38, 255, 0.4));
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(0, 243, 255, 0.8), rgba(176, 38, 255, 0.8));
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+}
+
+/* 2. Custom Cursor */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-neon-cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  box-shadow: 0 0 10px var(--color-neon-cyan);
+  transition: width 0.15s ease, height 0.15s ease, background-color 0.2s ease;
+}
+
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 243, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  backdrop-filter: invert(0.1);
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease, 
+              background-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.cursor-follower.is-hovered {
+  width: 64px;
+  height: 64px;
+  border-color: var(--color-neon-cyan);
+  background-color: rgba(0, 243, 255, 0.08);
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.3), inset 0 0 15px rgba(0, 243, 255, 0.15);
+}
+
+/* 3. Cyber Background Matrix */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.32;
+  mix-blend-mode: screen;
+}
+
+/* 4. Top Navigation Hologram Brand */
+.brand-anchor-3d {
+  display: inline-block;
+  perspective: 600px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.brand-text-layer {
+  display: inline-block;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.5), 0 0 25px rgba(176, 38, 255, 0.3);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.3s ease;
+}
+
+.brand-anchor-3d:hover .brand-text-layer {
+  text-shadow: 0 0 20px rgba(0, 243, 255, 1), 0 0 40px rgba(0, 243, 255, 0.6), 0 0 60px rgba(176, 38, 255, 0.4);
+  transform: translateZ(10px);
+}
+
+/* 5. Minimalist Neon Menu Button */
+.btn-neon-menu {
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 243, 255, 0.04);
+  border: 1px solid rgba(0, 243, 255, 0.4);
+  border-radius: 8px;
+  color: #00f3ff;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-neon-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.35), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-neon-menu:hover {
+  border-color: #00f3ff;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.6), inset 0 0 10px rgba(0, 243, 255, 0.25);
+  background: rgba(0, 243, 255, 0.15);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.btn-neon-menu:hover::before {
+  left: 100%;
+}
+
+/* 6. The Codex Overlay Menu System */
+#codex-overlay {
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(16px);
+  background: rgba(3, 5, 8, 0.9);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+
+#codex-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.codex-grid-tile {
+  position: relative;
+  background: linear-gradient(135deg, rgba(9, 13, 20, 0.9), rgba(15, 22, 34, 0.8));
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.codex-grid-tile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-neon-cyan), var(--color-neon-purple));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.codex-grid-tile:hover {
+  background: linear-gradient(135deg, rgba(14, 22, 35, 0.95), rgba(22, 32, 48, 0.9));
+  border-color: rgba(0, 243, 255, 0.8);
+  box-shadow: 0 0 35px rgba(0, 243, 255, 0.3), 0 10px 40px rgba(176, 38, 255, 0.15);
+  transform: translateY(-4px) scale(1.01);
+}
+
+.codex-grid-tile:hover::before {
+  opacity: 1;
+}
+
+/* 7. Universal Clickable Hit-Box Architecture */
+.universal-hitbox {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease,
+              background-color 0.3s ease;
+}
+
+.universal-hitbox:hover {
+  border-color: rgba(0, 243, 255, 0.7);
+  box-shadow: 0 12px 40px rgba(0, 243, 255, 0.2), 0 0 20px rgba(176, 38, 255, 0.1);
+  background-color: var(--color-surface-elevated);
+  transform: translateY(-4px);
+}
+
+/* 8. Media Node Aspect Framing & Image Overlay Filter */
+.media-visual-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #020408;
+  border-bottom: 1px solid rgba(0, 243, 255, 0.15);
+}
+
+.media-visual-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  filter: grayscale(35%) contrast(115%) brightness(90%);
+}
+
+.universal-hitbox:hover .media-visual-container img {
+  transform: scale(1.06);
+  filter: grayscale(0%) contrast(125%) brightness(105%);
+}
+
+.media-visual-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(5, 7, 10, 0.9) 100%);
+  pointer-events: none;
+}
+
+/* 9. Technical Chips (Ultra-Charming Neon Glow Engine & Border Radius) */
+.tech-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.85rem;
+  background: linear-gradient(135deg, rgba(0, 243, 255, 0.06), rgba(176, 38, 255, 0.04));
+  border: 1px solid rgba(0, 243, 255, 0.28);
+  border-radius: 9999px;
+  color: #7ee7f8;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-chip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.35), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.tech-chip:hover {
+  color: #ffffff;
+  border-color: var(--color-neon-cyan);
+  background: linear-gradient(135deg, rgba(0, 243, 255, 0.18), rgba(176, 38, 255, 0.12));
+  box-shadow: 0 0 16px rgba(0, 243, 255, 0.6), 
+              0 0 30px rgba(0, 243, 255, 0.3), 
+              0 0 50px rgba(176, 38, 255, 0.2), 
+              inset 0 0 10px rgba(0, 243, 255, 0.35);
+  transform: translateY(-3px) scale(1.04);
+}
+
+.tech-chip:hover::before {
+  transform: translateX(100%);
+}
+
+.universal-hitbox:hover .tech-chip {
+  border-color: rgba(0, 243, 255, 0.5);
+  background: rgba(0, 243, 255, 0.1);
+  color: #f7fafc;
+}
+
+/* 10. Group Mini-Hero Pinned Layout Mechanics */
+.group-pinned-container {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.group-mini-hero {
+  position: sticky;
+  top: 96px;
+  background: rgba(6, 9, 14, 0.94);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 243, 255, 0.08);
+  padding: 1.75rem;
+  z-index: 10;
+}
+
+.group-card-stream {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* 11. Dynamic Vibe Tracker Glow */
+.dynamic-vibe-target {
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.dynamic-vibe-target:hover {
+  text-shadow: 0 0 20px var(--color-neon-cyan), 0 0 40px rgba(0, 243, 255, 0.5);
+}
+
+/* 12. Observatory 3D Parallax Mesh */
+.observatory-parallax-zone {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.observatory-floating-node {
+  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* 13. Responsive Media Queries (768px Strict Transform) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .group-card-stream {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .group-pinned-container {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .group-mini-hero {
+    position: relative;
+    top: 0;
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+  }
+  
+  .grid-1x2-desktop {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .grid-1x3-desktop {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .hero-headline-scaling {
+    font-size: clamp(2.4rem, 9vw, 4rem) !important;
+    line-height: 1.05 !important;
+  }
+  
+  .cursor-dot, .cursor-follower {
+    display: none !important;
+  }
+}
